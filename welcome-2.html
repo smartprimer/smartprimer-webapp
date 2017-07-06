@@ -14,14 +14,12 @@
     <title>Archimedes Story</title>
 
 
-    <script src="/__/firebase/3.8.0/firebase.js"></script>
-    <script src="/__/firebase/init.js"></script>
-    <script src="js/main.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <script src="js/getLoc.js" defer></script>
+    <script src="js/main.js" defer></script>
 
     <!-- Custom CSS -->
     <link href="css/blog-post.css" rel="stylesheet">
-    <script src="js/server.js" defer></script>
 
 
 
@@ -36,8 +34,8 @@
     <!-- Added by Sherry -->
     <script src="api.ai/ApiAi.js"></script>
     <script src="api.ai/APIAI.Functions.js"></script>
-    <script defer src="api.ai/layout.js"></script>
-
+    <!--Interferes with firebase. Removed to make sure firebase works-->
+    <!--script defer src="api.ai/layout.js"></script-->
     <style type="text/css">
 
         .spoken-response {
@@ -109,7 +107,7 @@
                 <p>Hello there! I'd like to tell you a story. But first, tell me a little about yourself. </p>
 
                 <!-- form to collect input from children -->
-                <form action="1_attention.html" method="GET" id = "information">
+                <form>
                   Your first name:<br>
                   <div id = "firstName"> </div>
                   Your last name:<br>
@@ -120,7 +118,7 @@
                   <div id = "genderEnter"> </div>
                   Your school:<br>
                   <div id = "schoolEnter"> </div> <br>
-                  <input type="submit" value="Ready? Go!" id = "getInfo">
+                  <input type="submit" value="Ready? Go!" id = "getInfo"></input>
                 </form>
             </div>
 

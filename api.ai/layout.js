@@ -14,10 +14,11 @@ layfun = (function() {
     // alert("Hi there");
     queryInput = document.getElementById("q");
     resultDiv = document.getElementById("result");
-    queryInput.addEventListener("keydown", queryInputKeyDown);
+    if (queryInput != undefined) queryInput.addEventListener("keydown", queryInputKeyDown);
 
     // Directly add the token here.
-    document.getElementById("main-wrapper").style.display = "block";
+    const mainWrapper = document.getElementById("main-wrapper")
+    if (mainWrapper != undefined) mainWrapper.style.display = "block";
     window.init(tokenStr);
   }
 
@@ -51,7 +52,7 @@ layfun = (function() {
       });
   }
 
-  // Append a user's message box on the left side 
+  // Append a user's message box on the left side
   function createQueryNode(query) {
     var node = document.createElement('div');
     node.className = "clearfix left-align left card-panel green accent-1";
@@ -59,7 +60,7 @@ layfun = (function() {
     resultDiv.appendChild(node);
   }
 
-  // Append a agent's message box on the right side 
+  // Append a agent's message box on the right side
   function createResponseNode() {
     var node = document.createElement('div');
     node.className = "clearfix right-align right card-panel blue-text text-darken-2 hoverable";
@@ -72,7 +73,7 @@ layfun = (function() {
     node.innerHTML = response ? response : "[empty response]";
     node.setAttribute('data-actual-response', response);
     var speaking = false;
-    
+
     function speakNode() {
       if (!response || speaking) {
         return;

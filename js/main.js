@@ -2,14 +2,14 @@
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCbh2nnDeAyemSpqltO7Aa7y_vTkUW0Q6g",
-  authDomain: "smartprimer-e0b94.firebaseapp.com",
-  databaseURL: "https://smartprimer-e0b94.firebaseio.com",
-  projectId: "smartprimer-e0b94",
-  storageBucket: "smartprimer-e0b94.appspot.com",
-  messagingSenderId: "920348273264"
-};
-firebase.initializeApp(config);
+    apiKey: "AIzaSyAOiDUH8_63fXJfVrvBJA6VSc_ofvwf8h4",
+    authDomain: "primer-archimedes.firebaseapp.com",
+    databaseURL: "https://primer-archimedes.firebaseio.com",
+    projectId: "primer-archimedes",
+    storageBucket: "primer-archimedes.appspot.com",
+    messagingSenderId: "671806136657"
+  };
+  firebase.initializeApp(config);
 
 function SandhiniPrimer() {
 
@@ -19,6 +19,7 @@ function SandhiniPrimer() {
   this.login = document.querySelector("#getInfo");
   this.answer1 = document.querySelector("#submited");
   this.userAnswer = document.querySelector('#userAnswer');
+
 
   this.page9a = document.querySelector('#air-mass');
   this.page9b = document.querySelector('#dirt-mass');
@@ -48,23 +49,17 @@ SandhiniPrimer.prototype.checkSetup = function() {
   }
 };
 
-// Signs-in Friendly Chat.
-SandhiniPrimer.prototype.signIn = function(event) {
-  event.preventDefault();
-  // Sign in Firebase using popup auth and Google as the identity provider.
-  var provider = new firebase.auth.GoogleAuthProvider();
-  this.auth.signInWithPopup(provider);
-};
-
 SandhiniPrimer.prototype.writeUserData = function(event) {
+  event.preventDefault();
   console.log(localStorage.first_name);
-  firebase.database().ref('users/' + localStorage.first_name).set({
+  firebase.database().ref('users/' + localStorage.first_name).update({
     firstName: localStorage.first_name,
     lastName: localStorage.last_name,
     School: localStorage.school,
     Gender: localStorage.gender,
     Age: localStorage.age,
   });
+  window.location.href = "1_attention.html";
 }
 
 SandhiniPrimer.prototype.writeUserAnswer = function(event) {
@@ -73,10 +68,10 @@ SandhiniPrimer.prototype.writeUserAnswer = function(event) {
     userEnteredAnswer = "air-mass: " + this.page9a.value + ", dirt-mass: " + this.page9b.value + ", air-volume: " + this.page9c.value + ", dirt-volume: " + this.page9d.value;
   }
   else userEnteredAnswer = this.userAnswer.value;
-
   const params = window.location.pathname.split( '/' );
-  const lengthEnd = params[1].length;
-  const name = params[1].slice(0, lengthEnd-5);
+  const num = params.length - 1;
+  const lengthEnd = params[num].length;
+  const name = params[num].slice(0, lengthEnd-5);
   const inputElem = {};
   inputElem[name] = userEnteredAnswer;
   console.log(inputElem);

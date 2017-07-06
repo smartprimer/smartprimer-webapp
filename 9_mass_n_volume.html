@@ -13,8 +13,8 @@
 
     <title>Archimedes Story</title>
 
-    <script src="/__/firebase/3.8.0/firebase.js"></script>
-    <script src="/__/firebase/init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
     <script src="js/main.js" defer></script>
 
     <script src="js/storyChap1.js" defer></script>
@@ -31,8 +31,8 @@
     <!-- Added by Sherry -->
     <script src="api.ai/ApiAi.js"></script>
     <script src="api.ai/APIAI.Functions.js"></script>
-    <script defer src="api.ai/layout.js"></script>
-
+    <!--Interferes with firebase. Removed to make sure firebase works-->
+    <!--script defer src="api.ai/layout.js"></script-->
     <style type="text/css">
 
         .spoken-response {
@@ -201,7 +201,6 @@
     </div>
     <!-- /.container -->
 
-    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->

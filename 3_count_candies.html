@@ -7,28 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <title>Archimedes Story</title>
 
-    <script src="/__/firebase/3.8.0/firebase.js"></script>
-    <script src="/__/firebase/init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <script src="js/main.js" defer></script>
     <!-- Custom CSS -->
     <link href="css/blog-post.css" rel="stylesheet">
     <script src="js/storyChap1.js" defer></script>
     <script src="js/page1App.js" defer></script>
     <script src="js/page1.js" defer></script>
-    
+
 
 
 
     <!-- Added by Sherry -->
     <script src="api.ai/ApiAi.js"></script>
     <script src="api.ai/APIAI.Functions.js"></script>
-    <script defer src="api.ai/layout.js"></script>
+
+    <!--Interferes with firebase. Removed to make sure firebase works-->
+    <!--script defer src="api.ai/layout.js"></script-->
+
+
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 
@@ -119,8 +122,8 @@
                 <div style="text-align:center;">
                     <div>
                       <input type="text" name="num_candies" value="" id = "userAnswer"> <br> <br>
-                      <form action="4_after_count_candies.html">
-                      <button type="submit" class="btn btn-primary" id = "submited">Check Answer</button>
+                      <form action = "4_after_count_candies.html">
+                      <button id = "submited" class="btn btn-primary" >Check Answer</button>
                     </form>
                     </div>
                 </div>
@@ -146,7 +149,6 @@
 
     <!-- /.container -->
 
-    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
