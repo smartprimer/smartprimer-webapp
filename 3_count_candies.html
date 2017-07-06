@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Archimedes Story</title>
+
+    <script src="/__/firebase/3.8.0/firebase.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="js/main.js" defer></script>
+    <!-- Custom CSS -->
+    <link href="css/blog-post.css" rel="stylesheet">
+    <script src="js/storyChap1.js" defer></script>
+    <script src="js/page1App.js" defer></script>
+    <script src="js/page1.js" defer></script>
+    
+
+
+
+    <!-- Added by Sherry -->
+    <script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script>
+    <script defer src="api.ai/layout.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+
+    <style type="text/css">
+        .spoken-response {
+            -webkit-transition: all 0.35s ease-in;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id = "navigationBar">
+        <div class="container" id = "navStart">
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li>
+                      <a class="navbar-brand" href="#">Start</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container" id = "mainContainer">
+        <div class="row" id = "items">
+          <!-- Blog Sidebar Widgets Column -->
+          <div class="col-md-4">
+
+              <!-- Side Widget Well -->
+              <div class="well" id="chatbot" >
+                  <h4 style="text-align:center;">Hi, I'm your personal tutor Mr. Owl</h4>
+
+                  <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="60%" alt=""></center>
+                  <div class="container">
+                    <textarea id="speech" rows="3" cols = "14"> </textarea><br>
+                      <button id="rec" class="btn" style="text-align:center;">Ask</button>
+                      <div id="spokenResponse" class="spoken-response">
+                          <div class="spoken-response__text"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Title -->
+                <h1>Archimedes Story</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">Smart Primer Group</a>
+                </p>
+
+
+
+                <hr>
+                <p class="storyPlot">  </p>
+
+                <div class = "otherPges" id = "inactive">
+                  <div id = "getInfo"></div>
+                  <p class = "storyPlot2"</p>
+                  <p class = "storyPlot3"</p>
+                  <p class="storyPlot11">  </p>
+                </div>
+
+
+              <div id = "answerBox">
+                <center><h4> Enter Your Answer </h4></center>
+                <center><h5> How many sesame candies are left? Use a shoebox and a quarter to estimate. </h5></center>
+              </div>
+
+
+                <div style="text-align:center;">
+                    <div>
+                      <input type="text" name="num_candies" value="" id = "userAnswer"> <br> <br>
+                      <form action="4_after_count_candies.html">
+                      <button type="submit" class="btn btn-primary" id = "submited">Check Answer</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.row -->
+
+      </hr>
+
+        <!-- Footer -->
+
+        <footer class="inactive">
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+      </div>
+    </body>
+
+    <!-- /.container -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <!--script src="js/bootstrap.min.js"></script-->
+
+    <script type="text/javascript">
+
+    var accessToken = "832d17a2c5eb4632ba011271181d1e8c",
+      baseUrl = "https://api.api.ai/v1/",
+      $speechInput, //This stores your <input> element so you can access it in your JavaScript.
+      $recBtn, //This stores your <button> element
+      recognition, //You store your webkitSpeechRecognition() functionality in this variable. This is for the HTML5 Speech Recognition API.
+      messageRecording = "Recording...",
+      messageCouldntHear = "I couldn't hear you, could you say that again?",
+      messageInternalError = "Oh no, there has been an internal server error",
+      messageSorry = "I'm sorry, I don't have the answer to that yet.";
+
+      $(document).ready(function() {
+        $speechInput = $("#speech");
+        $recBtn = $("#rec");
+
+        // look for when the user presses the Enter key in the input field. When that happens, run the send() function to send off the data to Api.ai
+        $speechInput.keypress(function(event) {
+          if (event.which == 13) {
+            event.preventDefault();
+            send();
+          }
+        });
+
+        $recBtn.on("click", function(event) {
+          switchRecognition();
+        });
+
+        $(".debug__btn").on("click", function() {
+          $(this).next().toggleClass("is-active");
+          return false;
+        });
+      });
+
+      function startRecognition() {
+        recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        recognition.onstart = function(event) {
+          respond(messageRecording);
+          updateRec(); //switches the text for your recording button from “Stop” to “Speak”.
+        };
+        recognition.onresult = function(event) {
+          recognition.onend = null;
+
+          var text = "";
+          for (var i = event.resultIndex; i < event.results.length; ++i) {
+            console.log("index"+i+": "+event.results[i][0].transcript);
+            text += event.results[i][0].transcript;
+          }
+          setInput(text);
+          stopRecognition();
+        };
+        recognition.onend = function() {
+          respond(messageCouldntHear);
+          stopRecognition();
+        };
+        recognition.lang = "en-US";
+        recognition.start();
+      }
+
+      function stopRecognition() {
+        if (recognition) {
+          recognition.stop();
+          recognition = null;
+        }
+        updateRec();
+      }
+
+      function switchRecognition() {
+        if (recognition) {
+          stopRecognition();
+        } else {
+          startRecognition();
+        }
+      }
+
+      function setInput(text) {
+        $speechInput.val(text);
+        send();
+      }
+
+      function updateRec() {
+        $recBtn.text(recognition ? "Stop" : "Ask");
+      }
+
+
+      // send off your query to Api.ai
+      function send() {
+        var text = $speechInput.val();
+        $.ajax({
+          type: "POST",
+          url: baseUrl + "query",
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+          headers: {
+            "Authorization": "Bearer " + accessToken
+          },
+          data: JSON.stringify({query: text, lang: "en", sessionId: "yaydevdiner"}),
+
+          success: function(data) {
+            prepareResponse(data);
+          },
+          error: function() {
+            respond(messageInternalError);
+          }
+        });
+      }
+
+      function prepareResponse(val) {
+        var debugJSON = JSON.stringify(val, undefined, 2),
+          spokenResponse = val.result.speech; // your assistant’s text response
+
+        respond(spokenResponse);
+        debugRespond(debugJSON);
+      }
+
+      function debugRespond(val) {
+        $("#response").text(val);
+      }
+
+      function Expand(obj) {
+      obj.size= parseInt(obj.value.length);
+      }
+
+      function respond(val) {
+        if (val == "") {
+          val = messageSorry;
+        }
+
+        if (val !== messageRecording) {
+          var msg = new SpeechSynthesisUtterance();
+          msg.voiceURI = "native";
+          msg.text = val;
+          msg.lang = "en-US";
+          window.speechSynthesis.speak(msg);
+        }
+
+        $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
+      }
+
+      // exposition
+      function resizeIframe(iframe) {
+        console.log("print-0");
+        iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+      }
+
+      function expositionOnLoad() {
+        $(".exposition").mouseenter( function (eventObject) {
+          console.log("print-1");
+          var target = $(eventObject.target);
+          console.log(target.attr("data-link"))
+          $('<iframe>', {
+            src: target.attr("data-link"),
+            id: target.attr("data-link"),
+            width: 300,
+            scrolling: 'no',
+            style: "position: absolute; box-shadow: 5px 5px 15px #888888; " +
+              "border: 0px solid black;",
+            onload: "resizeIframe(this)"
+          }).appendTo(target);
+        }).mouseleave( function (eventObject) {
+          $("iframe").remove();
+        })
+        console.log("print");
+      }
+
+      function question(text) {
+        console.log(text);
+        setInput("What is "+text+"?");
+      }
+
+
+  </script>
+
+
+</body>
+
+</html>

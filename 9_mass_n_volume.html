@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Archimedes Story</title>
+
+    <script src="/__/firebase/3.8.0/firebase.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="js/main.js" defer></script>
+
+    <script src="js/storyChap1.js" defer></script>
+
+    <link href="css/blog-post.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Added by Sherry -->
+    <script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script>
+    <script defer src="api.ai/layout.js"></script>
+
+    <style type="text/css">
+
+        .spoken-response {
+            -webkit-transition: all 0.35s ease-in;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id = "navigationBar">
+        <div class="container" id = "navStart">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a class="navbar-brand" href="#">Start</a>
+                  </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" id = "mainContainer">
+        <div class="row">
+          <!-- Blog Sidebar Widgets Column -->
+          <div class="col-md-4">
+
+              <!-- Side Widget Well -->
+              <div class="well" id="chatbot" >
+                  <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
+
+                  <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="60%" alt=""></center>
+                  <div class="container">
+                    <textarea id="speech" rows="3" cols = "14"> </textarea><br>
+
+                      <button id="rec" class="btn">Ask</button>
+                      <div id="spokenResponse" class="spoken-response">
+                          <div class="spoken-response__text"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Title -->
+                <h1>Archimedes Story</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">Smart Primer Group</a>
+                </p>
+
+                <hr>
+
+                <p>"That's great. I'll let Aristippus know that once again, he has failed to stump me with a puzzle. Of course, I'll give you your due credit. Great job. I guess you've proven yourself a reliable helper for this whole crown ordeal.</p>
+
+                <p>"Here's my idea. Objects take up a certain amount of space, which is their volume, and the weigh a certain amount, which is their mass.</p>
+
+                <p>"I believe that objects that are the same size but are made up of different materials will have different weights. At the same time, I think objects that are the same weight but made up of different materials will take up a different amount of space. Does that make sense?"</p>
+
+                <p> UNDERSTANDING CHECK </p>
+
+                <p> "Wonderful! Now I can't very well run tests on the golden crown. Hiero would be quite upset if I did. So, to test my idea I'm thinking we can take to objects of different materials and compare their masses and volumes. Do you think we could use that container you have?" Archimedes asked, pointing at a plastic water bottle in John's hand.</p>
+                <p>John agreed and set the bottle on only exposed corner of the table in front of John.</p>
+
+                <center><img src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/waterbottle.jpg?alt=media&token=7b8bfb7a-af95-4e5e-b001-c3e0d5f251ff" width="33%"/></center><br>
+
+                <p>"Alright, so we can test this idea by filling the bottle first with air and then with dirt. We can find the mass of the bottle by weighing it. </p>
+
+                <p>"We know the volume of the bottle isn't changing when we put different materials inside it. Look, it even says the volume on the label! But the crown doesn't come with a volume label. So I'd like to test an idea I have to use water displacement to measure volume as well.</p>
+
+                <p>"I believe that if we put the bottle in a tub of water filled to the brim, the amount of water that overflows (the amount of water displaced) will equal the volume of the bottle, regardless of its mass. So the same amount of water should overflow when it is filled with air as when it is filled with dirt, and that amount of water should equal the volume labeled on the bottle. Are you following?"</p>
+
+                <p>"Wonderful! Then let's get started. Would you grab a piece of paper from somewhere? I need you to copy down a chart to keep track of the data."</p>
+                <!-- can you have the table slide downward from a left side column??-->
+
+
+                        <p> "Now let's start with the air filled container. Drink it; don't let water go to waste. We're in a drought, you know. And weigh the bottle."</p>
+                        <p>"You'll probably find it is too light to weigh, so we can estimate it at 12 grams, but if you could find a value, enter that into your chart."</p>
+                        <p>"We're now going to measure the volume of the bottle filled with air. First, fill a bowl big enough to hold the whole bottle to the brim with water. We want to see much water gets displaced, or flows over the brim. So place your bowl into a large flat basin, like a baking dish, that we can collect the water in.</p>
+
+                        <figure width=30% style=text-align:center;><img src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/water-bowl.jpg?alt=media&token=9b754e62-fd60-44d2-8237-91a2259e8977" width=30%/> </figure>
+
+                        <p>"When you have finished that, gently place the bottle into the bowl. Be careful not to splash. Collect the overflowing water in the flat basin. You may need to push the bottle down into the water until it is completely submerged. </p>
+                        <p>"Once the whole bottle is underwater, you can carefully release it--we've displaced all the water we need to--and remove the bowl from the basin. Pour the water in the basin into a measuring cup and measure how much water we gathered. What volume of water was displaced by your bottle? Convert this value to millileters; 1 cup equals 236.588 mL. What volume did you find?</p>
+                        <p>"Wonderful. Put that value into your chart, and then we can go ahead and do the same for a bottle filled with dirt. Go ahead and fill the bottle and we can move on when you're ready."</p>
+                        <p> "Now we can measure the mass of the bottle filled with dirt. This is a bit easier than the air filled bottle. As I'm sure you can tell by just feel, the dirt filled bottle has greater mass.</p>
+                        <p>"One way to find the weight of the dirt filled bottle is to weigh yourself holding the bottle, then weigh yourself without the bottle, and find the difference in these two weights. Remember, we want a weight in grams. There are 453.592 grams in one pound. Let me know when you have found the mass of the bottle."</p>
+                        <p>"That's great. Don't forget to fill that value into the table. Now we just have to find the volume of the dirt filled bottle. Repeat the process that you used to find the volume of an air filled bottle. As a reminder, filled a bowl of water set into a basin to the brim, put the bottle into the bowl and be sure it is fully submerged, remove the bowl from the basin, and measure the amount of collected displaced water with a measuring cup. When you find a value, let me know."</p>
+
+                        <div id="datatable" >
+                          <div id = "userAnswer">
+                          <div id = "air" style="float:left;width:50%;">
+                            <p><b>Air Filled Bottle</b></p>
+                            <p>Mass (in grams): <input id="air-mass" type="text" style= "width: 73%"></p>
+                            <p>Volume   (in mL):    <input id="air-volume" type="text" style= "width: 73%"> </p>
+                          </div>
+
+                          <div id = "dirt" style="float:right;width:50%;">
+                            <p><b>Dirt Filled Bottle</b></p>
+                            <p>Mass (in grams): <input id="dirt-mass" type="text" style= "width: 73%" ></p>
+                            <p>Volume (in mL): <input id="dirt-volume" type="text" style= "width: 73%"></p>
+                          </div>
+                        </div>
+                        </div>
+                        <form action="10_pure_or_not.html">
+                        <button type="submit" class="btn btn-primary" id = "submited">Submit</button>
+                      </form>
+                  </div>
+
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+
+                <!-- Side Widget Well -->
+
+                    <!-- Floating chat window testing -->
+                    <!-- <div id="main-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col s5">
+                                    <div class="input-field">
+                                        <input placeholder="Hey, ask me something..." id="q" type="text" >
+                                    </div>
+                                    <div id="result"></div>
+                                </div>
+                                <div class="col s2"></div>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer class="inactive">
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+      <script type="text/javascript">
+
+    var accessToken = "832d17a2c5eb4632ba011271181d1e8c",
+      baseUrl = "https://api.api.ai/v1/",
+      $speechInput, //This stores your <input> element so you can access it in your JavaScript.
+      $recBtn, //This stores your <button> element
+      recognition, //You store your webkitSpeechRecognition() functionality in this variable. This is for the HTML5 Speech Recognition API.
+      messageRecording = "Recording...",
+      messageCouldntHear = "I couldn't hear you, could you say that again?",
+      messageInternalError = "Oh no, there has been an internal server error",
+      messageSorry = "I'm sorry, I don't have the answer to that yet.";
+
+    $(document).ready(function() {
+      $speechInput = $("#speech");
+      $recBtn = $("#rec");
+
+      // look for when the user presses the Enter key in the input field. When that happens, run the send() function to send off the data to Api.ai
+      $speechInput.keypress(function(event) {
+        if (event.which == 13) {
+          event.preventDefault();
+          send();
+        }
+      });
+
+      $recBtn.on("click", function(event) {
+        switchRecognition();
+      });
+
+      $(".debug__btn").on("click", function() {
+        $(this).next().toggleClass("is-active");
+        return false;
+      });
+    });
+
+    function startRecognition() {
+      recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onstart = function(event) {
+        respond(messageRecording);
+        updateRec(); //switches the text for your recording button from “Stop” to “Speak”.
+      };
+      recognition.onresult = function(event) {
+        recognition.onend = null;
+
+        var text = "";
+        for (var i = event.resultIndex; i < event.results.length; ++i) {
+          console.log("index"+i+": "+event.results[i][0].transcript);
+          text += event.results[i][0].transcript;
+        }
+        setInput(text);
+        stopRecognition();
+      };
+      recognition.onend = function() {
+        respond(messageCouldntHear);
+        stopRecognition();
+      };
+      recognition.lang = "en-US";
+      recognition.start();
+    }
+
+    function stopRecognition() {
+      if (recognition) {
+        recognition.stop();
+        recognition = null;
+      }
+      updateRec();
+    }
+
+    function switchRecognition() {
+      if (recognition) {
+        stopRecognition();
+      } else {
+        startRecognition();
+      }
+    }
+    document.body.innerHTML=document.body.innerHTML.replace(/John/g,localStorage.first_name);
+
+
+    function setInput(text) {
+      $speechInput.val(text);
+      send();
+    }
+
+    function updateRec() {
+      $recBtn.text(recognition ? "Stop" : "Ask");
+    }
+
+
+    // send off your query to Api.ai
+    function send() {
+      var text = $speechInput.val();
+      $.ajax({
+        type: "POST",
+        url: baseUrl + "query",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+          "Authorization": "Bearer " + accessToken
+        },
+        data: JSON.stringify({query: text, lang: "en", sessionId: "yaydevdiner"}),
+
+        success: function(data) {
+          prepareResponse(data);
+        },
+        error: function() {
+          respond(messageInternalError);
+        }
+      });
+    }
+
+    function prepareResponse(val) {
+      var debugJSON = JSON.stringify(val, undefined, 2),
+        spokenResponse = val.result.speech; // your assistant’s text response
+
+      respond(spokenResponse);
+      debugRespond(debugJSON);
+    }
+
+    function debugRespond(val) {
+      $("#response").text(val);
+    }
+
+    function respond(val) {
+      if (val == "") {
+        val = messageSorry;
+      }
+
+      if (val !== messageRecording) {
+        var msg = new SpeechSynthesisUtterance();
+        msg.voiceURI = "native";
+        msg.text = val;
+        msg.lang = "en-US";
+        window.speechSynthesis.speak(msg);
+      }
+
+      $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
+    }
+
+    window.onscroll = function() {colorScrolled()};
+
+    function colorScrolled() {
+      var procedure = document.getElementById("procedure");
+      var datatable = document.getElementById("datatable");
+      if (procedure.getBoundingClientRect().top > 0) {
+        datatable.style.position = "absolute";
+        datatable.style.top = "";
+        datatable.style.left = "";
+      } else {
+        datatable.style.position = "fixed";
+        datatable.style.top = "0px";
+        //datatable.style.left = "8px";
+      }
+    }
+
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>

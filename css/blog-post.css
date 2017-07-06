@@ -1,0 +1,205 @@
+/*!
+ * Start Bootstrap - Blog Post (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    display: flex;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    flex-direction: column;
+    width: 100vh;
+    padding-left: 10%;
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+body:-webkit-full-screen {
+  width: 100%;
+    height: 100%;
+  }
+body:-ms-fullscreen {
+  width: 100%;
+    height: 100%;
+  }
+
+  body::-ms-backdrop {
+      background: white;
+  }
+
+#navStart{
+  margin-left: 7.8%;
+}
+#navigationBar{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  height: 57px;
+  background-color: #222;
+  border-color: #080808;
+
+  top: 0;
+  border-width: 0 0 1px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #9d9d9d;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar-nav>li {
+    float: left;
+    padding-right: 50px;
+    margin-top: 0px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+  color: white;
+  background: #222;
+}
+
+
+h1 {
+   font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+/*body {
+	width: 600px;
+	margin: 0 auto;
+	background: #eeeeee;
+	font-family: 'Trebuchet MS', Verdana, Arial, serif;
+}*/
+
+#chatbot{
+    display: flex;
+    flex-direction: column;
+    width: 16%;
+    border: solid black 2px;
+    padding-bottom: 2%;
+    position: fixed;
+    margin-left: 53%;
+    margin-top: 3%;
+}
+
+#speech{
+  font-family: "Titillium Web";
+  -webkit-transition: all 0.35s ease-in;
+  border: 1px solid #3F7F93;
+  margin-right: 9%;
+  width: 80%;
+  margin-left: 9%;
+}
+
+.spoken-response__text{
+  margin-left: 5%;
+  max-width: inherit;
+  flex-wrap: wrap;
+}
+
+#datatable{
+  margin: 10px;
+  position: inherit;
+  display: flex;
+}
+
+#rec{
+  width: 40%;
+  margin-left: 28%;
+}
+
+footer{
+  padding-left: 40%;
+}
+
+#mainContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+figcaption {
+	font-size: 10px;
+}
+
+#answerBox{
+  font-family: sans-serif;
+  font-size: 19px;
+}
+
+a:hover {
+	cursor: pointer;
+	background: yellow;
+}
+#inactive {
+  display: none !important;
+}
+
+#name_to_fill{
+  font-size: 20px;
+  font-family: sans-serif;
+}
+#missionHeading{
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+#missionMessage{
+  font-size: 16px;
+
+}
+
+@media screen and (max-width: 900px) {
+  body {
+      width: 50vh;
+  }
+
+  #chatbot{
+    display: flex;
+    width: 20%;
+    margin-left: 63%;
+    justify-content: center;
+    align-items: center;
+  }
+  .col-lg-8{
+    width: 83%;
+  }
+
+  #speech{
+    font-family: "Titillium Web";
+    -webkit-transition: all 0.35s ease-in;
+    border: 1px solid #3F7F93;
+    margin-right: 5%;
+    overflow: hidden;
+  }
+
+  #rec{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+
+  #navStart{
+    margin-left: 7.8%;
+    margin-top: 2%;
+  }
+}
