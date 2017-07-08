@@ -80,6 +80,7 @@
                   <div class="container">
                     <textarea id="speech" rows="3" cols = "14"> </textarea><br>
                       <button id="rec" class="btn">Ask</button>
+                      <center><button id="stop_button" class="btn">Stop</button></center>
                       <div id="spokenResponse" class="spoken-response">
                           <div class="spoken-response__text"></div>
                       </div>
@@ -140,7 +141,7 @@
     <script type="text/javascript" src="js/speechBot.js"></script>
 
     <script>
-    
+
     /* Replace all Johns with the user's first name */
     document.body.innerHTML=document.body.innerHTML.replace(/John/g,localStorage.first_name);
 
