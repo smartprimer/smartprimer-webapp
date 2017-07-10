@@ -196,7 +196,7 @@ a:hover {
   #chatbot1{
     display: flex;
     width: 80%;
-    margin-left: 20%;
+    margin-left: 10%;
     justify-content: center;
     align-items: center;
   }
