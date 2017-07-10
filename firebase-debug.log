@@ -1,0 +1,35 @@
+[debug] [2017-07-07T20:56:17.876Z] ----------------------------------------------------------------------
+[debug] [2017-07-07T20:56:17.882Z] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-07-07T20:56:17.883Z] CLI Version:  3.9.1
+[debug] [2017-07-07T20:56:17.884Z] Platform:     darwin
+[debug] [2017-07-07T20:56:17.884Z] Node Version: v6.11.0
+[debug] [2017-07-07T20:56:17.885Z] Time:         Fri Jul 07 2017 13:56:17 GMT-0700 (PDT)
+[debug] [2017-07-07T20:56:17.886Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-07T20:56:17.934Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-07T20:56:17.936Z] > authorizing via signed-in user
+[debug] [2017-07-07T20:56:17.943Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-07-07T20:56:17.944Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/Z3lLRJETTsfTVrC9Zk5IuHOaHY5eFGIUNGPJPxKP6i8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Jul 07 2017 13:56:17 GMT-0700 (PDT)
+[debug] [2017-07-07T20:56:18.161Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-07T20:56:18.181Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/primer-archimedes  
+ Fri Jul 07 2017 13:56:18 GMT-0700 (PDT)
+[debug] [2017-07-07T20:56:18.645Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-07T20:56:18.646Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/primer-archimedes/tokens  
+ Fri Jul 07 2017 13:56:18 GMT-0700 (PDT)
+[debug] [2017-07-07T20:56:18.969Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/jiangliwei/Documents/GitHub/Primer-Archimedes'...
+[info] 
+[debug] [2017-07-07T20:56:18.976Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/primer-archimedes  
+ Fri Jul 07 2017 13:56:18 GMT-0700 (PDT)
+[debug] [2017-07-07T20:56:19.422Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-07T20:56:19.423Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/671806136657/clients/_:getWebAppConfig  
+ Fri Jul 07 2017 13:56:19 GMT-0700 (PDT)
+[debug] [2017-07-07T20:56:19.993Z] <<< HTTP RESPONSE 200
+[info] ✔  hosting: Local server: http://localhost:5000
+
