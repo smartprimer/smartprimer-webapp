@@ -17,13 +17,15 @@
     <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
 
     <!-- Custom CSS -->
-    <script src="js/storyChap1.js" defer></script>
+
+    <script src="js/storyChap1.js"></script>
     <link href="css/blog-post.css" rel="stylesheet">
 
     <!-- Added by Sherry -->
     <script src="api.ai/ApiAi.js"></script>
     <script src="api.ai/APIAI.Functions.js"></script>
-    <script defer src="api.ai/layout.js"></script>
+
+    <!--script defer src="api.ai/layout.js"></script-->
 
     <style type="text/css">
 
@@ -74,10 +76,11 @@
               <div class="well" id="chatbot" >
                   <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
 
-                  <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="60%" alt=""></center>
+                  <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138"  alt=""></center>
                   <div class="container">
                     <textarea id="speech" rows="3" cols = "14"> </textarea><br>
                       <button id="rec" class="btn">Ask</button>
+                      <center><button id="stop_button" class="btn">Stop</button></center>
                       <div id="spokenResponse" class="spoken-response">
                           <div class="spoken-response__text"></div>
                       </div>
@@ -107,7 +110,7 @@
                 <!-- Post Content -->
                 <h4><i> The History </i></h4>
 
-                <p>For nearly one hundred years, the ancient Greek cities of <a onclick="question('Syracuse')">Syracuse</a> and <a onclick="question('Carthage')">Carthage</a> had been at war as ruler after ruler fought each other for the throne. Finally, in 275 BCE, the troops from Syracuse grew weary of the inefficiency and selfishness of their leaders and elected commanders from amongst themselves. One of their chosen leaders was a young general named <a onclick="question('Hiero')">Hiero</a>.</p>
+                <p>For nearly one hundred years, the ancient <a onclick="question('Syracuse')">Syracuse</a> and <a onclick="question('Carthage')">Carthage</a> had been at war as ruler after ruler fought each other for the throne. Finally, in 275 BCE, the troops from Syracuse grew weary of the inefficiency and selfishness of their leaders and elected commanders from amongst themselves. One of their chosen leaders was a young general named <a onclick="question('Greek')">Greek</a> cities of Syracuse and Carthage had been at war as ruler after ruler fought each other for the throne. Finally, in 275 BCE, the troops from Syracuse grew weary of the inefficiency and selfishness of their leaders and elected commanders from amongst themselves. One of their chosen leaders was a young general named <a onclick="question('Hiero')">Hiero</a>.</p>
 
                 <figure width=30% style=text-align:center;><img src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/coin-hiero.jpg?alt=media&token=37520816-a25f-4a6d-b52c-d2480c2f9e04" width=30%/> </figure>
 
@@ -117,7 +120,7 @@
                 </figure>
                 <br> -->
 
-                <p>Now, Hiero was charismatic and had a natural talent for leadership and politics. With his new status and help from his connections, he entered the city of Syracuse and managed to take over its government. And the citizens of Syracuse, who typically rejected the thought of soldiers picking their own leaders, made an exception and accepted Hiero as a leader. In 270 BCE, a great battle broke out, and it was Hiero who led Syracuse to victory, prompting the people of Syracuse chose Hiero as their king.</p>
+                <p>Now, Hiero was <a onclick="question('charismatic')">charismatic</a> and had a natural talent for leadership and politics. With his new status and help from his connections, he entered the city of Syracuse and managed to take over its government. And the citizens of Syracuse, who typically rejected the thought of soldiers picking their own leaders, made an exception and accepted Hiero as a leader. In 270 BCE, a great battle broke out, and it was Hiero who led Syracuse to victory, prompting the people of Syracuse chose Hiero as their king.</p>
 
                 <p>The people of Ancient Greece believed in <a onclick="question('many gods')">many gods</a>, and Hiero was grateful to them all for his success and good fortune. To show his appreciation, Hiero decided to put into a temple a golden crown made in their honor. Hiero weighed out a precise amount of gold, and appointing a goldsmith, commanded him to fashion out of the gold a <a onclick="question('laurel wreath')">laurel wreath</a> shaped crown worthy of the gods.</p>
 
@@ -125,7 +128,7 @@
 
                 <p>The goldsmith did as instructed, and several days later, he returned to the king with a beautiful and intricate crown in the form of a laurel wreath, just as the king had requested. This crown weighed exactly the same as the gold the king had given to the smith and King Hiero, pleased with the work, rewarded the goldsmith.</p>
 
-                <p>King Hiero began preparations for the ceremony in which he would place the crown in the temple. But something has gone wrong. The king is furious, the festival has been put on hold, and the city is in turmoil.</p>
+                <p>King Hiero began preparations for the ceremony in which he would place the crown in the temple. But something has gone wrong. The king is <a onclick="question('furious')">furious</a>, the festival has been put on hold, and the city is in turmoil.</p>
 
                 <h4 id="johns_task"><i>John's Task</i></h4>
 
@@ -133,7 +136,7 @@
 
                 <h4 id = "missionHeading">Ready to go undercover?</h4>
 
-                <h5 id = "missionMessage">Accept this mission when you are ready to proceed.</h5>
+                <h5 id = "missionMessage2">Accept this mission when you are ready to proceed.</h5>
 
                 <br>
 
@@ -167,7 +170,10 @@
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- JavaScript for Chatbot functionality. -->
+    <script type="text/javascript" src="js/speechBot.js"></script>
 
+<<<<<<< HEAD
     <script type="text/javascript">
 
     var accessToken = "832d17a2c5eb4632ba011271181d1e8c",
@@ -306,31 +312,7 @@
       $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
     }
 
-    // exposition
-    function resizeIframe(iframe) {
-      console.log("print-0");
-      iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
-    }
 
-    function expositionOnLoad() {
-      $(".exposition").mouseenter( function (eventObject) {
-        console.log("print-1");
-        var target = $(eventObject.target);
-        console.log(target.attr("data-link"))
-        $('<iframe>', {
-          src: target.attr("data-link"),
-          id: target.attr("data-link"),
-          width: 300,
-          scrolling: 'no',
-          style: "position: absolute; box-shadow: 5px 5px 15px #888888; " +
-            "border: 0px solid black;",
-          onload: "resizeIframe(this)"
-        }).appendTo(target);
-      }).mouseleave( function (eventObject) {
-        $("iframe").remove();
-      })
-      console.log("print");
-    }
 
     function question(text) {
       console.log(text);
@@ -338,14 +320,13 @@
     }
 
     // Replace John with the user's first name
+=======
+    <script>
+    /* Replace John with the user's first name */
+>>>>>>> 596b9092c4bb4569fc2ff9c4a522e2080ff08df1
     document.getElementById("johns_task").innerHTML=document.getElementById("johns_task").innerHTML.replace('John',localStorage.first_name);
-
     document.getElementById("john_is_to_travel").innerHTML=document.getElementById("john_is_to_travel").innerHTML.replace('John',localStorage.first_name);
-
-
-
-  </script>
-
+    </script>
 
 </body>
 

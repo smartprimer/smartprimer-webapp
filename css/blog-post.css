@@ -29,6 +29,7 @@ body:-ms-fullscreen {
       background: white;
   }
 
+
 #navStart{
   margin-left: 7.8%;
 }
@@ -90,6 +91,18 @@ a {
 	background: #eeeeee;
 	font-family: 'Trebuchet MS', Verdana, Arial, serif;
 }*/
+
+
+
+#chatbot1{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: solid black 2px;
+    padding-bottom: 2%;
+    margin-left: 12%;
+    margin-top: 0.5%;
+}
 
 #chatbot{
     display: flex;
@@ -161,18 +174,32 @@ a:hover {
 #missionHeading{
   font-size: 20px;
   font-family: sans-serif;
+  text-align: center;
 }
 
 #missionMessage{
-  font-size: 16px;
+  font-size: 14px;
+  text-align: center;
+  padding-right: 9px;
+  padding-left: 9px;
+}
 
+#missionMessage2{
+  font-size: 16px;
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {
   body {
       width: 50vh;
   }
-
+  #chatbot1{
+    display: flex;
+    width: 20%;
+    margin-left: 20%;
+    justify-content: center;
+    align-items: center;
+  }
   #chatbot{
     display: flex;
     width: 20%;
