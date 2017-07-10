@@ -10,7 +10,7 @@ var accessToken = "1d3ef81a217f4c6793152193a513fef7",
   baseUrl = "https://api.api.ai/v1/",
   $speechInput, //This stores your <input> element so you can access it in your JavaScript.
   $recBtn, //This stores your <record button> element
-  $stopBtn, //This stores your <stop button> element
+  // $stopBtn, //This stores your <stop button> element
   recognition, //You store your webkitSpeechRecognition() functionality in this variable. This is for the HTML5 Speech Recognition API.
   messageRecording = "Recording...",
   messageCouldntHear = "I couldn't hear you, could you say that again?",
@@ -21,7 +21,7 @@ var accessToken = "1d3ef81a217f4c6793152193a513fef7",
 $(document).ready(function() {
   $speechInput = $("#speech");
   $recBtn = $("#rec");
-  $stopBtn = $("#stop_button");
+  // $stopBtn = $("#stop_button");
 
   /*
   * look for when the user presses the Enter key in the input field.
@@ -39,10 +39,10 @@ $(document).ready(function() {
     switchRecognition();
   });
 
-  /* If click on the stop button, stop the audio that is being played. */
-  $stopBtn.on("click", function(event) {
-    stopAudio();
-  });
+  // /* If click on the stop button, stop the audio that is being played. */
+  // $stopBtn.on("click", function(event) {
+  //   stopAudio();
+  // });
 
   /* If click on anywhere of the interface, stop the audio that is playing. */
   $(document).click(function(event) {
@@ -208,7 +208,7 @@ function expositionOnLoad() {
   console.log("print");
 }
 
-/* Set the input to What is __ ? and  */
+/* Set the input to What is __ ? and connect to API.ai */
 function question(text) {
   console.log(text);
   setInput("What is "+text+"?");
