@@ -1,8 +1,4 @@
-/*!
- * Start Bootstrap - Blog Post (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+
 
 body {
     display: flex;
@@ -84,16 +80,6 @@ a {
     font-size: 20px;
 }
 
-
-/*body {
-	width: 600px;
-	margin: 0 auto;
-	background: #eeeeee;
-	font-family: 'Trebuchet MS', Verdana, Arial, serif;
-}*/
-
-
-
 #chatbot1{
     display: flex;
     flex-direction: column;
@@ -102,17 +88,6 @@ a {
     padding-bottom: 2%;
     margin-left: 12%;
     margin-top: 0.5%;
-}
-
-#chatbot{
-    display: flex;
-    flex-direction: column;
-    width: 16%;
-    border: solid black 2px;
-    padding-bottom: 2%;
-    position: fixed;
-    margin-left: 53%;
-    margin-top: 3%;
 }
 
 #speech{
@@ -130,19 +105,10 @@ a {
   flex-wrap: wrap;
 }
 
-#datatable{
-  margin: 10px;
-  position: inherit;
-  display: flex;
-}
 
 #rec{
   width: 40%;
   margin-left: 28%;
-}
-
-footer{
-  padding-left: 40%;
 }
 
 #mainContainer{
@@ -150,9 +116,6 @@ footer{
   flex-direction: column;
 }
 
-figcaption {
-	font-size: 10px;
-}
 
 #answerBox{
   font-family: sans-serif;
@@ -163,14 +126,11 @@ a:hover {
 	cursor: pointer;
 	background: yellow;
 }
+
 #inactive {
   display: none !important;
 }
 
-#name_to_fill{
-  font-size: 20px;
-  font-family: sans-serif;
-}
 #missionHeading{
   font-size: 20px;
   font-family: sans-serif;
@@ -200,13 +160,7 @@ a:hover {
     justify-content: center;
     align-items: center;
   }
-  #chatbot{
-    display: flex;
-    width: 20%;
-    margin-left: 63%;
-    justify-content: center;
-    align-items: center;
-  }
+
   .col-lg-8{
     width: 83%;
   }
