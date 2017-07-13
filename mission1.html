@@ -14,7 +14,8 @@
 <!--Sandhini New Comments-->
 
     <!-- Custom CSS -->
-    <script src="js/storyChap1.js" defer></script>
+    <script src="js/mission.js" defer></script>
+    <script src="js/talkBot.js" defer></script>
     <link href="css/mission.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -82,42 +83,42 @@
                 <hr>
 
                 <!-- Post Content -->
-                <h4 id = "mission1" align = "center"> MISSION: <br>Find the number of candies that will fit inside the box. However, this task isn’t as simple as counting the number of candies in the box. If you do individually count each candy it will take too long. You simply have one quarter and the box and you need to estimate how many of them can fit inside the box. </h4>
+                <div id = "missionMessage"> MISSION: <br>Find the number of candies that will fit inside the box. However, this task isn’t as simple as counting the number of candies in the box. If you do individually count each candy it will take too long. You simply have one quarter and the box and you need to estimate how many of them can fit inside the box. </div>
 
                 <div class="well" id="chatbot1" >
                     <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
 
                     <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="20%" alt=""></center>
-                    <div class="container">
-                      <div id="speech" > </div><br>
-                        <div id="rec" class="btn"></div>
-                        <div id="spokenResponse" class="spoken-response">
-                            <div class="spoken-response__text"></div>
-                        </div>
+                    <button id = stopButton> Stop Audio </button>
+
                     </div>
 
                   </div>
 
-                  <p class = "inactive">
+                  <p>
 
                     Key Observation: The <b>width, height and depth</b> of each candy is the same. This means that exactly the same number of candies will fit in each different row.<br><br>
 
-                    <p id = "step1" class = "inactive">
+                    <div>
+                    <p id = "step1" class = 'inactive'>
                       Step 1: Put one coin at the corner of the box. By marking the edge of the coin, count how many such coins can fit along the length, breadth and height of the box.<br><br>
                     </p>
                     <p id = "step2" class = "inactive">
                       Step 2: Count the number of coins that fit along the width of the box. Count the number of coins that fit along the length of the box.<br><br>
                     </p>
-                      <p>Step 3: Keep count of and stack coins on top of each other until you reach the end of the box.<br><br>
+                    <p id = "step3" class = "inactive">
+                      Step 3: Keep count of and stack coins on top of each other until you reach the end of the box.<br><br>
+                    </p>
                     <p id = "step4" class = "inactive">
                       Step 4: You now have the number of coins that fit along the breadth, height and depth of the box! If you multiply these three together you will have the number of coins in the box in total!<br><br>
                     </p>
+                  </div>
 
                   </p>
 
-<div id = helpButton>
-  Do You Want More Help?
-</div>
+<button id = helpButton>
+  Click here for more help
+</button>
 
 <div id = "answerBox">
   <center><h4> Enter Your Answer </h4></center>
@@ -148,9 +149,6 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-      // the following is not related to chatbot, only for user input storage
-      document.getElementById("name_to_fill").innerHTML="Attention: "+localStorage.first_name+" "+localStorage.last_name;
-      document.getElementById("start_para").innerHTML = document.getElementById("start_para").innerHTML.replace(/John/g, localStorage.first_name);
 
     </script>
 
