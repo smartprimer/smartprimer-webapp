@@ -11,6 +11,10 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+#datatable{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 body:-webkit-full-screen {
   width: 100%;
     height: 100%;
@@ -88,18 +92,9 @@ a {
     width: 80%;
     border: solid black 2px;
     padding-bottom: 2%;
-    margin-left: 10%;
     margin-top: 0.5%;
 }
 
-#speech{
-  font-family: "Titillium Web";
-  -webkit-transition: all 0.35s ease-in;
-  border: 1px solid #3F7F93;
-  margin-right: 9%;
-  width: 80%;
-  margin-left: 9%;
-}
 
 #stopButton{
     border-width: 2px;
@@ -133,7 +128,6 @@ a {
   width: 280px;
   font-size: 15px;
   margin-bottom: 40px;
-  margin-left: 30%;
 }
 
 #helpButton{
@@ -147,7 +141,6 @@ a {
   color: black;
   background-color: white;
   width: 250px;
-  margin-left: 32%;
   font-size: 15px;
 }
 
@@ -155,17 +148,6 @@ a {
   background-color:grey;
 }
 
-.spoken-response__text{
-  margin-left: 5%;
-  max-width: inherit;
-  flex-wrap: wrap;
-}
-
-
-#rec{
-  width: 40%;
-  margin-left: 28%;
-}
 
 #mainContainer{
   display: flex;
@@ -199,12 +181,6 @@ a:hover {
   padding-right: 9px;
   padding-left: 9px;
 }
-
-#missionMessage2{
-  font-size: 16px;
-  text-align: center;
-}
-
 @media screen and (max-width: 900px) {
   body {
       width: 50vh;
@@ -212,7 +188,6 @@ a:hover {
   #chatbot1{
     display: flex;
     width: 80%;
-    margin-left: 10%;
     justify-content: center;
     align-items: center;
   }
@@ -221,20 +196,6 @@ a:hover {
     width: 83%;
   }
 
-  #speech{
-    font-family: "Titillium Web";
-    -webkit-transition: all 0.35s ease-in;
-    border: 1px solid #3F7F93;
-    margin-right: 5%;
-    overflow: hidden;
-  }
-
-
-  #rec{
-    display: flex;
-    align-self: center;
-    justify-content: center;
-  }
 
   #navStart{
     margin-left: 7.8%;

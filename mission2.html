@@ -12,13 +12,15 @@
 
     <title>Archimedes Story</title>
 <!--Sandhini New Comments-->
-    <!-- Bootstrap Core CSS -->
-    <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
 
     <!-- Custom CSS -->
-    <script src="js/storyChap1.js" defer></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script src="js/main.js" defer></script>
 
 
+    <script src="js/mission.js" defer></script>
+    <script src="js/talkBot.js" defer></script>
     <link href="css/mission.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,13 +30,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script src="js/talkBot.js" defer></script>
 
     <!-- Added by Sherry -->
 
-    <script src="api.ai/ApiAi.js"></script>
-    <script src="api.ai/APIAI.Functions.js"></script>
-    <script defer src="api.ai/layout.js"></script>
 
     <style type="text/css">
 
@@ -90,47 +88,66 @@
                 <hr>
 
                 <!-- Post Content -->
-                <p id="start_para">While sitting on the couch one Saturday afternoon, John receives a notification from headquarters. </p>
+                <div id = "missionMessage"> MISSION: <br>Find the volume and mass of the bottle filled with air and the bottle filled with dust. You may find that submerging the bottles in a large bowl of water and measuring the amount of water you displace may help you measure the volume of the two bottles.</div>
 
-                <center> <h3 id="name_to_fill"></h3> </center>
                 <center><div class="well" id="chatbot1" >
                     <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
 
-                    <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="60%" alt=""></center>
-                    <div class="container">
-                      <button id = "stopButton"> Stop Audio </button>
-
-                        <h4 id = "missionMessage"> I am Mr. Owl and I am here to give you an important message. This message may contain information that can effect the course of history. Please proceed with care. While you undertake this mission, remember, I am right here and you can ask me any questions you may have </h4>
-                    </div>
+                    <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="40%" alt=""></center>
+                    <button id = stopButton> Stop Audio </button>
 
                   </div></center>
 
+                  </div>
 
-                <br>
+                  <p>
 
-                <div style="text-align:center;">
-                    <form action = "2_mission_briefing.html">
-                      <center><button type="submit" class="btn btn-primary" id = "submited">Open Briefing</button></center>
-                    </form>
-                </div>
+
+                    <div>
+                    <p id = "step1" class = 'inactive'>
+                      Step 1: Calculate the volume of the air filled bottle by seeing how much water you displace when you put it in a giant water-filled bowl. Make sure you push the bottle until it is fully submerged. Pour the amount of water we have displaced into a cup and measure it. Convert this value to millileters; 1 cup equals 236.588 mL. What volume did you find?
+                    </p>
+                    <p id = "step2" class = "inactive">
+                      Step 2: Calculate Mass of Air Filled bottle. Weight it. It may be too light to weigh so we can estimate it at 12 grams.
+                    </p>
+                    <p id = "step3" class = "inactive">
+                      Step 3: Repeat the above steps with a dirt-filled bottle. One way to calculate the mass of the dirt-filled bottle is to weigh yourself holding it and then subtract the your weight when you’re not holding it from it.
+                    </p>
+                    <p id = "step4" class = "inactive">
+                      Step 4: Find out the volume of the dirt-filled bottle the same way we found the volume of the air-filled bottle.
+                    </p>
+                  </div>
+
+                  </p>
+
+<center><button id = helpButton>
+  Click here for more help
+</button></center>
+
+<center>  <div id="datatable" >
+    <div id = "userAnswer">
+    <div id = "air" style="float:left;width:50%;">
+      <p><b>Air Filled Bottle</b></p>
+      <p>Mass (in grams): <input id="air-mass" type="text" style= "width: 73%"></p>
+      <p>Volume   (in mL):    <input id="air-volume" type="text" style= "width: 73%"> </p>
+    </div>
+
+    <div id = "dirt" style="float:right;width:50%;">
+      <p><b>Dirt Filled Bottle</b></p>
+      <p>Mass (in grams): <input id="dirt-mass" type="text" style= "width: 73%" ></p>
+      <p>Volume (in mL): <input id="dirt-volume" type="text" style= "width: 73%"></p>
+    </div>
+  </div>
+</div> </center>
+  <form action="10_pure_or_not.html">
+  <center><button type="submit" class="btn btn-primary" id = "submited">Submit</button></center>
+</form>
+
             </div>
-
-            <!-- Blog Sidebar Widgets Column -->
-
 
         </div>
-        <!-- /.row -->
 
         <hr>
-
-        <!-- Footer -->
-        <footer class="inactive">
-            <div class="row">
-                <div class="col-lg-12">
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
 
     </div>
     <!-- /.container -->
@@ -140,13 +157,8 @@
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- JavaScript for Chatbot functionality. -->
-    <script type="text/javascript" src="js/speechBot.js"></script>
 
     <script>
-      // the following is not related to chatbot, only for user input storage
-      document.getElementById("name_to_fill").innerHTML="Attention: "+localStorage.first_name+" "+localStorage.last_name;
-      document.getElementById("start_para").innerHTML = document.getElementById("start_para").innerHTML.replace(/John/g, localStorage.first_name);
 
     </script>
 
