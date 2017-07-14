@@ -212,8 +212,21 @@ function expositionOnLoad() {
   console.log("print");
 }
 
+function setBot(x, y){
+  let d = document.querySelector('#wordMeaning');
+  d.style.position = "absolute";
+  d.style.left = x-120+'px';
+  d.style.top = y-90+'px';
+}
 /* Set the input to What is __ ? and  */
 function question(text) {
+  const textAndBot = document.querySelector("#wordMeaning");
+  console.log(textAndBot);
+  textAndBot.classList.remove('inactive');
   console.log(text);
   setInput("What is "+text+"?");
+  let x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; // Get the horizontal coordinate
+  let y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop; 
+  console.log(y);
+  setBot(x,y);
 }

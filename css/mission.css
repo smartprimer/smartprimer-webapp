@@ -128,6 +128,20 @@ a {
   width: 280px;
   font-size: 15px;
   margin-bottom: 40px;
+}
+
+#submited1{
+  border-width: 2px;
+  border-color: black;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  color: black;
+  background-color: white;
+  width: 280px;
+  font-size: 15px;
+  margin-bottom: 40px;
   margin-left: 30%;
 }
 
