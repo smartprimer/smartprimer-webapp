@@ -20,7 +20,6 @@ function SandhiniPrimer() {
   this.answer1 = document.querySelector("#submited");
   this.userAnswer = document.querySelector('#userAnswer');
 
-
   this.page9a = document.querySelector('#air-mass');
   this.page9b = document.querySelector('#dirt-mass');
   this.page9c = document.querySelector('#air-volume');

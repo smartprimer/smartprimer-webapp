@@ -8,6 +8,7 @@
 /* Variables */
 var accessToken = "1d3ef81a217f4c6793152193a513fef7",
   baseUrl = "https://api.api.ai/v1/",
+  $closeButton,
   $speechInput, //This stores your <input> element so you can access it in your JavaScript.
   $recBtn, //This stores your <record button> element
   $stopBtn, //This stores your <stop button> element
@@ -22,6 +23,16 @@ $(document).ready(function() {
   $speechInput = $("#speech");
   $recBtn = $("#rec");
   $stopBtn = $("#stop_button");
+  $closeButton = $("#close");
+
+
+  $closeButton.on('click', function(event){
+    console.log("jljoj");
+    const close = document.querySelector('#wordMeaning');
+    if (!close.classList.contains('inactive')){
+      close.classList.add('inactive');
+    }
+  });
 
   /*
   * look for when the user presses the Enter key in the input field.
@@ -54,6 +65,7 @@ $(document).ready(function() {
     return false;
   });
 });
+
 
 /* Functions */
 
@@ -226,7 +238,7 @@ function question(text) {
   console.log(text);
   setInput("What is "+text+"?");
   let x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; // Get the horizontal coordinate
-  let y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop; 
+  let y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
   console.log(y);
   setBot(x,y);
 }

@@ -101,6 +101,12 @@ a {
 	font-family: 'Trebuchet MS', Verdana, Arial, serif;
 }*/
 
+#close{
+  align-self: flex-start;
+  border: 1px solid black;
+  background: white;
+}
+
 #speech{
   font-family: "Titillium Web";
   -webkit-transition: all 0.35s ease-in;
@@ -117,6 +123,7 @@ a {
   background: black;
   color: white;
   padding: 2%;
+  max-width: 300px;
   text-align: center;
   opacity: 0.8;
 }
