@@ -88,17 +88,30 @@
                 <hr>
 
                 <!-- Post Content -->
-                <div id = "missionMessage"> MISSION: <br>Find the number of candies that will fit inside the box. However, this task isn’t as simple as counting the number of candies in the box. If you do individually count each candy it will take too long. You simply have one quarter and the box and you need to estimate how many of them can fit inside the box. </div>
 
                 <center><div class="well" id="chatbot1" >
-                    <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
+                    <h4 style="text-align:center;">Mission 1: Approximate the Candies Challenge</h4>
 
-                    <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="40%" alt=""></center>
+                    <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/primer-archimedes.appspot.com/o/candyBox.gif?alt=media&token=28c15260-5c6e-4ce9-8a52-cad7e29bddbe" width="40%" alt=""></center>
+                    <div id = "missionMessage"> MISSION: <br>Find the number of candies that will fit inside the box. However, this task isn’t as simple as counting the number of candies in the box. If you do individually count each candy it will take too long. You simply have one quarter and the box and you need to estimate how many of them can fit inside the box. </div>
+
                     <button id = stopButton> Stop Audio </button>
 
                   </div></center>
 
-                  </div>
+                  <div id = "popUpChat" class = "inactive">
+                    <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
+
+                    <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="60%" alt=""></center>
+                    <div class="container">
+                      <textarea id="speech" rows="3" cols = "14"> </textarea><br>
+                        <button id="rec" class="btn">Ask</button>
+                        <center><button id="stop_button" class="btn">Stop</button></center>
+                        <div id="spokenResponse" class="spoken-response">
+                            <div class="spoken-response__text"></div>
+                        </div>
+                    </div>
+                </div>
 
                   <p>
 
@@ -126,31 +139,36 @@
 </button></center>
 
 <div id = "dimensions">
-    <div id = "answerBox">
+    <div id = "answerBox1">
       <center><h5> How many quarters fit along the width? </h5></center>
-      <center><input type="text" id = "widthAnswer"></center>
+      <center><input type="text" id = "widthAnswer"></center> <br>
+      <button id = "inputLength"> Next </button>
     </div>
 
-    <div id = "answerBox">
+    <div id = "answerBox2" class = "inactive">
       <center><h5> How many quarters fit along the length? </h5></center>
-      <center><input type="text" id = "lengthAnswer"> </center>
+      <center><input type="text" id = "lengthAnswer"> </center> <br>
+      <button id = "inputHeight"> Next </button>
+
     </div>
 
-    <div id = "answerBox">
+    <div id = "answerBox3" class = "inactive">
       <center><h5> How many quarters fit along the height? </h5></center>
-      <center><input type="text" id = "heightAnswer"> </center>
+      <center><input type="text" id = "heightAnswer"> </center> <br>
+      <button id = "inputAns"> Next </button>
     </div>
-</div>
 
-<div id = "answerBox">
+<div id = "answerBox4" class = "inactive">
   <center><h4> Enter Your Answer </h4></center>
   <center><h5> How many sesame candies are left? Use a shoebox and a quarter to estimate. </h5></center>
 </div>
+</div>
+
 
 
 
 <div style="text-align:center;">
-    <div>
+    <div id = "finalAns" class = "inactive">
       <input type="text" name="num_candies" value="" id = "userAnswer"> <br> <br>
       <form action = "4_after_count_candies.html">
     <center> <button id = "submited" class="btn btn-primary" >Check Answer</button></center>
