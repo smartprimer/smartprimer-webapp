@@ -27,7 +27,6 @@ $(document).ready(function() {
 
 
   $closeButton.on('click', function(event){
-    console.log("jljoj");
     const close = document.querySelector('#wordMeaning');
     if (!close.classList.contains('inactive')){
       close.classList.add('inactive');
@@ -151,6 +150,10 @@ function send() {
 
     success: function(data) {
       prepareResponse(data);
+      let inputElem = {};
+      inputElem [text] = "Chatbot";
+      console.log(inputElem);
+      firebase.database().ref('users/' + localStorage.first_name).update(inputElem);
     },
     error: function() {
       respond(messageInternalError);

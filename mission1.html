@@ -32,6 +32,13 @@
 
 
     <!-- Added by Sherry -->
+    <script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script type="text/javascript" src="js/speechBot.js" defer></script>
+
+
 
 
     <style type="text/css">
@@ -100,17 +107,32 @@
                   </div></center>
 
                   <div id = "popUpChat" class = "inactive">
+
+                    <center> <div id = "intendedLearning">
+                      <h3> LEARNING GOALS </h3>
+                      In this task we wanted you to learn..jwhqebf kqhebfkqe hafgh k. <br>
+                      uqwgefbkqyeyrgb uekrybekruyb gksfehbdgbjk dfsjkvdfghbjk afgbjkhgabjkfhgb vkagfbjkvhgsdfbjkhsvg bksdfgh jkghb dkgdfhjkgb eraghbieuqryg viuerngy iuren glhnl thng hnorwgnliusghdfn ughailuergn erghriousn ldfhnguykb oiulaghn lakuiehg yaelg eriyiuqng dj;g;os
+                      <br><br>
+                      <b> If you have any questions, Mr. Owl, your personal tutor is here to help. </b>
+                    </div> </center>
+
+                    <div id = "chat">
                     <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
 
-                    <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="60%" alt=""></center>
+                    <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="30%" alt=""></center>
                     <div class="container">
-                      <textarea id="speech" rows="3" cols = "14"> </textarea><br>
-                        <button id="rec" class="btn">Ask</button>
-                        <center><button id="stop_button" class="btn">Stop</button></center>
+                        <center><textarea id="speech" rows="6" cols = "25"> </textarea><br>
+                       <button id="rec" class="btn">Ask</button></center><br>
                         <div id="spokenResponse" class="spoken-response">
                             <div class="spoken-response__text"></div>
                         </div>
                     </div>
+                  </div>
+                  <form action = "4_after_count_candies.html">
+
+                <center> <button id = "submited" class="btn btn-primary" > Next </button></center>
+              </form>
+
                 </div>
 
                   <p>
@@ -141,40 +163,32 @@
 <div id = "dimensions">
     <div id = "answerBox1">
       <center><h5> How many quarters fit along the width? </h5></center>
-      <center><input type="text" id = "widthAnswer"></center> <br>
-      <button id = "inputLength"> Next </button>
+      <center><input type="text" id = "widthAnswer"> <br><br>
+      <button id = "inputLength"> Next </button></center>
     </div>
 
     <div id = "answerBox2" class = "inactive">
       <center><h5> How many quarters fit along the length? </h5></center>
-      <center><input type="text" id = "lengthAnswer"> </center> <br>
-      <button id = "inputHeight"> Next </button>
-
+      <center><input type="text" id = "lengthAnswer">  <br><br>
+      <button id = "inputHeight"> Next </button></center>
     </div>
 
     <div id = "answerBox3" class = "inactive">
       <center><h5> How many quarters fit along the height? </h5></center>
-      <center><input type="text" id = "heightAnswer"> </center> <br>
-      <button id = "inputAns"> Next </button>
+      <center><input type="text" id = "heightAnswer">  <br><br>
+      <button id = "inputAns"> Next </button></center>
     </div>
 
-<div id = "answerBox4" class = "inactive">
-  <center><h4> Enter Your Answer </h4></center>
-  <center><h5> How many sesame candies are left? Use a shoebox and a quarter to estimate. </h5></center>
-</div>
-</div>
-
-
-
-
-<div style="text-align:center;">
-    <div id = "finalAns" class = "inactive">
+    <div id = "answerBox4" class = "inactive">
+      <center><h4> Enter Your Answer </h4>
+      <h5> How many sesame candies are left? Use a shoebox and a quarter to estimate. </h5>
       <input type="text" name="num_candies" value="" id = "userAnswer"> <br> <br>
-      <form action = "4_after_count_candies.html">
-    <center> <button id = "submited" class="btn btn-primary" >Check Answer</button></center>
-    </form>
-    </div>
+      <button id = "getPopUp"> Next </button></center>
+  </div>
 </div>
+
+</div>
+
             </div>
 
         </div>

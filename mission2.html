@@ -23,6 +23,12 @@
     <script src="js/talkBot.js" defer></script>
     <link href="css/mission.css" rel="stylesheet">
 
+    <script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script type="text/javascript" src="js/speechBot.js" defer></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -104,18 +110,18 @@
 
 
                     <div>
-                    <p id = "step1" class = 'inactive'>
-                      Step 1: Calculate the volume of the air filled bottle by seeing how much water you displace when you put it in a giant water-filled bowl. Make sure you push the bottle until it is fully submerged. Pour the amount of water we have displaced into a cup and measure it. Convert this value to millileters; 1 cup equals 236.588 mL. What volume did you find?
-                    </p>
-                    <p id = "step2" class = "inactive">
-                      Step 2: Calculate Mass of Air Filled bottle. Weight it. It may be too light to weigh so we can estimate it at 12 grams.
-                    </p>
-                    <p id = "step3" class = "inactive">
-                      Step 3: Repeat the above steps with a dirt-filled bottle. One way to calculate the mass of the dirt-filled bottle is to weigh yourself holding it and then subtract the your weight when you’re not holding it from it.
-                    </p>
-                    <p id = "step4" class = "inactive">
-                      Step 4: Find out the volume of the dirt-filled bottle the same way we found the volume of the air-filled bottle.
-                    </p>
+                      <p id = "step1" class = 'inactive'>
+                        Step 1: Calculate the volume of the air filled bottle by seeing how much water you displace when you put it in a giant water-filled bowl. Make sure you push the bottle until it is fully submerged. Pour the amount of water we have displaced into a cup and measure it. Convert this value to millileters; 1 cup equals 236.588 mL. What volume did you find?
+                      </p><br>
+                      <p id = "step2" class = "inactive">
+                        Step 2: Calculate Mass of Air Filled bottle. Weight it. It may be too light to weigh so we can estimate it at 12 grams.
+                      </p><br>
+                      <p id = "step3" class = "inactive">
+                        Step 3: Repeat the above steps with a dirt-filled bottle. One way to calculate the mass of the dirt-filled bottle is to weigh yourself holding it and then subtract the your weight when you’re not holding it from it.
+                      </p><br>
+                      <p id = "step4" class = "inactive">
+                        Step 4: Find out the volume of the dirt-filled bottle the same way we found the volume of the air-filled bottle.
+                      </p>
                   </div>
 
                   </p>
@@ -128,20 +134,48 @@
     <div id = "userAnswer">
     <div id = "air" style="float:left;width:50%;">
       <p><b>Air Filled Bottle</b></p>
-      <p>Mass (in grams): <input id="air-mass" type="text" style= "width: 73%"></p>
-      <p>Volume   (in mL):    <input id="air-volume" type="text" style= "width: 73%"> </p>
+      <p>Mass (in grams): <input id="air-mass" type="text" style= "width: 40%"></p>
+      <p>Volume   (in mL):    <input id="air-volume" type="text" style= "width: 40%"> </p>
     </div>
 
     <div id = "dirt" style="float:right;width:50%;">
       <p><b>Dirt Filled Bottle</b></p>
-      <p>Mass (in grams): <input id="dirt-mass" type="text" style= "width: 73%" ></p>
-      <p>Volume (in mL): <input id="dirt-volume" type="text" style= "width: 73%"></p>
+      <p>Mass (in grams): <input id="dirt-mass" type="text" style= "width: 40%" ></p>
+      <p>Volume (in mL): <input id="dirt-volume" type="text" style= "width: 40%"></p>
     </div>
   </div>
 </div> </center>
-  <form action="10_pure_or_not.html">
-  <center><button type="submit" class="btn btn-primary" id = "submited">Submit</button></center>
+
+<div id = "popUpChat" class = "inactive">
+
+  <center> <div id = "intendedLearning">
+    <h3> LEARNING GOALS </h3>
+    In this task we wanted you to learn..jwhqebf kqhebfkqe hafgh k. <br>
+    uqwgefbkqyeyrgb uekrybekruyb gksfehbdgbjk dfsjkvdfghbjk afgbjkhgabjkfhgb vkagfbjkvhgsdfbjkhsvg bksdfgh jkghb dkgdfhjkgb eraghbieuqryg viuerngy iuren glhnl thng hnorwgnliusghdfn ughailuergn erghriousn ldfhnguykb oiulaghn lakuiehg yaelg eriyiuqng dj;g;os
+    <br><br>
+    <b> If you have any questions, Mr. Owl, your personal tutor is here to help. </b>
+  </div> </center>
+
+  <div id = "chat">
+  <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
+
+  <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="30%" alt=""></center>
+  <div class="container">
+      <center><textarea id="speech" rows="6" cols = "25"> </textarea><br>
+     <button id="rec" class="btn">Ask</button></center><br>
+      <div id="spokenResponse" class="spoken-response">
+          <div class="spoken-response__text"></div>
+      </div>
+  </div>
+</div>
+
+<form action="10_pure_or_not.html">
+<center> <button id = "submited" class="btn btn-primary" > Next </button></center>
 </form>
+
+</div>
+
+<center><button id = "getPopUp"> Next </button></center>
 
             </div>
 

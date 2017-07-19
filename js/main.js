@@ -63,10 +63,20 @@ SandhiniPrimer.prototype.writeUserData = function(event) {
 
 SandhiniPrimer.prototype.writeUserAnswer = function(event) {
   let userEnteredAnswer = "";
+
+  const height = document.querySelector('#heightAnswer');
+  const length = document.querySelector('#lengthAnswer');
+  const width = document.querySelector('#widthAnswer')
+
   if (this.page9a != undefined){
     userEnteredAnswer = "air-mass: " + this.page9a.value + ", dirt-mass: " + this.page9b.value + ", air-volume: " + this.page9c.value + ", dirt-volume: " + this.page9d.value;
   }
   else userEnteredAnswer = this.userAnswer.value;
+  if (height != undefined){
+
+    userEnteredAnswer += " Height::" + height.value + " Length::" + length.value + " Width::" + width.value;
+
+  }
   const params = window.location.pathname.split( '/' );
   const num = params.length - 1;
   const lengthEnd = params[num].length;

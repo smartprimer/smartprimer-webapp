@@ -11,7 +11,7 @@ body {
     line-height: 1.42857143;
     color: #333;
     flex-direction: column;
-    width: 100vh;
+    width: 50vw;
     padding-left: 10%;
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -36,7 +36,6 @@ body {
   width: 280px;
   font-size: 15px;
   margin-bottom: 40px;
-  margin-left: 35%;
 }
 
 
@@ -194,43 +193,8 @@ a:hover {
 }
 
 @media screen and (max-width: 900px) {
-  body {
-      width: 50vh;
-  }
-  #chatbot1{
-    display: flex;
-    width: 80%;
-    margin-left: 10%;
-    justify-content: center;
-    align-items: center;
-  }
-  #chatbot{
-    display: flex;
-    width: 20%;
-    margin-left: 63%;
-    justify-content: center;
-    align-items: center;
-  }
-  .col-lg-8{
-    width: 83%;
-  }
-
-  #speech{
-    font-family: "Titillium Web";
-    -webkit-transition: all 0.35s ease-in;
-    border: 1px solid #3F7F93;
-    margin-right: 5%;
-    overflow: hidden;
-  }
-
-  #helpButton{
-
-  }
-
-  #rec{
-    display: flex;
-    align-self: center;
-    justify-content: center;
+  body{
+    width: 50vw;
   }
 
   #navStart{

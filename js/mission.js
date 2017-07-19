@@ -6,11 +6,19 @@ class mission{
     this.lengthButton = document.querySelector("#inputLength");
     this.ansButton = document.querySelector("#inputAns");
 
+    this.popUpIntent = document.querySelector("#getPopUp");
+
+    this.getPopUp = this.getPopUp.bind(this);
+
+    if (this.popUpIntent != undefined) this.popUpIntent.addEventListener('click', this.getPopUp);
+
     this.showNextQues = this.showNextQues.bind(this);
 
-    this.heightButton.addEventListener('click', this.showNextQues);
-    this.lengthButton.addEventListener('click', this.showNextQues);
-    this.ansButton.addEventListener('click', this.showNextQues);
+    if (this.heightButton != undefined){
+      this.heightButton.addEventListener('click', this.showNextQues);
+      this.lengthButton.addEventListener('click', this.showNextQues);
+      this.ansButton.addEventListener('click', this.showNextQues);
+    }
 
 
     this.revealStep = this.revealStep.bind(this);
@@ -19,6 +27,11 @@ class mission{
 
 
     this.revealButton.addEventListener('click', this.revealStep);
+  }
+
+  getPopUp(){
+    const toShow = document.querySelector('#popUpChat');
+    toShow.classList.remove('inactive');
   }
 
   showNextQues(event){
@@ -41,8 +54,6 @@ class mission{
     if (button === this.ansButton){
         toHide = document.querySelector("#answerBox3");
         toShow = document.querySelector("#answerBox4");
-        const finalAns = document.querySelector("#finalAns");
-        finalAns.classList.remove('inactive');
     }
     toHide.classList.add("inactive");
     toShow.classList.remove('inactive');
