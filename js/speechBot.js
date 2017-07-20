@@ -17,20 +17,27 @@ var accessToken = "1d3ef81a217f4c6793152193a513fef7",
   messageCouldntHear = "I couldn't hear you, could you say that again?",
   messageInternalError = "Oh no, there has been an internal server error!",
   messageSorry = "I'm sorry. I don't have the answer to that yet.";
+  clicked = true;
 
 /* Events. */
 $(document).ready(function() {
   $speechInput = $("#speech");
   $recBtn = $("#rec");
   $stopBtn = $("#stop_button");
-  $closeButton = $("#close");
+  $bodyClose = $("body");
 
-
-  $closeButton.on('click', function(event){
-    const close = document.querySelector('#wordMeaning');
-    if (!close.classList.contains('inactive')){
-      close.classList.add('inactive');
+  $bodyClose.on('click', function(event){
+   if (clicked === false){
+      const close = document.querySelector('#wordMeaning');
+      if (close != undefined){
+        if (!close.classList.contains('inactive')){
+          close.classList.add('inactive');
+          $("#spokenResponse").find(".spoken-response__text").html(" ");
+        }
+      }
     }
+    else clicked = false;
+
   });
 
   /*
@@ -131,7 +138,6 @@ function setInput(text) {
 /* Update recording status. */
 function updateRec() {
   let isSpeaking = window.speechSynthesis.speaking;
-  console.log(isSpeaking);
   $recBtn.text(isSpeaking ? "Stop" : "Ask");
 }
 
@@ -153,7 +159,7 @@ function send() {
       let inputElem = {};
       inputElem [text] = "Chatbot";
       console.log(inputElem);
-      firebase.database().ref('users/' + localStorage.first_name).update(inputElem);
+      //firebase.database().ref('users/' + localStorage.first_name).update(inputElem);
     },
     error: function() {
       respond(messageInternalError);
@@ -235,13 +241,12 @@ function setBot(x, y){
 }
 /* Set the input to What is __ ? and  */
 function question(text) {
+  clicked = true;
   const textAndBot = document.querySelector("#wordMeaning");
-  console.log(textAndBot);
-  textAndBot.classList.remove('inactive');
-  console.log(text);
+  textAndBot.style.innerHTML = " ";
   setInput("What is "+text+"?");
   let x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; // Get the horizontal coordinate
   let y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-  console.log(y);
   setBot(x,y);
+  textAndBot.classList.remove('inactive');
 }

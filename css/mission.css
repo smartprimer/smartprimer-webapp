@@ -63,9 +63,10 @@ body {
   height: 30px;
   color: black;
   background-color: white;
-  width: 280px;
+  width: 150px;
   font-size: 15px;
   margin-bottom: 40px;
+  margin-right: 10px;
   align-items: center;
 }
 
@@ -84,10 +85,16 @@ body {
 #intendedLearning{
   background: black;
   color: white;
-  opacity: 1;
+  opacity: 0.9;
   height: 80%;
   margin: 10px;
   padding: 10px;
+}
+
+#userAns{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
 #chat{
@@ -101,9 +108,14 @@ body {
   align-self: center;
 }
 
+#buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #popUpChat{
 flex-wrap: wrap;
-  opacity: 0.95;
   display: flex;
   border: 2px solid black;
   width: 100%;
@@ -118,6 +130,7 @@ flex-wrap: wrap;
   align-content: center;
   background: grey;
   max-height: 700px;
+  margin-top: 12%;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover{

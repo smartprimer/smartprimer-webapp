@@ -117,7 +117,7 @@
                     </div> </center>
 
                     <div id = "chat">
-                    <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
+                    <h4 style="text-align:center;">Ask me any questions you have!</h4>
 
                     <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="30%" alt=""></center>
                     <div class="container">
@@ -128,29 +128,33 @@
                         </div>
                     </div>
                   </div>
+
                   <form action = "4_after_count_candies.html">
 
-                <center> <button id = "submited" class="btn btn-primary" > Next </button></center>
+                <center> <button id = "submited" class="btn btn-primary" > I have no questions </button></center>
               </form>
 
                 </div>
+
 
                   <p>
 
                     Key Observation: The <b>width, height and depth</b> of each candy is the same. This means that exactly the same number of candies will fit in each different row.<br><br>
 
+                    Items Required: One rectangular box, one quarter <br> <br>
+
                     <div>
                     <p id = "step1" class = 'inactive'>
-                      Step 1: Put one coin at the corner of the box. By marking the edge of the coin, count how many such coins can fit along the length, breadth and height of the box.<br><br>
+                      Step 1: Put one coin at the corner of the box. By marking the edge of the coin, flip the coin to test how many coins of the same dimension will fit along the length.<br><br>
                     </p>
                     <p id = "step2" class = "inactive">
-                      Step 2: Count the number of coins that fit along the width of the box. Count the number of coins that fit along the length of the box.<br><br>
+                      Step 2: Count the number of coins that fit along the width of the box. Using the same technique in the previous step, flip the coin to see how many such coins will fit along the length.<br><br>
                     </p>
                     <p id = "step3" class = "inactive">
-                      Step 3: Keep count of and stack coins on top of each other until you reach the end of the box.<br><br>
+                      Step 3: Use the above technique of flipping the coin to keep track of how many such coins will fit along the height.<br><br>
                     </p>
                     <p id = "step4" class = "inactive">
-                      Step 4: You now have the number of coins that fit along the breadth, height and depth of the box! If you multiply these three together you will have the number of coins in the box in total!<br><br>
+                      Step 4: You now have the number of coins that fit along the breadth, height and depth of the box! If you multiply these three together you will have the number of coins in the box in total! Hint: There is another step after this until your final answer.<br><br>
                     </p>
                   </div>
 
@@ -159,6 +163,14 @@
 <center><button id = helpButton>
   Click here for more help
 </button></center>
+
+<span id = userAns>
+  <span id = heightEnter> </span>
+  <span id = "widthEnter" class = "inactive"> </span>
+  <span id = lengthEnter> </span>
+</span>
+
+
 
 <div id = "dimensions">
     <div id = "answerBox1">
@@ -169,21 +181,30 @@
 
     <div id = "answerBox2" class = "inactive">
       <center><h5> How many quarters fit along the length? </h5></center>
-      <center><input type="text" id = "lengthAnswer">  <br><br>
-      <button id = "inputHeight"> Next </button></center>
+      <center><input type="text" id = "lengthAnswer">  <br><br></center>
+      <div id = "buttons">
+        <button id = "lengthBack"> Back </button>
+        <button id = "inputHeight"> Next </button>
+      </div>
     </div>
 
     <div id = "answerBox3" class = "inactive">
       <center><h5> How many quarters fit along the height? </h5></center>
-      <center><input type="text" id = "heightAnswer">  <br><br>
-      <button id = "inputAns"> Next </button></center>
+      <center><input type="text" id = "heightAnswer">  <br><br></center>
+      <div id = "buttons">
+        <button id = "heightBack"> Back </button>
+        <button id = "inputAns"> Next </button>
+      </div>
     </div>
 
     <div id = "answerBox4" class = "inactive">
       <center><h4> Enter Your Answer </h4>
       <h5> How many sesame candies are left? Use a shoebox and a quarter to estimate. </h5>
-      <input type="text" name="num_candies" value="" id = "userAnswer"> <br> <br>
-      <button id = "getPopUp"> Next </button></center>
+      <input type="text" name="num_candies" value="" id = "userAnswer"> <br> <br></center>
+      <div id = "buttons">
+        <button id = "finalBack"> Back </button>
+        <button id = "getPopUp"> Next </button>
+      </div>
   </div>
 </div>
 
