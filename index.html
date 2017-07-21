@@ -31,7 +31,7 @@
     </style>
 </head>
 
-<body>
+<body style = "background-color: #fdf5f5">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id = "navigationBar">
@@ -76,15 +76,16 @@
 
                 <hr>
 
-                <p>Hello there! I'd like to tell you a story. But first, tell me a little about yourself. </p>
+                <center><p>Hello there! I'd like to tell you a story. But first, tell me a little about yourself. </p>
 
                 <!-- form to collect input from children -->
+                <div id = "userInf">
                 <form action = "welcome-2.html" method="GET">
-                  First name:<br>
-                  <input type="text" name="firstname" value="First Name"><br>
-                  Last name:<br>
-                  <input type="text" name="lastname" value="Last Name"><br>
-                  Age:<br>
+                  First name:
+                  <input type="text" name="firstname" value="First Name"><br><br>
+                  Last name:
+                  <input type="text" name="lastname" value="Last Name"><br><br>
+                  Age:
                   <select name="age" value="Age" >
                     <option value="8">8</option>
                     <option value="9">9</option>
@@ -93,19 +94,21 @@
                     <option value="12">12</option>
                     <option value="13">13</option>
                     <option value="14">14</option>
-                  </select><br>
+                  </select><br><br>
                   <!--input type="text" name="age" value="Age"><br-->
-                  Gender:<br>
+                  Gender:
                   <select name="gender" value="Gender" >
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
-                  </select><br>
-                  School:<br>
+                  </select><br><br>
+                  School:
                   <input type="text" name="school" value="School"><br><br>
                   <input type="submit" value="Submit" id = "submit">
-                  <input type="reset">
                 </form>
+              </div></center>
+
             </div>
+
         </div>
         <!-- /.row -->
 

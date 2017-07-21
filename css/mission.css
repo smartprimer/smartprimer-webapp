@@ -120,7 +120,7 @@ flex-wrap: wrap;
   border: 2px solid black;
   width: 100%;
   position: fixed;
-  left: 20%;
+  left: 17%;
   top: 9%;
   margin-left: 10%;
   max-width: 400px;
@@ -132,6 +132,38 @@ flex-wrap: wrap;
   max-height: 700px;
   margin-top: 12%;
 }
+
+#popUpChat2{
+flex-wrap: wrap;
+  border: 2px solid black;
+  width: 100%;
+  position: fixed;
+  left: 17%;
+  top: 9%;
+  margin-left: 10%;
+  max-width: 400px;
+  padding: 2%;
+  background: grey;
+  max-height: 700px;
+  margin-top: 12%;
+  color: white;
+  font-size: 16px;
+}
+
+#goBack{
+  border-width: 2px;
+  border-color: black;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  align-self: center;
+  color: black;
+  background-color: white;
+  width: 250px;
+  font-size: 15px;
+}
+
 
 .navbar-inverse .navbar-nav>li>a:hover{
   color: white;

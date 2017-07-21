@@ -8,6 +8,7 @@ class mission{
     this.backToWidth = document.querySelector("#lengthBack");
     this.backToLength = document.querySelector("#heightBack");
     this.backToHeight = document.querySelector("#finalBack");
+    this.wrongAnsButton = document.querySelector("#goBack");
 
 
     this.getPopUp = this.getPopUp.bind(this);
@@ -15,6 +16,9 @@ class mission{
     this.revealStep = this.revealStep.bind(this);
     this.showStep = this.showStep.bind(this);
     this.goBack = this.goBack.bind(this);
+    this.removeWrongAns = this.removeWrongAns.bind(this);
+
+
 
     if (this.popUpIntent != undefined) this.popUpIntent.addEventListener('click', this.getPopUp);
     if (this.heightButton != undefined){
@@ -24,10 +28,16 @@ class mission{
       this.backToWidth.addEventListener('click', this.goBack);
       this.backToLength.addEventListener('click', this.goBack);
       this.backToHeight.addEventListener('click', this.goBack);
+      this.wrongAnsButton.addEventListener('click', this.removeWrongAns);
     }
     this.revealButton.addEventListener('click', this.revealStep);
 
     this.numClick = 0;
+  }
+
+  removeWrongAns(){
+   const toHide = document.querySelector('#popUpChat2');
+   toHide.classList.add('inactive');
   }
 
 goBack(){
@@ -51,9 +61,19 @@ goBack(){
 }
 
   getPopUp(){
-    const toShow = document.querySelector('#popUpChat');
-    toShow.classList.remove('inactive');
+    let toShow = document.querySelector('#popUpChat');
+    if (this.heightButton != undefined){
+      const height = document.querySelector('#heightAnswer');
+      const width = document.querySelector('#widthAnswer');
+      const length = document.querySelector('#lengthAnswer');
+      const ans = document.querySelector("#userAnswer");
+      let area = width.value * height.value * length.value/2;
+      if (area != ans.value){
+      toShow = document.querySelector('#popUpChat2');
+    }
+      toShow.classList.remove('inactive');
   }
+}
 
   showNextQues(event){
     event.preventDefault();
