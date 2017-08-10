@@ -51,7 +51,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li>
-                    <a class="navbar-brand" href="#">Start</a>
+                    <a class="navbar-brand" href="index.html">Restart</a>
                   </li>
                     <li>
                         <a href="#">About</a>
@@ -72,20 +72,6 @@
           <!-- Blog Sidebar Widgets Column -->
           <div class="col-md-4">
 
-              <!-- Side Widget Well -->
-              <!-- <div class="well" id="chatbot" >
-                  <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
-
-                  <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="60%" alt=""></center>
-                  <div class="container">
-                    <textarea id="speech" rows="3" cols = "14"> </textarea><br>
-                      <button id="rec" class="btn">Ask</button>
-                      <!-- <center><button id="stop_button" class="btn">Stop</button></center> -->
-                      <!-- <div id="spokenResponse" class="spoken-response">
-                          <div class="spoken-response__text"></div>
-                      </div>
-                  </div>
-              </div> -->
           </div>
 
             <!-- Blog Post Content Column -->
@@ -162,7 +148,7 @@
           <div id="spokenResponse" class="spoken-response">
             <textarea id="speech" class = "inactive" rows="3" cols = "14"> </textarea><br>
 
-              <div class="spoken-response__text"></div>
+              <div class="word-meaning__text"></div>
           </div>
           <button id = close> X </button>
 
@@ -180,12 +166,16 @@
     </div>
     <!-- /.container -->
 
+    <script> document.body.innerHTML=document.body.innerHTML.replace(/John/g,localStorage.first_name); </script>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- JavaScript for Chatbot functionality. -->
-    <script type="text/javascript" src="js/speechBot.js"></script>
+    <script src="js/wordMeanings.js" defer></script>
+
+
 
     <script>
     window.onscroll = function() {colorScrolled()};

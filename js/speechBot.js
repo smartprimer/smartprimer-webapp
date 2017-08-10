@@ -9,6 +9,7 @@
 var accessToken = "1d3ef81a217f4c6793152193a513fef7",
   baseUrl = "https://api.api.ai/v1/",
   $closeButton,
+  $mute,
   $speechInput, //This stores your <input> element so you can access it in your JavaScript.
   $recBtn, //This stores your <record button> element
   $stopBtn, //This stores your <stop button> element
@@ -21,10 +22,11 @@ var accessToken = "1d3ef81a217f4c6793152193a513fef7",
 
 /* Events. */
 $(document).ready(function() {
-  $speechInput = $("#speech");
-  $recBtn = $("#rec");
+  $speechInput = $(".speechBtn");
+  $recBtn = $(".recBtn");
   $stopBtn = $("#stop_button");
   $bodyClose = $("body");
+  $mute = $("#muteVol");
 
   $bodyClose.on('click', function(event){
    if (clicked === false){
@@ -32,12 +34,11 @@ $(document).ready(function() {
       if (close != undefined){
         if (!close.classList.contains('inactive')){
           close.classList.add('inactive');
-          $("#spokenResponse").find(".spoken-response__text").html(" ");
+          $(".spoken-response__text").html(" ");
         }
       }
     }
-    else clicked = false;
-
+    else clicked = true;
   });
 
   /*
@@ -61,6 +62,10 @@ $(document).ready(function() {
     stopAudio();
   });
 
+  $mute.on("click", function(event) {
+    stopAudio();
+  });
+
   /* If click on anywhere of the interface, stop the audio that is playing. */
   $(document).click(function(event) {
     stopAudio();
@@ -77,8 +82,8 @@ $(document).ready(function() {
 
 /* Stop the audio message. */
 function stopAudio() {
-      window.speechSynthesis.cancel();
-      updateRec();
+  window.speechSynthesis.cancel();
+  updateRec();
 }
 
 /* Start speech recognition. */
@@ -138,7 +143,7 @@ function setInput(text) {
 /* Update recording status. */
 function updateRec() {
   let isSpeaking = window.speechSynthesis.speaking;
-  $recBtn.text(isSpeaking ? "Stop" : "Ask");
+  $recBtn.text(isSpeaking ? "Ask" : "Ask");
 }
 
 /* Send off your query to Api.ai. */
@@ -159,7 +164,7 @@ function send() {
       let inputElem = {};
       inputElem [text] = "Chatbot";
       console.log(inputElem);
-      //firebase.database().ref('users/' + localStorage.first_name).update(inputElem);
+      firebase.database().ref('users/' + localStorage.first_name).update(inputElem);
     },
     error: function() {
       respond(messageInternalError);
@@ -198,7 +203,7 @@ function respond(val) {
     updateRec();
   }
 
-  $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
+  $(".spoken-response__text").html(val);
 }
 
 /*  */
@@ -231,22 +236,4 @@ function expositionOnLoad() {
     $("iframe").remove();
   })
   console.log("print");
-}
-
-function setBot(x, y){
-  let d = document.querySelector('#wordMeaning');
-  d.style.position = "absolute";
-  d.style.left = x-120+'px';
-  d.style.top = y-90+'px';
-}
-/* Set the input to What is __ ? and  */
-function question(text) {
-  clicked = true;
-  const textAndBot = document.querySelector("#wordMeaning");
-  textAndBot.style.innerHTML = " ";
-  setInput("What is "+text+"?");
-  let x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; // Get the horizontal coordinate
-  let y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-  setBot(x,y);
-  textAndBot.classList.remove('inactive');
 }
