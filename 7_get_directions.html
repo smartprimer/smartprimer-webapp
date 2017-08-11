@@ -19,9 +19,10 @@
     <link href="css/blog-post.css" rel="stylesheet">
 
     <!-- Added by Sherry -->
-    <script src="api.ai/ApiAi.js"></script>
-    <script src="api.ai/APIAI.Functions.js"></script>
-    <script defer src="api.ai/layout.js"></script>
+    <!--script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script-->
+    <!--script defer src="api.ai/layout.js"></script-->
+
 
     <style type="text/css">
 
@@ -45,7 +46,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li>
-                    <a class="navbar-brand" href="#">Start</a>
+                    <a class="navbar-brand" href="index.html">Restart</a>
                   </li>
 
                     <li>
@@ -97,16 +98,15 @@
                 <hr>
                 <figure width=30% style=text-align:center;><img src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/directions.jpg?alt=media&token=3ad71bcf-aae5-43ba-b6fa-86d91ad27d1e" width=30%/> </figure>
 
-                <p>“I believe the next line in Aristippus’ puzzle is some description that might make sense when you get there, and the hint is there in case you are really having trouble. If you’d like, I can give you directions to these coordinates.” Would you like directions to the coordinates given?</p>
+                <p>“I believe the next line in Aristippus’ puzzle is some description that might make sense when you get there, and the hint is there in case you are really having trouble. The coordinates of the mysterious location seem to be 37.4282° N, 122.1700° W. I wonder what we'll find when we get there."</p>
 
                 <br>
-
                 <div id = "wordMeaning" class = "inactive">
                   <img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="10%" alt="">
                   <div id="spokenResponse" class="spoken-response">
                     <textarea id="speech" class = "inactive" rows="3" cols = "14"> </textarea><br>
 
-                      <div class="spoken-response__text"></div>
+                      <div class="word-meaning__text"></div>
                   </div>
                   <button id = close> X </button>
 
@@ -120,14 +120,21 @@
                   </div> &nbsp;&nbsp; &nbsp;
                   <div style="display: inline-block;">
                       <form action="8_describe.html">
-                        <center><button type="submit" class="btn btn-primary" id = "submited">No</button></center>
+                        <center><button type="submit" class="btn btn-primary" id = "submited">Next</button></center>
                       </form>
                   </div>
                 </div>
             </div>
 
+     <center><iframe
+          width="670"
+          padding-left="100"
+          height="450"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAVRwoPameFrW0jTdIdi2-XrjQ55rJ_vNg&origin=Gates+Computer+Science&destination=memorial+court&mode=walking" allowfullscreen>
+      </iframe></center>
+    </div>
 
-        </div>
         <!-- /.row -->
 
         <hr>
@@ -150,13 +157,12 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- JavaScript for Chatbot functionality. -->
-    <script type="text/javascript" src="js/speechBot.js"></script>
+    <script src="js/wordMeanings.js" defer></script>
 
     <script>
     /* Replace all Johns with the user's first name */
     document.body.innerHTML=document.body.innerHTML.replace(/John/g,localStorage.first_name);
     </script>
-
 
 </body>
 

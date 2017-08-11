@@ -22,10 +22,6 @@
     <script src="js/page1.js" defer></script>
 
 
-
-    <!-- Added by Sherry -->
-    <script src="api.ai/ApiAi.js"></script>
-    <script src="api.ai/APIAI.Functions.js"></script>
     <!--Interferes with firebase. Removed to make sure firebase works-->
     <!--script defer src="api.ai/layout.js"></script-->
 
@@ -52,7 +48,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li>
-                    <a class="navbar-brand" href="#">Start</a>
+                    <a class="navbar-brand" href="index.html">Restart</a>
                   </li>
                     <li>
                         <a href="#">About</a>
@@ -83,7 +79,7 @@
                     <!--button id="rec" class="btn" style="text-align:center;">Ask</button-->
                       <!-- <center><button id="stop_button" class="btn">Stop</button></center> -->
                       <!-- <<div id="spokenResponse" class="spoken-response">
-                          <div class="spoken-response__text"></div>
+                          <div class="word-meaning__text"></div>
                       </div>
                   </div>
               </div> -->
@@ -124,7 +120,7 @@
         <div id="spokenResponse" class="spoken-response">
           <textarea id="speech" class = "inactive" rows="3" cols = "14"> </textarea><br>
 
-            <div class="spoken-response__text"></div>
+            <div class="word-meaning__text"></div>
         </div>
         <button id = close> X </button>
 
@@ -150,7 +146,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- JavaScript for Chatbot functionality. -->
-    <script type="text/javascript" src="js/speechBot.js"></script>
+    <script src="js/wordMeanings.js" defer></script>
 
     <script>
     window.scrollTo(0,1);

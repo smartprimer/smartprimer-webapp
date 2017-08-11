@@ -9,6 +9,7 @@
 var accessToken = "1d3ef81a217f4c6793152193a513fef7",
   baseUrl = "https://api.api.ai/v1/",
   $closeButton,
+  $mute,
   $speechInput, //This stores your <input> element so you can access it in your JavaScript.
   $recBtn, //This stores your <record button> element
   $stopBtn, //This stores your <stop button> element
@@ -21,10 +22,11 @@ var accessToken = "1d3ef81a217f4c6793152193a513fef7",
 
 /* Events. */
 $(document).ready(function() {
-  $speechInput = $("#speech");
-  $recBtn = $("#rec");
+  $speechInput = $(".speechBtn");
+  $recBtn = $(".recBtn");
   $stopBtn = $("#stop_button");
   $bodyClose = $("body");
+  $mute = $("#muteVol");
 
   $bodyClose.on('click', function(event){
    if (clicked === false){
@@ -32,11 +34,15 @@ $(document).ready(function() {
       if (close != undefined){
         if (!close.classList.contains('inactive')){
           close.classList.add('inactive');
-          $("#spokenResponse").find(".spoken-response__text").html(" ");
+          $(".spoken-response__text").html(" ");
         }
       }
     }
+<<<<<<< HEAD
     else clicked = false;
+=======
+    else clicked = true;
+>>>>>>> 168a64ca0c0b1446c79cb91e14aefa47c6d9471f
   });
 
   /*
@@ -60,6 +66,10 @@ $(document).ready(function() {
     stopAudio();
   });
 
+  $mute.on("click", function(event) {
+    stopAudio();
+  });
+
   /* If click on anywhere of the interface, stop the audio that is playing. */
   $(document).click(function(event) {
     stopAudio();
@@ -76,8 +86,8 @@ $(document).ready(function() {
 
 /* Stop the audio message. */
 function stopAudio() {
-      window.speechSynthesis.cancel();
-      updateRec();
+  window.speechSynthesis.cancel();
+  updateRec();
 }
 
 /* Start speech recognition. */
@@ -137,7 +147,7 @@ function setInput(text) {
 /* Update recording status. */
 function updateRec() {
   let isSpeaking = window.speechSynthesis.speaking;
-  $recBtn.text(isSpeaking ? "Stop" : "Ask");
+  $recBtn.text(isSpeaking ? "Ask" : "Ask");
 }
 
 
@@ -161,7 +171,7 @@ function send() {
       let inputElem = {};
       inputElem [text] = "Chatbot";
       console.log(inputElem);
-      //firebase.database().ref('users/' + localStorage.first_name).update(inputElem);
+      firebase.database().ref('users/' + localStorage.first_name).update(inputElem);
     },
     error: function() {
       respond(messageInternalError);
@@ -205,7 +215,7 @@ function respond(val) {
     updateRec();
   }
 
-  $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
+  $(".spoken-response__text").html(val);
 }
 
 function Expand(obj) {
@@ -236,6 +246,7 @@ function expositionOnLoad() {
   })
   console.log("print");
 }
+<<<<<<< HEAD
 
 function setBot(x, y){
   let d = document.querySelector('#wordMeaning');
@@ -260,3 +271,5 @@ function question(text) {
 function sendQA() {
 
 }
+=======
+>>>>>>> 168a64ca0c0b1446c79cb91e14aefa47c6d9471f

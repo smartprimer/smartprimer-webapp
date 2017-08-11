@@ -22,10 +22,6 @@
     <link href="css/blog-post.css" rel="stylesheet">
 
     <!-- Added by Sherry -->
-    <script src="api.ai/ApiAi.js"></script>
-    <script src="api.ai/APIAI.Functions.js"></script>
-
-    <!--script defer src="api.ai/layout.js"></script-->
 
     <style type="text/css">
 
@@ -50,7 +46,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li>
-                    <a class="navbar-brand" href="#">Start</a>
+                    <a class="navbar-brand" href="index.html">Restart</a>
                   </li>
 
                     <li>
@@ -92,7 +88,7 @@
                 <!-- Post Content -->
                 <h4><i> The History </i></h4>
 
-                <p>For nearly one hundred years, the ancient <a onclick="question('Syracuse')">Syracuse</a> and <a onclick="question('Carthage')">Carthage</a> had been at war as ruler after ruler fought each other for the throne. Finally, in 275 BCE, the troops from Syracuse grew weary of the inefficiency and selfishness of their leaders and elected commanders from amongst themselves. One of their chosen leaders was a young general named <a onclick="question('Greek')">Greek</a> cities of Syracuse and Carthage had been at war as ruler after ruler fought each other for the throne. Finally, in 275 BCE, the troops from Syracuse grew weary of the inefficiency and selfishness of their leaders and elected commanders from amongst themselves. One of their chosen leaders was a young general named <a onclick="question('Hiero')">Hiero</a>.</p>
+                <p>For nearly one hundred years, the ancient <a onclick="question('Syracuse')">Syracuse</a> and <a onclick="question('Carthage')">Carthage</a> had been at war as ruler after ruler fought each other for the throne. Finally, in 275 BCE, the troops from Syracuse grew weary of the inefficiency and selfishness of their leaders and elected commanders from amongst themselves. One of their chosen leaders was a young general named <a onclick="question('Hiero')">Hiero</a>.</p>
 
                 <figure width=30% style=text-align:center;><img src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/coin-hiero.jpg?alt=media&token=37520816-a25f-4a6d-b52c-d2480c2f9e04" width=30%/> </figure>
 
@@ -140,7 +136,7 @@
           <div id="spokenResponse" class="spoken-response">
             <textarea id="speech" class = "inactive" rows="3" cols = "14"> </textarea><br>
 
-              <div class="spoken-response__text"></div>
+              <div class="word-meaning__text"></div>
           </div>
           <button id = close> X </button>
     </div>
@@ -153,8 +149,10 @@
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/wordMeanings.js" defer></script>
+
     <!-- JavaScript for Chatbot functionality. -->
-    <script type="text/javascript" src="js/speechBot.js"></script>
 
     <script>
     /* Replace John with the user's first name */

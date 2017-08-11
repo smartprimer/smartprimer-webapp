@@ -11,15 +11,20 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+
 #datatable{
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+#submited1:hover{
+  background-color: grey;
+}
 
 #navStart{
   margin-left: 7.8%;
 }
+
 #navigationBar{
   display:flex;
   flex-direction: column;
@@ -31,30 +36,16 @@ body {
 
   top: 0;
   border-width: 0 0 1px;
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
+  position: fixed;
+  right: 0;    left: 0;
+  z-index: 1030;
 }
+
 #missionMessage{
   font-weight: bold;
 }
-#getPopUp{
-  border-width: 2px;
-  border-color: black;
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  justify-content: center;
-  height: 30px;
-  color: black;
-  background-color: white;
-  width: 280px;
-  font-size: 15px;
-  margin-bottom: 40px;
-  align-items: center;
 
-}
-#dimensions button{
+.col-lg-8 button{
   border-width: 2px;
   border-color: black;
   font-family: 'Montserrat', sans-serif;
@@ -76,18 +67,38 @@ body {
     font-size: 20px;
 }
 
+.col-lg-8 button:hover{
+  background: grey;
+}
+
 .navbar-nav>li {
     float: left;
     padding-right: 50px;
     margin-top: 0px;
 }
 
+#muteVol{
+  align: left;
+  border-width: 0px;
+  border-color: none;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: left;
+  color: black;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  align-items: left;
+  width: 40px;
+  height: 40px;
+}
+
 #intendedLearning{
   background: black;
   color: white;
-  opacity: 0.9;
   height: 80%;
   margin: 10px;
+  margin-top: -20px;
+  padding-top: 0px;
   padding: 10px;
 }
 
@@ -98,11 +109,12 @@ body {
 }
 
 #chat{
-  background: white;
-  color: black;
+  border: 2px solid black;
   opacity: 1.0;
   margin: 10px;
   padding: 10px;
+  width: 87%;
+  background: white;
   align-items: center;
   justify-content: center;
   align-self: center;
@@ -115,36 +127,70 @@ body {
 }
 
 #popUpChat{
-flex-wrap: wrap;
+  flex-wrap: wrap;
   display: flex;
   border: 2px solid black;
   width: 100%;
   position: fixed;
-  left: 17%;
   top: 9%;
-  margin-left: 10%;
   max-width: 400px;
   padding: 2%;
   justify-content: center;
-  align-items: center;
-  align-content: center;
-  background: grey;
-  max-height: 700px;
+  background: black;
+  margin-left: 24%;
   margin-top: 12%;
 }
 
+#wordMeaning{
+  display: flex;
+  align-items: center;
+}
+
+.word-meaning__text{
+  margin-left: 5%;
+  max-width: inherit;
+  flex-wrap: wrap;
+  background: black;
+  color: white;
+  padding: 2%;
+  max-width: 300px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+#close{
+  align-self: flex-start;
+  border: 1px solid black;
+  background: white;
+  max-width: 30px;
+}
+
+.img-responsive{
+  align-self: flex-start;
+}
+
+#chat.speechBtn{
+  font-family: "Titillium Web";
+  -webkit-transition: all 0.35s ease-in;
+  border: 1px solid #3F7F93;
+  margin-right: 9%;
+  width: 80%;
+  margin-left: 9%;
+}
+
+
 #popUpChat2{
-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: flex;
   border: 2px solid black;
   width: 100%;
   position: fixed;
-  left: 17%;
   top: 9%;
-  margin-left: 10%;
   max-width: 400px;
   padding: 2%;
-  background: grey;
-  max-height: 700px;
+  justify-content: center;
+  background: black;
+  margin-left: 16%;
   margin-top: 12%;
   color: white;
   font-size: 16px;
@@ -220,7 +266,7 @@ a {
   align-self: center;
 }
 
-#submited{
+#chat.btn{
   border-width: 2px;
   border-color: black;
   font-family: 'Montserrat', sans-serif;
@@ -229,8 +275,9 @@ a {
   height: 30px;
   color: black;
   background-color: white;
-  width: 280px;
+  width: 150px;
   font-size: 15px;
+  margin-bottom: 40px;
 }
 
 #submited1{
@@ -261,10 +308,6 @@ a {
   font-size: 15px;
 }
 
-#helpButton:hover{
-  background-color:grey;
-}
-
 
 #mainContainer{
   display: flex;
@@ -292,6 +335,7 @@ a:hover {
   padding-right: 9px;
   padding-left: 9px;
 }
+
 @media screen and (max-width: 900px) {
 
   body{
@@ -300,6 +344,21 @@ a:hover {
 
   #navStart{
     margin-left: 7.8%;
-    margin-top: 2%;
+    margin-top: 1%;
+  }
+
+  #popUpChat{
+    padding: 2%;
+    justify-content: center;
+    max-height: 950px;
+    margin-left: 15%;
+
+  }
+
+  #popUpChat2{
+      padding-top: 38%;
+      padding: 2%;
+      justify-content: center;
+      margin-left: 15%;
   }
 }
