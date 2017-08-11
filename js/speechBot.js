@@ -37,7 +37,6 @@ $(document).ready(function() {
       }
     }
     else clicked = false;
-
   });
 
   /*
@@ -141,6 +140,9 @@ function updateRec() {
   $recBtn.text(isSpeaking ? "Stop" : "Ask");
 }
 
+
+
+
 /* Send off your query to Api.ai. */
 function send() {
   var text = $speechInput.val();
@@ -166,6 +168,11 @@ function send() {
     }
   });
 }
+
+
+
+
+
 
 /* Prepare for response. */
 function prepareResponse(val) {
@@ -201,18 +208,15 @@ function respond(val) {
   $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
 }
 
-/*  */
 function Expand(obj) {
 obj.size= parseInt(obj.value.length);
 }
 
-/*  */
 function resizeIframe(iframe) {
   console.log("print-0");
   iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
 }
 
-/*  */
 function expositionOnLoad() {
   $(".exposition").mouseenter( function (eventObject) {
     console.log("print-1");
@@ -239,7 +243,8 @@ function setBot(x, y){
   d.style.left = x-120+'px';
   d.style.top = y-90+'px';
 }
-/* Set the input to What is __ ? and  */
+
+/* Set the input to What is __ ? */
 function question(text) {
   clicked = true;
   const textAndBot = document.querySelector("#wordMeaning");
@@ -249,4 +254,9 @@ function question(text) {
   let y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
   setBot(x,y);
   textAndBot.classList.remove('inactive');
+}
+
+/* Send the text to the QA System */
+function sendQA() {
+
 }
