@@ -1,7 +1,7 @@
 var say = require('say');
 var mqtt = require('mqtt');
-var client = mqtt.connect('mqtt://commuter.stanford.edu', {
-    port: 8000,
+var client = mqtt.connect('mqtt://hri.stanford.edu', {
+    port: 8134,
     protocolId: 'MQIsdp',
     protocolVersion: 3
 });
@@ -10,16 +10,15 @@ var exec = child_process.exec;
 
 // Setup the mqtt connection and listen for messages
 client.on('connect', function() {
-    //client.subscribe('say');
+    client.subscribe('say');
     client.subscribe('english');
     client.subscribe('french');
     client.subscribe('japanese');
     client.subscribe('test');
     client.subscribe('play');
-    client.subscribe('say');
     console.log("Waiting for messages...");
 
-    testingMsgs();
+    //testingMsgs();
 });
 
 // Print out the messages and say messages that are topic: "say"
@@ -77,5 +76,5 @@ client.on('message', function(topic, message) {
 function testingMsgs() {
     // messages for testing
     client.publish('test', 'MQTT Connected');
-    client.publish('say', 'Hello, I am a need finding machine');
+    //client.publish('say', 'Hello, I am a need finding machine');
 }
