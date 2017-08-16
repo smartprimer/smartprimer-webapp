@@ -38,11 +38,7 @@ $(document).ready(function() {
         }
       }
     }
-<<<<<<< HEAD
     else clicked = false;
-=======
-    else clicked = true;
->>>>>>> 168a64ca0c0b1446c79cb91e14aefa47c6d9471f
   });
 
   /*
@@ -141,7 +137,13 @@ function switchRecognition() {
 /* Set the input text in the question box. */
 function setInput(text) {
   $speechInput.val(text);
-  send();
+  //send();
+  var userId = 'Dummy';
+  return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+    var username = snapshot.val().School;
+    console.log(username);
+    $(".spoken-response__text").html(username);
+  });
 }
 
 /* Update recording status. */
@@ -246,7 +248,6 @@ function expositionOnLoad() {
   })
   console.log("print");
 }
-<<<<<<< HEAD
 
 function setBot(x, y){
   let d = document.querySelector('#wordMeaning');
@@ -271,5 +272,3 @@ function question(text) {
 function sendQA() {
 
 }
-=======
->>>>>>> 168a64ca0c0b1446c79cb91e14aefa47c6d9471f
