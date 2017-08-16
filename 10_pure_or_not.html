@@ -19,11 +19,10 @@
 
     <!-- Custom CSS -->
     <link href="css/blog-post.css" rel="stylesheet">
+    <link href="css/dragableOwl.css" rel="stylesheet">
     <script src="js/storyChap1.js" defer></script>
 
     <!-- Added by Sherry -->
-    <script src="api.ai/ApiAi.js"></script>
-    <script src="api.ai/APIAI.Functions.js"></script>
     <!--Interferes with firebase. Removed to make sure firebase works-->
     <!--script defer src="api.ai/layout.js"></script-->
     <style type="text/css">
@@ -47,7 +46,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li>
-                    <a class="navbar-brand" href="#">Start</a>
+                    <a class="navbar-brand" href="index.html">Restart</a>
                   </li>
                     <li>
                         <a href="#">About</a>
@@ -67,27 +66,9 @@
       <div id = "getInfo" class = "inactive"></div>
 
         <div class="row">
-          <!-- Blog Sidebar Widgets Column -->
-          <div class="col-md-4">
-
-              <!-- Side Widget Well -->
-              <!-- <div class="well" id="chatbot" >
-                  <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
-
-                  <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="60%" alt=""></center>
-                  <div class="container">
-                    <textarea id="speech" rows="3" cols = "14"> </textarea><br>
-                      <button id="rec" class="btn">Ask</button>
-                      <!-- <center><button id="stop_button" class="btn">Stop</button></center> -->
-                      <!-- <div id="spokenResponse" class="spoken-response">
-                          <div class="spoken-response__text"></div>
-                      </div>
-                  </div>
-              </div>  -->
-          </div>
-
             <!-- Blog Post Content Column -->
             <div class="col-lg-8">
+
 
                 <!-- Title -->
                 <h1>Archimedes Story</h1>
@@ -103,32 +84,57 @@
                 <p>John scribbled the last number down and looked up at Archimedes.</p>
                 <p>"Well," Archimedes prompted. "What do the results tell you?"</p>
                 <p>John glanced at the paper. "The mass of the bottle changes a lot when you fill it with different materials. But you were right! The volume stays the same. And the volume matched the volume on the label."</p>
-                <p>"Exactly! So objects of different material that are the same volume weigh different amounts. I think we can capture this relationship in something called <a onclick="question('density')">density</a>. Density is mass divided by volume (D = M / V). So basically what we are saying is that all materials have different densities. Therefore gold should have a different density than silver.</p>
-                <p>"Now, I'm desperately in need of a bath, but I think with this knowledge we have enough information to solve the king's problem. Don't you? Will you write up a proposal for an experiment and bring it to me in the bath house just down the street when you are done?"</p>
+                <p>"Exactly! So objects of different material that are the same volume weigh different amounts. I think we can capture this relationship in something called <a onclick="question('density')">density</a>. Density is mass divided by volume (D = M / V). So basically what we are saying is that all materials have different densities. Therefore gold should have a different density than a lesser material such as silver.
+                  The density of gold is 19.32 grams per cubic centimeter.</p>
+                <p>"Now, I'm desperately in need of a bath, but I think with this knowledge we have enough information to solve the king's problem. Don't you? Will you write up a proposal for an experiment and bring it to me in the bath house just down the street when you are done?" </p>
 
-                <center><p><i>How will you determine whether the crown is gold or not?</i></p></center>
+                <div id = "tutor">
+                  <div id = "owlHelper"> <img src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="110px"></div>
+                  <div id="container" class="inactive">
+                      <center><textarea rows="6" cols = "25" class = "speechBtn"> </textarea><br>
+                      <button class="recBtn">Ask</button></center><br>
+                      <div class="spoken-response">
+                          <div class="spoken-response__text"></div>
+                      </div>
+                  </div>
+                </div>
+
 
                 <div id = "wordMeaning" class = "inactive">
                   <img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="10%" alt="">
                   <div id="spokenResponse" class="spoken-response">
-                    <textarea id="speech" class = "inactive" rows="3" cols = "14"> </textarea><br>
+                    <textarea id="speech2" class = "inactive" rows="3" cols = "14"> </textarea><br>
 
-                      <div class="spoken-response__text"></div>
+                      <div class="word-meaning__text"></div>
                   </div>
                   <button id = close> X </button>
-            </div>
+                </div>
 
                 <center>
-                  <textarea id="userAnswer" cols="50" rows="20" id = "userAnswer"></textarea>
+                  <p><i>How will you determine whether the crown is gold or not?</i></p>
+
+                  <p>Can we figure out the weight and volume of the crown? How?</p>
+
+                  <textarea id="userAnswer" cols="80" rows="5"></textarea>
+
+                  <p>Once we have the weight and the volume, can we find out the density? How?</p>
+
+                  <textarea id="userAnswer2" cols="80" rows="5"></textarea>
+
+                  <p>What if the density is less than 19.32 grams per cubic centimeter? What if it's more?</p>
+
+                  <textarea id="userAnswer3" cols="80" rows="5"></textarea>
 
                   <br> <br>
                   <form action="11_open_followup.html">
-                    <button type="submit" class="btn btn-primary" id = "submited">Submit</button></center>
+                    <button type="submit" class="btn btn-primary" id = "submited3">Submit</button>
+                </center>
                 </form>
 
             </div>
 
         </div>
+
         <!-- /.row -->
 
         <hr>
@@ -145,12 +151,18 @@
     </div>
     <!-- /.container -->
 
-    <!-- jQuery -->
+    <script src="js/wordMeanings.js" defer></script>
+    <script src="js/owlHelper.js" defer></script>
+
+    <script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script type="text/javascript" src="js/speechBot.js" defer></script>
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- JavaScript for Chatbot functionality. -->
-    <script type="text/javascript" src="js/speechBot.js"></script>
+
 
     <script>
 

@@ -20,7 +20,10 @@
 
 
     <script src="js/mission.js" defer></script>
-    <script src="js/talkBot.js" defer></script>
+    <!--script src="js/talkBot.js" defer></script-->
+    <script src="js/owlHelper.js" defer></script>
+
+    <link href="css/dragableOwl.css" rel="stylesheet">
     <link href="css/mission.css" rel="stylesheet">
 
     <script src="api.ai/ApiAi.js"></script>
@@ -60,7 +63,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li>
-                    <a class="navbar-brand" href="#">Start</a>
+                    <a class="navbar-brand" href="index.html">Restart</a>
                   </li>
                     <li>
                         <a href="#">About</a>
@@ -100,11 +103,9 @@
 
                     <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/primer-archimedes.appspot.com/o/mission2.png?alt=media&token=72d4897d-6291-4890-8bea-cf56f86cdae8" width="40%" alt=""></center>
                     <div id = "missionMessage"> MISSION: <br>Find the volume and mass of the bottle filled with air and the bottle filled with dust. You may find that submerging the bottles in a large bowl of water and measuring the amount of water you displace may help you measure the volume of the two bottles.</div>
-                    <button id = stopButton> Stop Audio </button>
+                    <!--button id = stopButton> Stop Audio </button-->
 
                   </div></center>
-
-                  </div>
 
                   <p>
 
@@ -127,8 +128,19 @@
                   </p>
 
 <center><button id = helpButton>
-  Click here for more help
+  Click here for more hints
 </button></center>
+
+<div id = "tutor">
+  <div id = "owlHelper"> <img src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="110px"></div>
+  <div id="container" class="inactive">
+      <center><textarea rows="6" cols = "25" class = "speechBtn"> </textarea><br>
+      <button class="recBtn">Ask</button></center><br>
+      <div id="spokenResponse" class="spoken-response">
+          <div class="spoken-response__text"></div>
+      </div>
+  </div>
+</div>
 
 <center>  <div id="datatable" >
     <div id = "userAnswer">
@@ -145,25 +157,29 @@
     </div>
   </div>
 </div> </center>
+<center><button id = "getPopUp"> Next </button></center>
 
 <div id = "popUpChat" class = "inactive">
 
-  <center> <div id = "intendedLearning">
-    <h3> LEARNING GOALS </h3>
+     <div id = "intendedLearning">
+       <button id = "muteVol"> <img src = "https://firebasestorage.googleapis.com/v0/b/primer-archimedes.appspot.com/o/Mute-vol.png?alt=media&token=ba3dfed5-ec16-4da5-886e-b6defe9c3002" width="30px" height="30px" background-color="black"> </button>
+
+    <center><h3> LEARNING GOALS </h3></center>
     In this task we wanted you to learn about the concept of density. We want you build an intuitive understanding of how density relates to mass and volume. <br>
-    Density is defined by the ratio of the mass of a substance to its volume.<br>
-    Through this task, we also aimed to show you in a practical and handon way how to design scientific experiment and see how the density of different objects can be measured using  water.
+    Density is defined by the ratio of the mass of a substance to its volume. Mathematically, density is defined as mass divided by volume. <br>
+    Through this task, we also aimed to show you in a practical and hands-on way how to design scientific experiment and see how the density of different objects can be measured using  water.
     <br><br>
-    <b> If you have any questions, Mr. Owl, your personal tutor is here to help. </b>
+   <center><b> If you have any questions, Mr. Owl, your personal tutor is here to help. </b>
   </div> </center>
+
 
   <div id = "chat">
   <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
 
   <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&token=b395f3cd-032a-42e2-9857-3846c907d138" width="30%" alt=""></center>
   <div class="container">
-      <center><textarea id="speech" rows="6" cols = "25"> </textarea><br>
-     <button id="rec" class="btn">Ask</button></center><br>
+      <center><textarea id="speech" rows="6" cols = "25" class = "speechBtn"> </textarea><br>
+     <button id="rec" class="recBtn"> Ask </button></center><br>
       <div id="spokenResponse" class="spoken-response">
           <div class="spoken-response__text"></div>
       </div>
@@ -171,14 +187,19 @@
 </div>
 
 <form action="10_pure_or_not.html">
-<center> <button id = "submited" class="btn btn-primary" > Next </button></center>
+<center> <button id = "submited2" class="btn btn-primary" > I have no questions </button></center>
 </form>
 
 </div>
 
-<center><button id = "getPopUp"> Next </button></center>
+<div id = "popUpChat2" class = "inactive">
+    <center>Oops! Try Again. There seems to be something amiss. <br> <br>
+    <button id = "goBack"> Go Back </button></center>
+</div>
 
-            </div>
+
+
+    </div>
 
         </div>
 

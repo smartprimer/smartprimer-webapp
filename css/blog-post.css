@@ -7,7 +7,7 @@
 body {
     display: flex;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.42857143;
     color: #333;
     flex-direction: column;
@@ -22,10 +22,9 @@ body {
   background-color: white;
   border: 2px solid black;
   text-align: center;
-  width: 40%;
+  width: 60%;
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
-
 }
 
 #submit{
@@ -50,8 +49,10 @@ body {
   height: 30px;
   color: black;
   background-color: white;
-  width: 180px;
+  width: 140px;
   font-size: 15px;
+  margin: 10px;
+
 }
 
 #navStart{
@@ -76,8 +77,40 @@ body {
   margin-bottom: 40px;
 }
 
+#restart{
+  border-width: 2px;
+  border-color: black;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  color: black;
+  background-color: white;
+  width: 140px;
+  font-size: 15px;
+  margin-bottom: 40px;
+  margin: 10px;
+}
+#restart:hover{
+  background: grey;
+}
+
+
 #submited:hover{
   background-color: grey;
+}
+
+#submit:hover{
+  background-color: grey;
+}
+
+#getInfo:hover{
+    background-color: grey;
+}
+
+#buttonsFirst{
+  display: flex;
+  justify-content: center;
 }
 
 #navigationBar{
@@ -147,7 +180,7 @@ a {
   background: white;
 }
 
-#speech{
+#speech2{
   font-family: "Titillium Web";
   -webkit-transition: all 0.35s ease-in;
   border: 1px solid #3F7F93;
@@ -156,7 +189,7 @@ a {
   margin-left: 9%;
 }
 
-.spoken-response__text{
+.word-meaning__text{
   margin-left: 5%;
   max-width: inherit;
   flex-wrap: wrap;
@@ -174,10 +207,6 @@ a {
   display: flex;
 }
 
-#rec{
-  width: 40%;
-  margin-left: 28%;
-}
 
 footer{
   padding-left: 40%;
@@ -240,6 +269,6 @@ a:hover {
 
   #navStart{
     margin-left: 7.8%;
-    margin-top: 2%;
+    margin-top: 1%;
   }
 }

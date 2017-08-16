@@ -28,8 +28,8 @@ class mission{
       this.backToWidth.addEventListener('click', this.goBack);
       this.backToLength.addEventListener('click', this.goBack);
       this.backToHeight.addEventListener('click', this.goBack);
-      this.wrongAnsButton.addEventListener('click', this.removeWrongAns);
     }
+    this.wrongAnsButton.addEventListener('click', this.removeWrongAns);
     this.revealButton.addEventListener('click', this.revealStep);
 
     this.numClick = 0;
@@ -62,17 +62,30 @@ goBack(){
 
   getPopUp(){
     let toShow = document.querySelector('#popUpChat');
+    let toHide = document.querySelector('#tutor');
     if (this.heightButton != undefined){
+      console.log("if");
       const height = document.querySelector('#heightAnswer');
       const width = document.querySelector('#widthAnswer');
       const length = document.querySelector('#lengthAnswer');
       const ans = document.querySelector("#userAnswer");
       let area = width.value * height.value * length.value/2;
       if (area != ans.value){
-      toShow = document.querySelector('#popUpChat2');
-    }
-      toShow.classList.remove('inactive');
+        toShow = document.querySelector('#popUpChat2');
+        if (ans.value == area*2){
+          const text = toShow.querySelector('p');
+          text.innerHTML = "Hmmm. Was the box fully filled?";
+        }
+      }
   }
+  else{
+    const airVol = document.querySelector('#air-volume');
+    const dirtVol = document.querySelector('#dirt-volume');
+    console.log(dirtVol);
+    if (airVol.value != dirtVol.value) toShow = document.querySelector('#popUpChat2');
+  }
+  toHide.classList.add('inactive');
+  toShow.classList.remove('inactive');
 }
 
   showNextQues(event){

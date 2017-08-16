@@ -58,7 +58,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                      <a class="navbar-brand" href="#">Start</a>
+                      <a class="navbar-brand" href="index.html">Restart</a>
                     </li>
                     <li>
                         <a href="#">About</a>
@@ -93,20 +93,27 @@
                 <center><p>Hello there! I'd like to tell you a story. But first, tell me a little about yourself. </p>
 
                 <!-- form to collect input from children -->
-                <form id = "userInf">
-                  Your first name:<br>
-                  <div id = "firstName"> </div>
-                  Your last name:<br>
-                  <div id = "lastName"> </div>
-                  Your age:<br>
-                  <div id = "ageEnter"> </div>
-                  Your gender:<br>
-                  <div id = "genderEnter"> </div>
-                  Your school:<br>
-                  <div id = "schoolEnter"> </div> <br>
-                  <input type="submit" value="Ready? Go!" id = "getInfo"></input>
-                </form>
+                <div id = "userInf">
+                  Your first name:
+                  <span id = "firstName"> </span><br> <br>
+                  Your last name:
+                  <span id = "lastName"> </span><br> <br>
+                  Your age:
+                  <span id = "ageEnter"> </span><br> <br>
+                  Your gender:
+                  <span id = "genderEnter"> </span><br> <br>
+                  Your school:
+                  <span id = "schoolEnter"> </span><br> <br>
+                  <div id = buttonsFirst>
+                    <form action = "index.html">
+                      <button id = "restart"> Restart </button>
+                    </form>
+                    <input type="submit" value="Ready? Go!" id = "getInfo"></input>
+                  </div>
+                </div>
             </div></center>
+
+
 
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">

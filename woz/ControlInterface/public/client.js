@@ -18,7 +18,8 @@ function sendMsg() {
     var msg = document.getElementById("message").value;
     console.log(msg);
     socket.emit('msg', msg); //send the message to ther server
-
+    const display = document.querySelector('.spoken-response__text');
+    display.innerHTML = msg;
     // add the question to the list
     addQuestion(msg);
 
