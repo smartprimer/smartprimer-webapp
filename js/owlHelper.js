@@ -1,5 +1,5 @@
 function showAskArea(event){
-    askArea = document.querySelector("#container");
+    askArea = document.querySelector("#main-wrapper");
     if (askArea.classList.contains('inactive')){
       askArea.classList.remove("inactive");
 

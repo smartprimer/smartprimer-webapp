@@ -51,20 +51,26 @@ layfun = (function() {
       });
   }
 
-  // Append a user's message box on the left side 
+  // Append a user's message box on the left side
   function createQueryNode(query) {
     var node = document.createElement('div');
-    node.className = "clearfix left-align left card-panel green accent-1";
+    var linebreak = document.createElement("br");
+
+    node.classList.add('userAsk');
     node.innerHTML = query;
     resultDiv.appendChild(node);
+    resultDiv.appendChild(linebreak);
   }
 
-  // Append a agent's message box on the right side 
+  // Append a agent's message box on the right side
   function createResponseNode() {
     var node = document.createElement('div');
-    node.className = "clearfix right-align right card-panel blue-text text-darken-2 hoverable";
+    var linebreak = document.createElement("br");
+    node.classList.add('botResponse');
     node.innerHTML = "...";
+    node.style.alignText = "right";
     resultDiv.appendChild(node);
+    resultDiv.appendChild(linebreak);
     return node;
   }
 
@@ -72,7 +78,7 @@ layfun = (function() {
     node.innerHTML = response ? response : "[empty response]";
     node.setAttribute('data-actual-response', response);
     var speaking = false;
-    
+
     function speakNode() {
       if (!response || speaking) {
         return;

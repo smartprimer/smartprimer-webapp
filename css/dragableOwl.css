@@ -3,28 +3,40 @@
   display: flex;
 }
 
-#tutor.speechTutor{
+#result{
+  border: 2px solid grey;
   max-width: 300px;
-  rows = 8;
-  columns: 25;
-  background: black;
-  opacity: 0.7;
+  background: solid white;
+  opacity: 1;
+  margin: 5px;
 }
 
-#tutor.btnRec{
-  background: black;
-  color: white;
-  opacity: 0.7;
+.userAsk{
+  display: inline-block;
+  background: #98FB98;
+  padding: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: pre;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px 2px #888888;
 }
 
-#tutor.spoken-response__text{
-  margin-left: 5%;
-  max-width: inherit;
-  flex-wrap: wrap;
-  background: black;
-  color: black;
-  padding: 2%;
-  max-width: 300px;
-  text-align: center;
-  opacity: 0.8;
+.botResponse{
+  display: inline-block;
+  padding: 3px;
+  background: #B0C4DE;
+  text-align: right;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px 2px #888888;
+}
+
+.input-field{
+  margin-left: 5px;
+  margin-bottom: 10px;
+  width:auto;
 }
