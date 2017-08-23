@@ -9,7 +9,6 @@
 var accessToken = "1d3ef81a217f4c6793152193a513fef7",
   baseUrl = "https://api.api.ai/v1/",
   $closeButton,
-  $mute,
   $speechInput, //This stores your <input> element so you can access it in your JavaScript.
   $recBtn, //This stores your <record button> element
   $stopBtn, //This stores your <stop button> element
@@ -22,11 +21,10 @@ var accessToken = "1d3ef81a217f4c6793152193a513fef7",
 
 /* Events. */
 $(document).ready(function() {
-  $speechInput = $(".speechBtn");
-  $recBtn = $(".recBtn");
+  $speechInput = $("#speech");
+  $recBtn = $("#rec");
   $stopBtn = $("#stop_button");
   $bodyClose = $("body");
-  $mute = $("#muteVol");
 
   $bodyClose.on('click', function(event){
    if (clicked === false){
@@ -34,7 +32,7 @@ $(document).ready(function() {
       if (close != undefined){
         if (!close.classList.contains('inactive')){
           close.classList.add('inactive');
-          $(".spoken-response__text").html(" ");
+          $("#spokenResponse").find(".spoken-response__text").html(" ");
         }
       }
     }
@@ -62,10 +60,6 @@ $(document).ready(function() {
     stopAudio();
   });
 
-  $mute.on("click", function(event) {
-    stopAudio();
-  });
-
   /* If click on anywhere of the interface, stop the audio that is playing. */
   $(document).click(function(event) {
     stopAudio();
@@ -77,13 +71,12 @@ $(document).ready(function() {
   });
 });
 
-
 /* Functions */
 
 /* Stop the audio message. */
 function stopAudio() {
-  window.speechSynthesis.cancel();
-  updateRec();
+      window.speechSynthesis.cancel();
+      updateRec();
 }
 
 /* Start speech recognition. */
@@ -137,23 +130,14 @@ function switchRecognition() {
 /* Set the input text in the question box. */
 function setInput(text) {
   $speechInput.val(text);
-  //send();
-  var userId = 'Dummy';
-  return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-    var username = snapshot.val().School;
-    console.log(username);
-    $(".spoken-response__text").html(username);
-  });
+  send();
 }
 
 /* Update recording status. */
 function updateRec() {
   let isSpeaking = window.speechSynthesis.speaking;
-  $recBtn.text(isSpeaking ? "Ask" : "Ask");
+  $recBtn.text(isSpeaking ? "Stop" : "Ask");
 }
-
-
-
 
 /* Send off your query to Api.ai. */
 function send() {
@@ -173,7 +157,7 @@ function send() {
       let inputElem = {};
       inputElem [text] = "Chatbot";
       console.log(inputElem);
-      firebase.database().ref('users/' + localStorage.first_name).update(inputElem);
+      //firebase.database().ref('users/' + localStorage.first_name).update(inputElem);
     },
     error: function() {
       respond(messageInternalError);
@@ -181,18 +165,21 @@ function send() {
   });
 }
 
-
-
-
-
-
 /* Prepare for response. */
 function prepareResponse(val) {
   var debugJSON = JSON.stringify(val, undefined, 2),
     spokenResponse = val.result.speech; // your assistant’s text response
 
-  respond(spokenResponse);
-  debugRespond(debugJSON);
+  if (val.result.score > 0.98) {
+    console.log(val)
+    console.log('Question in API.ai database.')
+    respond(spokenResponse);
+    debugRespond(debugJSON);
+  }
+  else {
+    console.log('Question not in API.ai database: pass to QA system.')
+    sendQA()
+  }
 }
 
 /* Debug response. */
@@ -216,12 +203,11 @@ function respond(val) {
     window.speechSynthesis.speak(msg);
     updateRec();
   }
-
-  $(".spoken-response__text").html(val);
+  $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
 }
 
 function Expand(obj) {
-obj.size= parseInt(obj.value.length);
+  obj.size= parseInt(obj.value.length);
 }
 
 function resizeIframe(iframe) {
@@ -249,6 +235,7 @@ function expositionOnLoad() {
   console.log("print");
 }
 
+/* Set the chatbot at location (x, y). */
 function setBot(x, y){
   let d = document.querySelector('#wordMeaning');
   d.style.position = "absolute";
@@ -256,7 +243,7 @@ function setBot(x, y){
   d.style.top = y-90+'px';
 }
 
-/* Set the input to What is __ ? */
+/* Set the input to What is __ ? and  */
 function question(text) {
   clicked = true;
   const textAndBot = document.querySelector("#wordMeaning");
@@ -270,5 +257,20 @@ function question(text) {
 
 /* Send the text to the QA System */
 function sendQA() {
-
+  var input_question = $speechInput.val();
+  var jqXHR = $.ajax({
+      url: "https://qasystem-python-client-heroku.herokuapp.com/qatest",
+      crossDomain: true,
+      type: "GET",
+      data: {'question': input_question},
+      success: function(data) {
+          response_json = JSON.parse(data);
+          console.log(response_json.answer);
+          respond(response_json.answer);
+      },
+      error: function(request, status, error) {
+         console.log('Error');
+         respond(messageInternalError);
+      }
+  });
 }
