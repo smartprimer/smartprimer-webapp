@@ -165,7 +165,12 @@ function send() {
   });
 }
 
-/* Prepare for response. */
+/* Prepare for response from API.ai
+   Check the confidence score of the question
+   If the question has high score (API.ai thinks it can answer this question with high confidence),
+   then use answer from API.ai to answer the question
+   If the question has low score, then pass the question to the QASystem
+*/
 function prepareResponse(val) {
   var debugJSON = JSON.stringify(val, undefined, 2),
     spokenResponse = val.result.speech; // your assistant’s text response
@@ -255,7 +260,7 @@ function question(text) {
   textAndBot.classList.remove('inactive');
 }
 
-/* Send the text to the QA System */
+/* Request the question from the QA System using Jquery ajax request */
 function sendQA() {
   var input_question = $speechInput.val();
   var jqXHR = $.ajax({
