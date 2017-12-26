@@ -4,7 +4,7 @@ This is the main smart primer application. It is developed as a web application.
 
 ## Wiki
 
-https://github.com/smartprimer/smartprimer-web/wiki
+https://github.com/smartprimer/smartprimer-webapp/wiki
 
 ## Hosting 
 
