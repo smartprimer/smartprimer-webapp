@@ -153,16 +153,16 @@
     document.getElementById("johns_task").innerHTML=document.getElementById("johns_task").innerHTML.replace('John',localStorage.first_name);
     document.getElementById("john_is_to_travel").innerHTML=document.getElementById("john_is_to_travel").innerHTML.replace('John',localStorage.first_name);
 
-    $(window).scroll(function() {
-      var winScrollTop = $(window).scrollTop();
-      var winHeight = $(window).height();
-      var floaterHeight = $('.fixedbutton').outerHeight(true);
-      //true so the function takes margins into account
-      var fromBottom = 650;
-
-      var top = winScrollTop + winHeight - floaterHeight - fromBottom;
-      $('.fixedbutton').css({'top': top + 'px'});
-    });
+    // $(window).scroll(function() {
+    //   var winScrollTop = $(window).scrollTop();
+    //   var winHeight = $(window).height();
+    //   var floaterHeight = $('.fixedbutton').outerHeight(true);
+    //   //true so the function takes margins into account
+    //   var fromBottom = 650;
+    //
+    //   var top = winScrollTop + winHeight - floaterHeight - fromBottom;
+    //   $('.fixedbutton').css({'top': top + 'px'});
+    // });
     </script>
 
 </body>

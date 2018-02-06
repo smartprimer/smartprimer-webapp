@@ -150,16 +150,16 @@
         }, 0);
     });
 
-    $(window).scroll(function() {
-      var winScrollTop = $(window).scrollTop();
-      var winHeight = $(window).height();
-      var floaterHeight = $('.fixedbutton').outerHeight(true);
-      //true so the function takes margins into account
-      var fromBottom = 650;
-
-      var top = winScrollTop + winHeight - floaterHeight - fromBottom;
-      $('.fixedbutton').css({'top': top + 'px'});
-    });
+    // $(window).scroll(function() {
+    //   var winScrollTop = $(window).scrollTop();
+    //   var winHeight = $(window).height();
+    //   var floaterHeight = $('.fixedbutton').outerHeight(true);
+    //   //true so the function takes margins into account
+    //   var fromBottom = 650;
+    //
+    //   var top = winScrollTop + winHeight - floaterHeight - fromBottom;
+    //   $('.fixedbutton').css({'top': top + 'px'});
+    // });
 
   </script>
 
