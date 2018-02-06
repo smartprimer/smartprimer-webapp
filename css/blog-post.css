@@ -5,56 +5,164 @@
  */
 
 body {
+    /* background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed; */
     display: flex;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 17px;
-    line-height: 1.42857143;
-    color: #333;
+    font-family: 'Quicksand',Helvetica,Arial,sans-serif;
+    font-size: 24px;
     flex-direction: column;
-    width: 50vw;
-    padding-left: 10%;
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    margin: auto;
+    padding: 70px 5px;
+}
+
+
+#navigationBar{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  height: 70px;
+  border: 1px solid #e7e7e7;
+  background-color: #47A1BF;
+  color: white;
+  top: 0;
+  border-width: 0 0 1px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+    font-size: 20px;
+}
+
+.navbar-nav>li {
+    float: left;
+    padding-right: 50px;
+    margin-top: 0px;
+    list-style-type: none;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+  color: black;
+}
+
+.fixedbutton{
+  position: fixed;
+  top: 400px;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 0s linear;
+  z-index: 1;
+}
+
+#leftfixedbutton {
+  left: 5px;
+}
+#rightfixedbutton {
+  right: 40px;
+}
+
+h1 {
+   font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+.container{
+  margin: auto;
+  width: 100%;
+}
+
+#book_content{
+  text-align: center;
+  margin: auto;
+  padding: 90px 40px;
+}
+
+.book-text{
+  text-align: left;
+  padding: 20px 60px;
 }
 
 #userInf{
+  margin: auto;
   align: center;
   font-size: 18px;
-  background-color: white;
-  border: 2px solid black;
   text-align: center;
   width: 60%;
-  padding: 10px;
-  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
 }
 
-#submit{
-  border-width: 2px;
-  border-color: black;
-  font-family: 'Montserrat', sans-serif;
-  height: 30px;
-  color: black;
-  background-color: white;
-  width: 180px;
-  font-size: 15px;
+#submit {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font-size: 16px;
+    width: 100px;
+    background-color: white;
+    color: black;
+    border: 2px solid #47A1BF;
+    border-radius: 8px;
 }
 
-#submit:hover{
-  background-color: grey;
+#submit:hover {
+  background-color: #47A1BF ;
+  color: white;
+}
+
+#buttonsFirst{
+  display: flex;
+  justify-content: center;=
 }
 
 #getInfo{
   border-width: 2px;
-  border-color: black;
-  font-family: 'Montserrat', sans-serif;
+  border-color: #47A1BF;
+  height: 30px;
+  color: black;
+  width: 100px;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+#getInfo:hover{
+  background-color: #47A1BF ;
+  color: white;
+}
+
+#restart{
+  border-width: 2px;
+  border-color: #47A1BF;
+  display: flex;
+  justify-content: center;
   height: 30px;
   color: black;
   background-color: white;
-  width: 140px;
+  width: 100px;
   font-size: 15px;
+  /* margin-bottom: 40px; */
   margin: 10px;
-
+  border-radius: 8px;
 }
 
+#restart:hover{
+  background-color: #47A1BF ;
+  color: white;
+}
+
+/* Keeps navbar stuck to the left side */
 #navStart{
   margin-left: 7.8%;
 }
@@ -77,102 +185,20 @@ body {
   margin-bottom: 40px;
 }
 
-#restart{
-  border-width: 2px;
-  border-color: black;
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  justify-content: center;
-  height: 30px;
-  color: black;
-  background-color: white;
-  width: 140px;
-  font-size: 15px;
-  margin-bottom: 40px;
-  margin: 10px;
-}
-#restart:hover{
-  background: grey;
-}
-
-
 #submited:hover{
   background-color: grey;
 }
 
-#submit:hover{
-  background-color: grey;
-}
-
-#getInfo:hover{
-    background-color: grey;
-}
-
-#buttonsFirst{
-  display: flex;
-  justify-content: center;
-}
-
-#navigationBar{
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: flex-start;
-  height: 57px;
-  background-color: #222;
-  border-color: #080808;
-
-  top: 0;
-  border-width: 0 0 1px;
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-    color: #9d9d9d;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.navbar-nav>li {
-    float: left;
-    padding-right: 50px;
-    margin-top: 0px;
-}
-
-.navbar-inverse .navbar-nav>li>a:hover{
-  color: white;
-  background: #222;
-}
-
-
-h1 {
-   font-size: 36px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.1;
-    color: inherit;
-}
 
 a {
     color: #337ab7;
     text-decoration: none;
     font-size: 20px;
 }
-
+/*
 .col-lg-8{
   width: 150%;
-}
-/*body {
-	width: 600px;
-	margin: 0 auto;
-	background: #eeeeee;
-	font-family: 'Trebuchet MS', Verdana, Arial, serif;
-}*/
+} */
 
 #close{
   align-self: flex-start;
@@ -207,7 +233,6 @@ a {
   display: flex;
 }
 
-
 footer{
   padding-left: 40%;
 }
@@ -221,12 +246,6 @@ figcaption {
 	font-size: 10px;
 }
 
-
-
-a:hover {
-	cursor: pointer;
-	background: yellow;
-}
 #inactive {
   display: none !important;
 }
@@ -262,13 +281,17 @@ a:hover {
   text-align: center;
 }
 
-@media screen and (max-width: 900px) {
-  body{
-    width: 50vw;
-  }
+.spoken-response {
+    -webkit-transition: all 0.35s ease-in;
+}
 
-  #navStart{
+@media screen and (max-width: 900px) {
+  /* body{
+    width: 50vw;
+  } */
+
+  /* #navStart{
     margin-left: 7.8%;
     margin-top: 1%;
-  }
+  } */
 }
