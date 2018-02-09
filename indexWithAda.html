@@ -15,17 +15,25 @@
 
     <!-- Custom CSS -->
     <link href="css/splitPanes.css" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/communicationChild.js"></script>
+    <script src="js/communicationParent.js"></script>
 </head>
 
 <body>
 
   <div>
-    <!-- Displays the Archimedes story sequence -->
-    <iframe class="main" src="http://smartprimer.org/" ></iframe>
-    <!-- Chat interface to interact with Ada -->
-    <iframe class="ada" src="http://smartprimer.org:8000/"></iframe>
+    <!-- Displays the Archimedes story sequence on the left and the chat interface to interact with Ada on the right -->
+    <iframe id="primer" class="main full" src="http://smartprimer.org/" ></iframe>
+    <iframe id="chat" class="ada hidden" src="http://smartprimer.org:8000/"></iframe>
+
+    <!-- Uncomment iframes to test locally -->
+    <!-- <iframe id="primer" class="main full" src="index.html" ></iframe>
+    <iframe id="chat" class="ada hidden" src="http://localhost:8000/"></iframe> -->
+
   </div>
-  <script src="js/jquery.js"></script>
 </body>
 
 </html>
