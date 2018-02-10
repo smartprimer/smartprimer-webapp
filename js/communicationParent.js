@@ -1,10 +1,15 @@
 'use strict';
 
+/**
+ * showChat and hideChat control the layout of the page.
+ */
+
+
 var showChat = function() {
-  let sourceFrame = document.getElementById("primer");
+  let storyFrame = document.getElementById("primer");
   let chatFrame = document.getElementById("chat");
-  if (sourceFrame.classList.contains("full")) {
-    sourceFrame.classList.remove("full");
+  if (storyFrame.classList.contains("full")) {
+    storyFrame.classList.remove("full");
   }
   if (chatFrame.classList.contains("hidden")) {
     chatFrame.classList.remove("hidden");
@@ -12,17 +17,29 @@ var showChat = function() {
 };
 
 var hideChat = function() {
-  let sourceFrame = document.getElementById("primer");
+  let storyFrame = document.getElementById("primer");
   let chatFrame = document.getElementById("chat");
-  if (!sourceFrame.classList.contains("full")) {
-    sourceFrame.classList.add("full");
+  if (!storyFrame.classList.contains("full")) {
+    storyFrame.classList.add("full");
   }
   if (!chatFrame.classList.contains("hidden")) {
     chatFrame.classList.add("hidden");
   }
-}
+};
 
-var bindEvent = function(element, eventName, eventHandler) {
+/**
+ * sendToChat passes messages to the chat window.
+ */ 
+var sendToChat = function(msg) {
+  let chatFrame = document.getElementById("chat");
+  chatFrame.contentWindow.postMessage(msg, '*');
+};
+
+/**
+ * bindEvent listens to messages from child elements - 
+ * in particular from the story iFrame.
+ */
+let bindEvent = function(element, eventName, eventHandler) {
   if (element.addEventListener) {
       element.addEventListener(eventName, eventHandler, false);
   } else if (element.attachEvent) {
@@ -34,25 +51,32 @@ var bindEvent = function(element, eventName, eventHandler) {
 bindEvent(window, 'message', function (e) {
   let msg = decodeMsg(e.data);
   let tag = msg[0];
-  let data = msg[1];
-  // console.log("MESSAGE: " + tag + " : " + data);
+  // console.log("MESSAGE: " + tag);
 
-  // Showing or hiding chat
-  if (tag == "showChat") {
-    showChat();
-  } 
-  if (tag == "hideChat") {
-    hideChat();
-  }
-
-  if (tag == "setName") {
-      // Send name to chat
+  switch(tag) {
+    case "showChat":
+      showChat();
+      break;
+    case "hideChat":
+      showChat();
+      break;
+    case "setName":
+      sendToChat(msg);
+      break;
+    case "mission1Answer":
+      handleMission1Answer(msg[1], msg[2]);
+      break;
+    default:
+      break;
   }
 });
 
-// Send message to the chatbot
-var sendToChat = function(msg) {
-  // TODO is there a way to add a tag in addition to the data?
-  let chatFrame = document.getElementById("chat");
-  chatFrame.contentWindow.postMessage(msg, '*');
+/** 
+ * Relating to the first Mission.
+ */
+
+let handleMission1Answer = function(area, answer) {
+  // console.log("Actual area: " + area + " / Answer: " + answer);
 };
+
+

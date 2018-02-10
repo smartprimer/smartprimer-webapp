@@ -1,12 +1,12 @@
 'use strict';
 
-var encodeMsg = function(tag, value) {
-  return tag + ":" + value;
-}
+var encodeMsg = function(tag, value1, value2) {
+  return tag + ":" + value1 + ":" + value2;
+};
 
 var decodeMsg = function(msg) {
   return msg.split(':');
-}
+};
 
 // Send a message to the parent
 var sendToParent = function(msg) {

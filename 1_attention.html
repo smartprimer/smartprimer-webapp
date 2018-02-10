@@ -140,6 +140,7 @@
     <script type="text/javascript">
         // Hide chat, in case user is returning from mission.
         sendToParent("hideChat");
+        
         // Before continuing to next page, send some information to the parent.
         $('#startForm').submit(function() {
             sendToParent(encodeMsg("setName", localStorage.first_name));
