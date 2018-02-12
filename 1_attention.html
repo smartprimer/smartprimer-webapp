@@ -39,6 +39,7 @@
     <script src="api.ai/ApiAi.js"></script>
     <script src="api.ai/APIAI.Functions.js"></script>
     <script defer src="api.ai/layout.js"></script>
+    <script src="js/communicationChild.js"></script>
 </head>
 <body>
 
@@ -137,6 +138,19 @@
 
     <script type="text/javascript">
     document.getElementById("name_to_fill").innerHTML= localStorage.first_name;
+    </script>
+
+    <!-- Page-specific JS for communication with parent frame -->
+    <script type="text/javascript">
+        // Hide chat, in case user is returning from mission.
+        sendToParent("hideChat");
+
+        // Before continuing to next page, send some information to the parent.
+        $('#startForm').submit(function() {
+            sendToParent(encodeMsg("setName", localStorage.first_name));
+            sendToParent("showChat");
+            return true;
+        });
     </script>
 
 </body>

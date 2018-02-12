@@ -40,6 +40,7 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
     <script type="text/javascript" src="js/speechBot.js" defer></script>
+    <script src="js/communicationChild.js"></script>
 </head>
 <body>
 
@@ -225,8 +226,8 @@
       <input type="text" name="num_candies" value="" id = "userAnswer"> <br> <br>
       <div id = "buttons">
         <button class="next-prev-buttons" id = "finalBack"> Back </button>
-        <form action = "4_after_count_candies.html">
-          <button class="next-prev-buttons"> Next </button>
+        <form id = "finalCount" action = "4_after_count_candies.html">
+          <button class="next-prev-buttons"> Done! </button>
         </form>
         <!-- <button class="next-prev-buttons" id = "getPopUp"> Next </button> -->
       </div>
@@ -264,6 +265,20 @@
       $('.fixedbutton').css({'top': top + 'px'});
     });
     </script> -->
+
+    <!-- Page-specific JS for communication with parent frame -->
+    <script type="text/javascript">    
+      // Send final count to parent
+      $('#finalCount').submit(function() {
+        let height = document.querySelector('#heightAnswer').value;
+        let width = document.querySelector('#widthAnswer').value;
+        let length = document.querySelector('#lengthAnswer').value;
+        let ans = document.querySelector("#userAnswer").value;
+        let area = (width * height * length) / 2;
+        sendToParent(encodeMsg("mission1Answer", area, ans));
+        return true; // Change to false to prevent continuing to next mission.
+      });
+    </script>
 
 </body>
 
