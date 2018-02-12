@@ -11,32 +11,29 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <title>Archimedes Story</title>
+    <title>Smart Primer</title>
 
     <!-- Bootstrap Core CSS -->
-    <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
+    <!-- link href="css/bootstrap.min.css" rel="stylesheet" -->
 
     <!-- Custom CSS -->
-
-    <script src="js/storyChap1.js"></script>
+    <script src="CandyMan_js/Story_Text.js"></script>
+    <script src="CandyMan_js/Setting_Story_Text.js" defer></script>
     <link href="css/blog-post.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
 
-    <!-- Added by Sherry -->
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id = "navigationBar">
+    <!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id = "navigationBar">
         <div class="container" id = "navStart">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
 
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                   <li>
@@ -51,10 +48,8 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
-    </nav>
+    </nav> -->
 
     <!-- Page Content -->
     <div class="container">
@@ -63,34 +58,27 @@
             <div class="col-lg-12" id="book_content">
 
                 <!-- Title -->
-                <h1>Archimedes Story</h1>
+                <h1>The Candy Man</h1>
 
                 <!-- Author -->
                 <p class="lead">
                     by <a href="#">Smart Primer Group</a>
                 </p>
 
-                <!-- Preview Image -->
-                <!-- <figure width="80%" style="text-align:center;">
-                    <img class="img-responsive" src="../mediterranean_264BC.png" alt="">
-                    <figcaption>The Mediterranean around 264 BC, when Rome and Carthage started First Punic War. </figcaption>
-                </figure> -->
-
-                <a href="1_attention.html" class="fixedbutton" id="leftfixedbutton"><img src="left arrow.png"></a>
-                <a href="3_count_candies.html" class="fixedbutton" id="rightfixedbutton"><img src="right arrow.png"></a>
+                <a href="2_CandyMan_Story_Part1.html" class="fixedbutton" id="leftfixedbutton"><img src="left arrow.png"></a>
+                <a href="CandyMan_Mission.html" class="fixedbutton" id="rightfixedbutton"><img src="right arrow.png"></a>
                 <div class="book-text">
                 <!-- Post Content -->
-                  <h4><i> The History </i></h4>
+                  <p class="story_paragraph_3"></p>
+                  <br>
+                  <img id="image_on_left" src="images/coin.png" alt="">
+                  <img id="image_on_right" src="images/package_box.png" alt="">
 
-                  <p>For nearly one hundred years, the ancient <a onclick="question('Syracuse')">Syracuse</a> and <a onclick="question('Carthage')">Carthage</a> had been at war as ruler after ruler fought each other for the throne. Finally, in 275 BCE, the troops from Syracuse grew weary of the inefficiency and selfishness of their leaders and elected commanders from amongst themselves. One of their chosen leaders was a young general named <a onclick="question('Hiero')">Hiero</a>.</p>
+                  <!-- <p>For nearly one hundred years, the ancient <a onclick="question('Syracuse')">Syracuse</a> and <a onclick="question('Carthage')">Carthage</a> had been at war as ruler after ruler fought each other for the throne. Finally, in 275 BCE, the troops from Syracuse grew weary of the inefficiency and selfishness of their leaders and elected commanders from amongst themselves. One of their chosen leaders was a young general named <a onclick="question('Hiero')">Hiero</a>.</p>
 
                   <figure width=30% style=text-align:center;><img src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/coin-hiero.jpg?alt=media&token=37520816-a25f-4a6d-b52c-d2480c2f9e04" width=30%/> </figure>
 
-                  <!-- <figure width="30%" style="text-align:center;">
-                      <img src="../HieroCopperCR.jpg" width=30%/>
-                      <figcaption>Coin with the image of Hiero.</figcaption>
-                  </figure>
-                  <br> -->
+                  <br>
 
                   <p>Now, Hiero was <a onclick="question('charismatic')">charismatic</a> and had a natural talent for leadership and politics. With his new status and help from his connections, he entered the city of Syracuse and managed to take over its government. And the citizens of Syracuse, who typically rejected the thought of soldiers picking their own leaders, made an exception and accepted Hiero as a leader. In 270 BCE, a great battle broke out, and it was Hiero who led Syracuse to victory, prompting the people of Syracuse chose Hiero as their king.</p>
 
@@ -110,13 +98,7 @@
 
                   <h5 id = "missionMessage2">Move on to the next page when you are ready to proceed.</h5>
 
-                  <br>
-
-                  <!-- <div style="text-align:center;">
-                      <form action = "3_count_candies.html">
-                    <center><button type="submit" class="btn btn-primary" id = "submited">Begin Mission</button></center>
-                      </form>
-                  </div> -->
+                  <br> -->
                 </div>
             </div>
 
@@ -148,11 +130,10 @@
 
     <!-- JavaScript for Chatbot functionality. -->
 
-    <script>
-    /* Replace John with the user's first name */
+    <!-- <script>
     document.getElementById("johns_task").innerHTML=document.getElementById("johns_task").innerHTML.replace('John',localStorage.first_name);
     document.getElementById("john_is_to_travel").innerHTML=document.getElementById("john_is_to_travel").innerHTML.replace('John',localStorage.first_name);
-    </script>
+    </script> -->
 
 </body>
 

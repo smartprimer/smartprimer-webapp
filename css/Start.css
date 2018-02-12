@@ -5,20 +5,41 @@
  */
 
 body {
+    background-image: url("candy.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: relative;
+    background-size: contain;
     display: flex;
     font-family: 'Quicksand',Helvetica,Arial,sans-serif;
     font-size: 24px;
     flex-direction: column;
-    overflow: hidden;
     /* padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */ */
     margin: auto;
-    padding: 30px 5px;
+    padding: 150px 5px;
 }
 
-#image_on_right{
-  margin-left: 10px;
+.images{
+  display: block;
+  margin: auto;
+  padding: 20px;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  width: 280px;
+  margin-bottom: 40px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 2px solid #47A1BF;
+  border-radius: 8px;
+  margin: auto;
+}
 
 #navigationBar{
   display:flex;
@@ -88,7 +109,7 @@ h1 {
 #book_content{
   text-align: center;
   margin: auto;
-  padding: 90px 40px;
+  padding: 0px 40px;
 }
 
 .book-text{
