@@ -39,12 +39,6 @@ body {
   border: 2px solid #47A1BF;
   border-radius: 8px;
   margin: auto;
-  outline: none;
-}
-
-.buttons:hover{
-  background-color: #47A1BF ;
-  color: white;
 }
 
 #navigationBar{

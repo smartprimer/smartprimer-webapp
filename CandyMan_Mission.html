@@ -11,23 +11,17 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <title>Smart Primer</title>
+
 <!--Sandhini New Comments-->
-
-    <!-- Custom CSS -->
-
-    <!--script src="js/getVal.js" defer></script-->
-
 
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <script src="js/main.js" defer></script>
 
 
-    <script src="js/mission.js" defer></script>
-    <!--script src="js/talkBot.js" defer></script-->
-    <script src="js/owlHelper.js" defer></script>
+    <script src="CandyMan_js/mission.js" defer></script>
 
 
-    <link href="css/mission.css" rel="stylesheet">
+    <link href="CandyMan_css/mission.css" rel="stylesheet">
     <link href="css/dragableOwl.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -59,100 +53,53 @@
                 <h1 id="title">Your Task!</h1>
                 <br>
 
-                <!-- <center><div class="well" id="chatbot1" >
-                    <h4 style="text-align:center;">Mission 1: Approximate the Candies Challenge</h4>
-
-                    <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/primer-archimedes.appspot.com/o/candyBox.gif?alt=media&token=28c15260-5c6e-4ce9-8a52-cad7e29bddbe" width="40%" alt=""></center>
-                    <div id = "missionMessage">
-
-                      MISSION: <br>Find the number of candies that will fit inside the box. However, this task isn’t as simple as counting the number of candies in the box. If you do individually count each candy it will take too long. You simply have one quarter and the box and you need to estimate how many of them can fit inside the box. </div>
-
-
-                  </div></center>
-
-
-
-                <div id = "popUpChat2" class = "inactive">
-                    <p><center>Oops! Try Again. There seems to be something amiss. <br> <br></p>
-                    <button id = "goBack"> Go Back </button></center>
-              </div> -->
                   <p>
 
-                    Now it’s your turn to solve this puzzle and win free candy! Remember that you can always get help from your generous personal tutor Sally and also remember to provide her with your answers at the end!
+                    Now it’s your turn to solve this puzzle and win free candy! Remember that you can always get help from your generous personal tutor Sally!
                   </p>
 
                   <img class="images" src="images/candy_box.png" alt="">
                   <br><br>
                   <p>
                     Key Observation: The width, height and depth of each candy is the same. This means that exactly the same number of candies will fit in each different row.
-
                   </p>
-                  <!-- <div id = "popUpChat" class = "inactive">
 
-                     <span id = "intendedLearning">
-                       <button id = "muteVol"> <img src = "https://firebasestorage.googleapis.com/v0/b/primer-archimedes.appspot.com/o/Mute-vol.png?alt=media&token=ba3dfed5-ec16-4da5-886e-b6defe9c3002" width="30px" height="30px" background-color="black"> </button>
-
-                    <center>  <h3> LEARNING GOALS </h3></center>
-                      In this task we wanted you to learn about the concept of volume. Volume is the amount of 3-dimensional space an object occupies. It is also its capacity.<br>
-                      Through this task, we wanted you to observe how the volume of objects can be measured using certain formulas. For example, the volume of a rectangular box would be its (length X breadth X height).<br>
-                      You discovered this relation between the volume of an object and its dimensions yourself by the way you counted the candies.
-                      <br><br>
-                      <center><b> If you have any questions, Mr. Owl, your personal tutor is here to help. </b></center>
-                    </span>
-
-                  </div> -->
-
-
-
-                  <center>
                   <span id = userAns>
-                    <span id = heightEnter> </span>
-                    <span id = "widthEnter" class = "inactive"> </span>
-                    <span id = lengthEnter> </span>
+                    <span id = "widthEnter" class = "entered_Answers inactive"> </span>
+                    <span id = "heightEnter" class = "entered_Answers inactive"> </span>
+                    <span id = "depthEnter" class = "entered_Answers inactive"> </span>
                   </span>
+                  <br>
 
-                  <div id = "dimensions">
-                      <div id = "answerBox1">
-                        <h5> How many quarters fit along the width? </h5>
-                        <input type="text" id = "widthAnswer"> <br><br>
-                        <button class="next-prev-buttons" id = "inputLength"> Next </button>
-                      </div>
-
-                      <div id = "answerBox2" class = "inactive">
-                        <h5> How many quarters fit along the length? </h5>
-                        <input type="text" id = "lengthAnswer">  <br><br>
-                        <div id = "buttons">
-                          <!-- <button class="next-prev-buttons" id = "lengthBack"> Back </button> -->
-                          <button class="next-prev-buttons" id = "inputHeight"> Next </button>
-                        </div>
-                      </div>
-
-                      <div id = "answerBox3" class = "inactive">
-                        <h5> How many quarters fit along the height? </h5>
-                        <input type="text" id = "heightAnswer">  <br><br>
-                        <div id = "buttons">
-                          <!-- <button class="next-prev-buttons" id = "heightBack"> Back </button> -->
-                          <button class="next-prev-buttons" id = "inputAns"> Next </button>
-                        </div>
-                      </div>
-
-                      <div id = "answerBox4" class = "inactive">
-                        <h4> Enter Your Answer </h4>
-                        <h5> How many sesame candies are left? Use a shoebox and a quarter to estimate. </h5>
-                        <input type="text" name="num_candies" value="" id = "userAnswer"> <br> <br>
-                        <div id = "buttons">
-                          <!-- <button class="next-prev-buttons" id = "finalBack"> Back </button> -->
-                          <form action = "#">
-                            <button class="next-prev-buttons"> Next </button>
-                          </form>
-                          <!-- <button class="next-prev-buttons" id = "getPopUp"> Next </button> -->
-                        </div>
-                      </div>
-                    </center>
+                  <div class="answers">
+                    <div id="Width">
+                      <h5> How many quarters fit along the width? </h5>
+                      <input type="text" id="Width_Answer" value="">
+                      <button class="answer-buttons" id = "Width_Inputted"> Next </button>
                     </div>
+                    <div id="Height" class="inactive">
+                      <h5> How many quarters fit along the height? </h5>
+                      <input type="text" id="Height_Answer" value="">
+                      <button class="answer-buttons" id = "Height_Inputted"> Next </button>
+                    </div>
+                    <div id="Depth" class="inactive">
+                      <h5> How many quarters fit along the depth? </h5>
+                      <input type="text" id="Depth_Answer" value="">
+                      <button class="answer-buttons" id = "Depth_Inputted"> Next </button>
+                    </div>
+                    <div id="Overall_Answer" class="inactive">
+                      <h5> How many candies does the candy man have in the box? </h5>
+                      <input type="text" id="Final_Answer" value="">
+                      <button type="button" class="answer-buttons" id="Check_Answer" name="button">I Solved it!</button>
+                    </div>
+                    <br>
+                    <button type="button" class="answer-buttons" id="restart">Restart</button>
                   </div>
 
+                  </div>
                 </div>
+
+              </div>
             </div>
 
         </div>
@@ -168,20 +115,6 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script defer src="messenger_ui/layout.js"></script>
-
-
-    <!-- <script>
-    $(window).scroll(function() {
-      var winScrollTop = $(window).scrollTop();
-      var winHeight = $(window).height();
-      var floaterHeight = $('.fixedbutton').outerHeight(true);
-      //true so the function takes margins into account
-      var fromBottom = 400;
-
-      var top = winScrollTop + winHeight - floaterHeight - fromBottom;
-      $('.fixedbutton').css({'top': top + 'px'});
-    });
-    </script> -->
 
 </body>
 

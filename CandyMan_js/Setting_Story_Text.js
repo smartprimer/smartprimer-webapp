@@ -18,17 +18,6 @@ class App {
       }
     }
 
-
-    // const part1 = document.querySelector("p.story_paragraph_1");
-    // const part2 = document.querySelector("p.story_paragraph_2");
-    // const part3 = document.querySelector("p.story_paragraph_3");
-    //
-    // // if (part1 != undefined){
-    //   part1.innerHTML = RESULTS_MAP[localStorage.gender].Paragraph1;
-    //   part2.innerHTML = RESULTS_MAP[localStorage.gender].Paragrpah2;
-    //   part3.innerHTML = RESULTS_MAP[localStorage.gender].Paragrpah3;
-
-    // }
     document.body.innerHTML=document.body.innerHTML.replace(/John/g,localStorage.first_name);
   }
 }
