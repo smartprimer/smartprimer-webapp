@@ -85,7 +85,7 @@ body {
 #book_content{
   text-align: center;
   margin: auto;
-  padding: 5px 70px 5px 70px;
+  padding: 20px 70px 20px 70px;
   position: relative;
   overflow: scroll;
 }
@@ -171,4 +171,22 @@ input[type=text] {
 
 .spoken-response {
     -webkit-transition: all 0.35s ease-in;
+}
+
+@media (hover: none) {
+   .buttons {
+     display: block;
+     justify-content: center;
+     height: 30px;
+     width: 280px;
+     -webkit-transition-duration: 0.4s; /* Safari */
+     transition-duration: 0.4s;
+     font-size: 16px;
+     background-color: white;
+     color: black;
+     border: 2px solid #47A1BF;
+     border-radius: 8px;
+     margin: 40px auto 40px auto;
+     outline: none;
+   }
 }
