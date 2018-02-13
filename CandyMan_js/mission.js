@@ -4,6 +4,7 @@ class mission{
     this.heightButton = document.querySelector("#Height_Inputted");
     this.depthButton = document.querySelector("#Depth_Inputted");
     this.restartButton = document.querySelector("#restart");
+    this.checkAnswerButton = document.querySelector("#Check_Answer");
 
     this.widthButton.onclick = function() {
       var toHide = document.querySelector("#Width");
@@ -14,7 +15,7 @@ class mission{
       widthAns.classList.remove('inactive');
       toHide.classList.add("inactive");
       toShow.classList.remove('inactive');
-    }
+    };
 
     this.heightButton.onclick = function() {
       var toHide = document.querySelector("#Height");
@@ -25,7 +26,7 @@ class mission{
       heightAns.classList.remove('inactive');
       toHide.classList.add("inactive");
       toShow.classList.remove('inactive');
-    }
+    };
 
     this.depthButton.onclick = function() {
       var toHide = document.querySelector("#Depth");
@@ -36,7 +37,7 @@ class mission{
       depthAns.classList.remove('inactive');
       toHide.classList.add("inactive");
       toShow.classList.remove('inactive');
-    }
+    };
 
     this.restartButton.onclick = function() {
       var width = document.querySelector("#Width");
@@ -53,8 +54,20 @@ class mission{
       widthAns.innerHTML = "";
       heightAns.innerHTML = "";
       depthAns.innerHTML = "";
-    }
+    };
 
+    this.checkAnswerButton.onclick = function() {
+      let width = document.querySelector("#Width").value;
+      let height = document.querySelector("#Height").value;
+      let depth = document.querySelector("#Depth").value;
+      let area = (width * height * depth) / 2;
+      let ans = document.querySelector("#Final_Answer").value;
+      if (ans === "") { // If user didn't submit answer, default to 0
+        ans = 0;
+      }
+      sendToParent(encodeMsg("mission1Answer", area, ans));
+      // TODO: Move to next page
+    };
 
   }
 
