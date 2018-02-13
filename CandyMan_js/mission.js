@@ -56,6 +56,10 @@ class mission{
       depthAns.innerHTML = "";
     };
 
+    /** 
+     * When kid inputs an answer, send both that answer and the box dimensions
+     * to the parent for evaluation. 
+     */
     this.checkAnswerButton.onclick = function() {
       const height = document.querySelector('#Height_Answer').value;
       const width = document.querySelector('#Width_Answer').value;
@@ -68,11 +72,19 @@ class mission{
       sendToParent(encodeMsg("mission1Answer", area, ans));
     };
 
-    // Listen and advance to next page if hear correct answer
+    /**
+     * Listen for the parent's response to the proposed answer and respond
+     * accordingly.
+     */
     bindEvent(window, 'message', function (e) {
       let msg = decodeMsg(e.data);
-      if (msg[0] === "mission1" && msg[1] === "correct") {
+      if (msg[0] !== "mission1") return;
+      let outcome = msg[1];
+      if (outcome === "correct") {
+        // TODO: Add gif. When kid closes gif, invoke the following redirect.
         window.location.href = "4_after_count_candies.html";
+      } else if (outcome === "double" || outcome === "incorrect") {
+        // TODO: Visual indication for incorrect answer
       }
     });
 

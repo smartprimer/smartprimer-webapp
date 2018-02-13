@@ -76,12 +76,13 @@ let handleMission1Answer = function(area, answer) {
   // console.log("Actual area: " + area + " / Answer: " + answer); // For debugging
 
   if (area === answer) { // Correct answer!
-    // TODO(katg): Show gif
-    sendToChat("mission1:correct");
     sendToStory("mission1:correct");
+    sendToChat("mission1:correct");
   } else if (area === answer / 2) { // Forgot to halve answer
+    sendToStory("mission1:double");   
     sendToChat("mission1:double");
   } else { // Just wrong
+    sendToStory("mission1:incorrect");
     sendToChat("mission1:incorrect");
   }
 };
