@@ -4,7 +4,6 @@
  * showChat and hideChat control the layout of the page.
  */
 
-
 var showChat = function() {
   let storyFrame = document.getElementById("primer");
   let chatFrame = document.getElementById("chat");
@@ -36,29 +35,28 @@ var sendToChat = function(msg) {
 };
 
 /**
- * bindEvent listens to messages from child elements - 
- * in particular from the story iFrame.
+ * sendToStory passes messages to the story window.
  */
-let bindEvent = function(element, eventName, eventHandler) {
-  if (element.addEventListener) {
-      element.addEventListener(eventName, eventHandler, false);
-  } else if (element.attachEvent) {
-      element.attachEvent('on' + eventName, eventHandler);
-  }
+var sendToStory = function(msg) {
+  let storyFrame = document.getElementById("primer");
+  storyFrame.contentWindow.postMessage(msg, '*');
 };
 
-// Receive messages from the story by listening to child window
+/** 
+ * Receive messages from the story by listening to child window.
+ * bindEvent is defined in communcationChild file.
+ */
 bindEvent(window, 'message', function (e) {
   let msg = decodeMsg(e.data);
   let tag = msg[0];
-  // console.log("MESSAGE: " + tag);
+  console.log("MESSAGE: " + tag);
 
   switch(tag) {
     case "showChat":
       showChat();
       break;
     case "hideChat":
-      showChat();
+      hideChat();
       break;
     case "setName":
       sendToChat(msg);
@@ -74,9 +72,16 @@ bindEvent(window, 'message', function (e) {
 /** 
  * Relating to the first Mission.
  */
-
 let handleMission1Answer = function(area, answer) {
   // console.log("Actual area: " + area + " / Answer: " + answer);
+
+  if (area === answer) { // Correct answer!
+    // TODO(katg): Show gif
+    sendToChat("mission1:correct");
+    sendToStory("mission1:correct");
+  } else if (area === answer / 2) { // Forgot to halve answer
+    sendToChat("mission1:double");
+  } else { // Just wrong
+    sendToChat("mission1:incorrect");
+  }
 };
-
-
