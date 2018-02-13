@@ -161,6 +161,10 @@ a {
     font-size: 20px;
 }
 
+a:hover {
+  background-color: transparent !important;
+}
+
 .word-meaning__text{
   margin-left: 5%;
   max-width: inherit;
@@ -251,5 +255,10 @@ footer{
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+  }
+
+  img::selection {
+      background-color: transparent;
+      color: #000;
   }
 }

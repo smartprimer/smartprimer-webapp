@@ -139,6 +139,10 @@ a {
     font-size: 20px;
 }
 
+a:hover {
+  background-color: transparent !important;
+}
+
 .buttons {
   display: block;
   justify-content: center;
@@ -179,6 +183,11 @@ img{
  -moz-user-select: none;
  -webkit-user-select: none;
  user-select: none;
+}
+
+img::selection {
+    background-color: transparent;
+    color: #000;
 }
 
 @media (hover: none) {
