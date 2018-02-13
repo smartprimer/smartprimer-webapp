@@ -11,31 +11,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <title>Smart Primer</title>
-<!--Sandhini New Comments-->
-    <!-- Bootstrap Core CSS -->
-    <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS and JS-->
     <script src="js/storyChap1.js" defer></script>
-
-
-    <link href="css/Start.css" rel="stylesheet">
+    <link href="CandyMan_css/Start.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
 
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!--script src="js/talkBot.js" defer></script-->
-
     <!-- Added by Sherry -->
-
     <script src="api.ai/ApiAi.js"></script>
     <script src="api.ai/APIAI.Functions.js"></script>
     <script defer src="api.ai/layout.js"></script>
@@ -43,88 +27,31 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id = "navigationBar">
-        <div class="container" id = "navStart">
-            <div class="navbar-header">
-
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                  <li>
-                    <a class="navbar-brand" href="index.html">Restart</a>
-                  </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-          <!-- <div class="col-md-12">
-          </div> -->
             <!-- Blog Post Content Column -->
-            <div class="col-lg-12" id="book_content">
+            <div id="book_content">
 
-                <!-- Title -->
-                <h1>The Candy Man</h1>
-
-                <!-- Author -->
-                <p class="lead">
-                    by <a href="#">Smart Primer Group</a>
-                </p>
-
-                <div class="book-text">
+              <div class="book-text">
                 <!-- Post Content -->
-                <p id="start_para">
-                  Hey there <span id="name_to_fill"></span>!
+                <p>
+                  Hey <span id="name_to_fill"></span>!
                   <br><br>
                   We have great news for you! As you go through this mission, you will have an amazing companion. Her name is Sally and you can communicate with her through the chat on the right. You can ask Sally anything at all! You can either type your messages, or use the microphone button on the keyboard to record yourself. Sally can also help you understand the meaning of the blue words in case you don’t know what they mean. All you have to do is tap on the word!
-                  <br>
-                  <img class="images" src="images/sally_picture_transparent.png" alt="">
-
-<br>
+                  <br><br>
                   At the end of the mission, Sally might also have some interesting follow-up questions for you. She is quite the curious person!
-                  <br>
-                  <br>
-                  While going through the mission, you can use the arrow on the right to move to the next page, and the arrow on the left to go to the previous page.
                   <br><br>
-                  For the next mission, you will need the following tools: a package box, a quarter, scratch paper, and a pen. So, please look for them before you go on, and remember to use them! It is almost impossible to solve the task without using these tools. Also, feel free to write as you would like on the paper.
-                  <br><br>
-                  Ready to get started? Awesome! Say Hi to Sally, then move on to the next page to get started with the story!
-                <br>
+                  Ready to start? Awesome! <strong>Say Hi to Sally to get started</strong>.
               </div>
 
-                <div>
-                    <form action = "2_CandyMan_Story_Part1.html">
-                    <button type="submit" class="btn btn-primary buttons" >Let's Start!</button>
-                    </form>
-                </div>
+              <!-- <div>
+                  <form action = "2_CandyMan_Story_Part1.html">
+                  <button type="submit" class="btn btn-primary buttons" >Let's Start!</button>
+                  </form>
+              </div> -->
 
             </div>
-
-            <!-- Blog Sidebar Widgets Column -->
-
-
-        </div>
-        <!-- /.row -->
-
-        <!-- Footer -->
-        <footer class="inactive">
-            <div class="row">
-                <div class="col-lg-12">
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-
     </div>
     <!-- /.container -->
 
@@ -142,11 +69,10 @@
 
     <!-- Page-specific JS for communication with parent frame -->
     <script type="text/javascript">
-        // Show chat and send name when page loads. 
+        // Show chat and send name when page loads.
         sendToParent("showChat");
         sendToParent(encodeMsg("setName", localStorage.first_name));
     </script>
 
 </body>
-
 </html>

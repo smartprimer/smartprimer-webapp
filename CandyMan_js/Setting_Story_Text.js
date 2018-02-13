@@ -1,12 +1,13 @@
 class App {
   constructor(containerElement) {
 
-    const NUM_PARAGRAPHS = 3;
+    const NUM_PARAGRAPHS = 4;
 
-    var dic = {
+    var dict = {
       1 : RESULTS_MAP[localStorage.gender].Paragraph1,
       2 : RESULTS_MAP[localStorage.gender].Paragraph2,
-      3 : RESULTS_MAP[localStorage.gender].Paragraph3
+      3 : RESULTS_MAP[localStorage.gender].Paragraph3,
+      4 : RESULTS_MAP[localStorage.gender].Paragraph4
     };
 
     var i = 1;
@@ -14,7 +15,7 @@ class App {
       var query = "p.story_paragraph_" + i.toString();
       var part = document.querySelector(query);
       if (part != undefined) {
-        part.innerHTML = dic[i];
+        part.innerHTML = dict[i];
       }
     }
 

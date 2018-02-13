@@ -3,19 +3,51 @@ body {
     font-family: 'Quicksand',Helvetica,Arial,sans-serif;
     font-size: 24px;
     flex-direction: column;
-    margin: auto;
-    /* padding: 100px 5px; */
-    padding-top:20px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    /* position: absolute; */
+    justify-content: center;
+    overflow: hidden;
 }
 
-.entered_Answers{
-  width: 100%;
-}
-
-.answers{
-  text-align: center;
+#dimension-answers{
+  background: url("../images/candy_box.png");
+  width: 600px;
+  height: 300px;
   margin: auto;
+}
+
+#Width_Answer{
+  position: relative;
+  top: 83px;
+  left: 279px;
+  width: 90px;
+  height: 32px;
+}
+
+#Height_Answer{
+  position: relative;
+  top: 162px;
+  left: 392.5px;
+  width: 90px;
+  height: 32px;
+}
+
+#Depth_Answer{
+  position: relative;
+  top: 260px;
+  left: -169px;
+  width: 90px;
+  height: 32px;
+}
+
+#Final_Answer{
+  border-radius: 4px;
+  width: 200px;
+  height: 30px;
+  margin: auto;
+  display: block;
+}
+
+#final_answers h5{
+    text-align: center;
 }
 
 .images{
@@ -46,50 +78,21 @@ body {
   right: 40px;
 }
 
-
 .book-text{
   text-align: left;
-  padding: 20px 30px;
-}
-
-.instructions-text{
-  text-align: left;
-}
-
-.container{
-  margin: auto;
-  width: 100%;
 }
 
 #book_content{
   text-align: center;
   margin: auto;
-  padding-top: 50px;
-  padding-bottom: 20px;
-  width: inherit;
+  padding: 5px 70px 5px 70px;
   position: relative;
   overflow: scroll;
 }
 
-#muteVol{
-  align: left;
-  border-width: 0px;
-  border-color: none;
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  justify-content: left;
-  color: black;
-  margin-bottom: 0px;
-  margin-right: 0px;
-  align-items: left;
-  width: 40px;
-  height: 40px;
-}
-
-#userAns{
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 50px;
+.container{
+  width: inherit;
+  margin: 0;
 }
 
 #wordMeaning{
@@ -136,21 +139,11 @@ a {
     font-size: 20px;
 }
 
-#dimensions{
-  margin-top: 30px;
-  font-family: sans-serif;
-  font-size: 19px;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-}
-
 .buttons {
-  display: flex;
+  display: block;
   justify-content: center;
   height: 30px;
   width: 280px;
-  margin-bottom: 40px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   font-size: 16px;
@@ -158,7 +151,8 @@ a {
   color: black;
   border: 2px solid #47A1BF;
   border-radius: 8px;
-  margin: auto;
+  margin: 40px auto 40px auto;
+  outline: none;
 }
 
 .buttons:hover {
@@ -166,108 +160,15 @@ a {
   color: white;
 }
 
-.answer-buttons:hover {
-  background-color: #47A1BF ;
-  color: white;
-}
-
-.answer-buttons {
-  display: flex;
-  justify-content: center;
-  height: 30px;
-  width: 100px;
-  margin-bottom: 40px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  font-size: 16px;
-  background-color: white;
-  color: black;
-  border: 2px solid #47A1BF;
-  border-radius: 8px;
-  margin: 8px auto;
-  padding: 5px 2px;
-  outline: none;
-}
-
-
-#helpButton{
-  display: flex;
-  justify-content: center;
-  height: 30px;
-  width: 280px;
-  margin-bottom: 40px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  font-size: 16px;
-  background-color: white;
-  color: black;
-  border: 2px solid #47A1BF;
-  border-radius: 8px;
-  margin: auto;
-}
-
-#helpButton:hover{
-  background-color: #47A1BF ;
-  color: white;
-}
-
-#mainContainer{
-  display: flex;
-  flex-direction: column;
-}
-
 .inactive {
   display: none !important;
 }
 
 input[type=text] {
-    width: 40%;
-    padding: 12px 20px;
-    margin: 15px 0;
     box-sizing: border-box;
     border: 1px solid black;
 }
 
-#missionHeading{
-  font-size: 20px;
-  font-family: sans-serif;
-  text-align: center;
-}
-
-#missionMessage{
-  font-size: 14px;
-  text-align: center;
-  padding-right: 9px;
-  padding-left: 9px;
-}
-
 .spoken-response {
     -webkit-transition: all 0.35s ease-in;
-}
-
-@media screen and (max-width: 900px) {
-
-  body{
-    width: 80vw;
-  }
-
-  #navStart{
-    margin-left: 7.8%;
-    margin-top: 1%;
-  }
-
-  #popUpChat{
-    padding: 2%;
-    justify-content: center;
-    max-height: 950px;
-    margin-left: 15%;
-
-  }
-
-  #popUpChat2{
-      padding-top: 38%;
-      padding: 2%;
-      justify-content: center;
-      margin-left: 15%;
-  }
 }

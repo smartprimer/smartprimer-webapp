@@ -5,7 +5,7 @@
  */
 
 body {
-    background-image: url("candy.jpg");
+    background-image: url("../images/candy.jpg");
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: relative;
@@ -45,23 +45,6 @@ body {
 .buttons:hover{
   background-color: #47A1BF ;
   color: white;
-}
-
-#navigationBar{
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: flex-start;
-  height: 70px;
-  border: 1px solid #e7e7e7;
-  background-color: #47A1BF;
-  color: white;
-  top: 0;
-  border-width: 0 0 1px;
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -150,7 +133,7 @@ h1 {
 
 #buttonsFirst{
   display: flex;
-  justify-content: center;=
+  justify-content: center;
 }
 
 #getInfo{
