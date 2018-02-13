@@ -142,8 +142,9 @@
 
     <!-- Page-specific JS for communication with parent frame -->
     <script type="text/javascript">
-        // Show chat when page loads. 
+        // Show chat and send name when page loads. 
         sendToParent("showChat");
+        sendToParent(encodeMsg("setName", localStorage.first_name));
     </script>
 
 </body>
