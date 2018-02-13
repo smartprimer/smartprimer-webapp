@@ -49,7 +49,7 @@ var sendToStory = function(msg) {
 bindEvent(window, 'message', function (e) {
   let msg = decodeMsg(e.data);
   let tag = msg[0];
-  console.log("MESSAGE: " + tag);
+  // console.log("MESSAGE: " + tag); // For debugging
 
   switch(tag) {
     case "showChat":
@@ -73,7 +73,7 @@ bindEvent(window, 'message', function (e) {
  * Relating to the first Mission.
  */
 let handleMission1Answer = function(area, answer) {
-  // console.log("Actual area: " + area + " / Answer: " + answer);
+  // console.log("Actual area: " + area + " / Answer: " + answer); // For debugging
 
   if (area === answer) { // Correct answer!
     // TODO(katg): Show gif

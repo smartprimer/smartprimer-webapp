@@ -57,17 +57,24 @@ class mission{
     };
 
     this.checkAnswerButton.onclick = function() {
-      let width = document.querySelector("#Width").value;
-      let height = document.querySelector("#Height").value;
-      let depth = document.querySelector("#Depth").value;
+      const height = document.querySelector('#Height_Answer').value;
+      const width = document.querySelector('#Width_Answer').value;
+      const depth = document.querySelector('#Depth_Answer').value;
       let area = (width * height * depth) / 2;
       let ans = document.querySelector("#Final_Answer").value;
       if (ans === "") { // If user didn't submit answer, default to 0
         ans = 0;
       }
       sendToParent(encodeMsg("mission1Answer", area, ans));
-      // TODO: Move to next page
     };
+
+    // Listen and advance to next page if hear correct answer
+    bindEvent(window, 'message', function (e) {
+      let msg = decodeMsg(e.data);
+      if (msg[0] === "mission1" && msg[1] === "correct") {
+        window.location.href = "4_after_count_candies.html";
+      }
+    });
 
   }
 
