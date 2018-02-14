@@ -16,7 +16,7 @@ body {
 
 #Width_Answer{
   position: relative;
-  top: 83px;
+  top: 84px;
   left: 279px;
   width: 90px;
   height: 32px;
@@ -24,7 +24,7 @@ body {
 
 #Height_Answer{
   position: relative;
-  top: 162px;
+  top: 164px;
   left: 392.5px;
   width: 90px;
   height: 32px;
@@ -32,7 +32,7 @@ body {
 
 #Depth_Answer{
   position: relative;
-  top: 260px;
+  top: 262px;
   left: -169px;
   width: 90px;
   height: 32px;
@@ -171,6 +171,10 @@ a:hover {
 input[type=text] {
     box-sizing: border-box;
     border: 1px solid black;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
 }
 
 .spoken-response {
