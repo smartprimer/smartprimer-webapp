@@ -1,19 +1,10 @@
-let dictionaryRet = null;
 clicked = true;
-
-function onJsonReady(json) {
-  dictionaryRet = json.dictionary;
-}
-
-function onResponse(response) {
-  return response.json();
-}
 
 function setBot(x, y){
   let d = document.querySelector('#wordMeaning');
   d.style.position = "absolute";
-  d.style.left = x-120+'px';
-  d.style.top = y-90+'px';
+  d.style.left = x-150+'px';
+  d.style.top = y+20+'px';
   setClose();
 }
 
@@ -45,6 +36,7 @@ function question(text) {
   for (const words in dictionaryRet){
     if (dictionaryRet[words].name === text){
     meaning = dictionaryRet[words].meaning;
+    console.log(text);
     break;
     }
   }
@@ -54,7 +46,3 @@ function question(text) {
   setBot(x,y);
   textAndBot.classList.remove('inactive');
 }
-
-fetch('https://api.myjson.com/bins/wz15d')
-    .then(onResponse)
-    .then(onJsonReady);

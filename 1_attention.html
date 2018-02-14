@@ -13,7 +13,7 @@
     <title>Smart Primer</title>
 
     <!-- Custom CSS and JS-->
-    <script src="js/storyChap1.js" defer></script>
+    <script src="CandyMan_js/dictionary.js"></script>
     <link href="CandyMan_css/Start.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -38,18 +38,28 @@
                 <p>
                   Hey <span id="name_to_fill"></span>!
                   <br><br>
-                  We have great news for you! As you go through this mission, you will have an amazing companion. Her name is Sally and you can communicate with her through the chat on the right. You can ask Sally anything at all! You can either type your messages, or use the microphone button on the keyboard to record yourself. Sally can also help you understand the meaning of the blue words in case you don’t know what they mean. All you have to do is tap on the word!
+                  We have great news for you! As you go through this mission, you will have an amazing companion. Her name is Sally and you can communicate with her through the chat on the right. You can ask Sally anything at all! You can either type your messages, or use the microphone button on the keyboard to record yourself. Sally can also help you understand the meaning of the <a onclick="question('blue words')">blue words</a> (just like these) in case you don’t know what they mean. All you have to do is tap on the word!
                   <br><br>
                   At the end of the mission, Sally might also have some interesting follow-up questions for you. She is quite the curious person!
                   <br><br>
                   Ready to start? Awesome! <strong>Say Hi to Sally to get started</strong>.
               </div>
 
-              <!-- <div>
+              <div>
                   <form action = "2_CandyMan_Story_Part1.html">
                   <button type="submit" class="btn btn-primary buttons" >Let's Start!</button>
                   </form>
-              </div> -->
+              </div>
+
+              <div id = "wordMeaning" class = "inactive">
+                <img class="img-responsive" src="images/sally_picture_transparent.png" width="20%" alt="">
+                <div id="spokenResponse" class="spoken-response">
+                  <textarea id="speech" class = "inactive" rows="3" cols = "14"> </textarea><br>
+
+                    <div class="word-meaning__text"></div>
+                </div>
+                <button id="close"> X </button>
+              </div>
 
             </div>
     </div>
@@ -60,8 +70,10 @@
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="CandyMan_js/wordMeanings.js" defer></script>
     <!-- JavaScript for Chatbot functionality. -->
-    <script type="text/javascript" src="js/speechBot.js"></script>
+    <!-- <script type="text/javascript" src="js/speechBot.js"></script> -->
 
     <script type="text/javascript">
     document.getElementById("name_to_fill").innerHTML= localStorage.first_name;

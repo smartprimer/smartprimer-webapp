@@ -8,8 +8,7 @@ body {
     display: flex;
     font-family: 'Quicksand',Helvetica,Arial,sans-serif;
     font-size: 24px;
-    flex-direction: column;
-    overflow: hidden;
+    flex-direction: column;\
     /* padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */ */
     margin: auto;
     padding: 30px 5px;

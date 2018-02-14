@@ -155,10 +155,32 @@ h1 {
   align-self: flex-start;
 }
 
+#close{
+  align-self: flex-start;
+  border: 1px solid black;
+  background: white;
+}
+
+#speech{
+  font-family: "Titillium Web";
+  -webkit-transition: all 0.35s ease-in;
+  border: 1px solid #3F7F93;
+  margin-right: 9%;
+  width: 80%;
+  margin-left: 9%;
+}
+
+#wordMeaning{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left = x-120+'px';
+  d.style.top = y-90+'px';
+}
+
 a {
     color: #337ab7;
     text-decoration: none;
-    font-size: 20px;
 }
 
 a:hover {
