@@ -61,6 +61,12 @@ bindEvent(window, 'message', function (e) {
     case "setName":
       sendToChat(encodeMsg(tag, msg[1]));
       break;
+    case "waitingForHi":
+      sendToChat("waitingForHi");
+      break;
+    case "saidHi":
+      sendToStory("saidHi");
+      break;
     case "mission1Answer":
       handleMission1Answer(msg[1], msg[2]);
       break;
