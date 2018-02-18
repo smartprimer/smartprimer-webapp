@@ -173,9 +173,6 @@ h1 {
 #wordMeaning{
   display: flex;
   align-items: center;
-  position: absolute;
-  left = x-120+'px';
-  d.style.top = y-90+'px';
 }
 
 a {
@@ -214,6 +211,11 @@ footer{
 
 .spoken-response {
     -webkit-transition: all 0.35s ease-in;
+}
+
+#goodbye{
+  font-weight: 700;
+  text-align: center;
 }
 
 @media (hover: none) {

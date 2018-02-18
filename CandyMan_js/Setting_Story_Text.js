@@ -1,13 +1,15 @@
 class App {
   constructor(containerElement) {
 
-    const NUM_PARAGRAPHS = 4;
+    const NUM_PARAGRAPHS = 6;
 
     var dict = {
       1 : RESULTS_MAP[localStorage.gender].Paragraph1,
       2 : RESULTS_MAP[localStorage.gender].Paragraph2,
       3 : RESULTS_MAP[localStorage.gender].Paragraph3,
-      4 : RESULTS_MAP[localStorage.gender].Paragraph4
+      4 : RESULTS_MAP[localStorage.gender].Paragraph4,
+      5 : RESULTS_MAP[localStorage.gender].Paragraph5,
+      6 : RESULTS_MAP[localStorage.gender].Paragraph6
     };
 
     var i = 1;

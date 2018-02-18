@@ -105,9 +105,6 @@ a:hover {
 #wordMeaning{
   display: flex;
   align-items: center;
-  position: absolute;
-  left = x-120+'px';
-  d.style.top = y-90+'px';
 }
 
 .spoken-response {

@@ -8,8 +8,8 @@ function processForm() {
   var school = parameters[4].split("=");
 
   // store to localStorage to pass across html pages
-  localStorage.first_name = first_name[1];
-  localStorage.last_name = last_name[1];
+  localStorage.first_name = first_name[1].replace('+', '');
+  localStorage.last_name = last_name[1].replace('+', '');
 
   if (gender[1] === "Female"){
   localStorage.gender = "Female";
@@ -17,10 +17,10 @@ function processForm() {
   else localStorage.gender = "Male";
 
   const firstName = document.querySelector("#firstName");
-  firstName.innerHTML = first_name[1];
+  firstName.innerHTML = first_name[1].replace('+', '');
 
   const lastName = document.querySelector("#lastName");
-  lastName.innerHTML = last_name[1];
+  lastName.innerHTML = last_name[1].replace('+', '');
 
   const ageEnter = document.querySelector("#ageEnter");
   ageEnter.innerHTML = age[1];
@@ -30,8 +30,8 @@ function processForm() {
   genderEnter.innerHTML = gender[1];
 
   const schoolEnter = document.querySelector("#schoolEnter");
-  schoolEnter.innerHTML = school[1];
-  localStorage.school = school[1];
+  schoolEnter.innerHTML = school[1].replace('+', '');;
+  localStorage.school = school[1].replace('+', '');;
 }
 
 processForm();

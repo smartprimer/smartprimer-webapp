@@ -16,9 +16,7 @@
     <script src="js/main.js" defer></script>
 
     <!-- Custom CSS and JS-->
-    <!-- <script src="CandyMan_js/mission.js" defer></script> -->
     <script src="js/communicationChild.js"></script>
-
     <link href="CandyMan_css/mission.css" rel="stylesheet">
     <link href="css/dragableOwl.css" rel="stylesheet">
 
@@ -46,7 +44,6 @@
                 <a href="3_CandyMan_Story_Part2.html" class="fixedbutton" id="leftfixedbutton"><img src="images/left arrow.png"></a>
 
                 <h1 id="title">John's Task</h1>
-                <br>
 
                   <p>
                     Now it’s your turn to find how many candies the candy man has! In the boxes on the picture below, write how many quarters fit along each of the width, height, and depth. Then answer the final question below. Remember that you can always get help from your generous personal tutor Sally!
@@ -60,12 +57,23 @@
                   <br>
                   <div id="final_answers">
                     <h5> How many candies does the candy man have in the box? </h5>
-                    <input type="text" id="Final_Answer" value="">
+                    <div class="answer_area">
+                      <input type="text" id="Final_Answer">
+                      <p class="inactive" id="try_again">It seems like you missed something! Maybe discuss it with Sally.</p>
+                    </div>
                   </div>
-                  <button type="button" class="buttons" id="Check_Answer" name="button">I Solved it!</button>
+                  <button class="buttons" id="Check_Answer" name="button">I Solved it!</button>
                 </div>
             </div>
-        ``</div>
+         </div>
+         <div class="modal">
+          <div class="modal-content">
+            <img src="images/homer.gif" alt="">
+            <h1>Congratulations! You got it!</h1>
+            <br>
+            <button class="close-button" href>Close</button>
+          </div>
+         </div>
         <!-- <span id = userAns>
           <span id = "widthEnter" class = "inactive"> </span>
           <span id = "heightEnter" class = "inactive"> </span>
@@ -105,7 +113,10 @@
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <script defer src="messenger_ui/layout.js"></script>
+    <!-- <script defer src="messenger_ui/layout.js"></script> -->
+
+
+    <script src="CandyMan_js/mission.js" defer></script>
 
     <script type="text/javascript">
       document.body.innerHTML=document.body.innerHTML.replace(/John/g,localStorage.first_name);
