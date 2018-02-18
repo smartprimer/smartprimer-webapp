@@ -45,11 +45,12 @@
                   Ready to start? Awesome! <strong>Say Hi to Sally to get started</strong>.
               </div>
 
-              <div>
+              <!-- Remove "Let's Start" button and instead only advance after kid interacts with bot -->
+              <!-- <div>
                   <form action = "2_CandyMan_Story_Part1.html">
                   <button type="submit" class="btn btn-primary buttons" >Let's Start!</button>
                   </form>
-              </div>
+              </div> -->
 
               <div id = "wordMeaning" class = "inactive">
                 <img class="img-responsive" src="images/sally_picture_transparent.png" width="20%" alt="">
@@ -84,6 +85,13 @@
         // Show chat and send name when page loads.
         sendToParent("showChat");
         sendToParent(encodeMsg("setName", localStorage.first_name));
+        sendToParent("waitingForHi");
+
+        bindEvent(window, 'message', function (e) {
+          let msg = decodeMsg(e.data);
+          if (msg[0] !== "saidHi") return;
+            window.location.href = "2_CandyMan_Story_Part1.html";
+        });
     </script>
 
 </body>

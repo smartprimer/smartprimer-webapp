@@ -122,6 +122,42 @@
       document.body.innerHTML=document.body.innerHTML.replace(/John/g,localStorage.first_name);
     </script>
 
+    <!-- The following script enables this page to communicate with the parent-->
+    <script>
+      /**
+       * When kid inputs an answer, send both that answer and the box dimensions
+       * to the parent for evaluation.
+       */
+      let checkAnswerButton = document.querySelector("#Check_Answer");
+      checkAnswerButton.onclick = function() {
+        const height = document.querySelector('#Height_Answer').value;
+        const width = document.querySelector('#Width_Answer').value;
+        const depth = document.querySelector('#Depth_Answer').value;
+        let area = (width * height * depth) / 2;
+        let ans = document.querySelector("#Final_Answer").value;
+        if (ans === "") { // If user didn't submit answer, default to 0
+          ans = 0;
+        }
+        sendToParent(encodeMsg("mission1Answer", area, ans));
+      };
+
+      /**
+       * Listen for the parent's response to the proposed answer and respond
+       * accordingly.
+       */
+      bindEvent(window, 'message', function (e) {
+        let msg = decodeMsg(e.data);
+        if (msg[0] !== "mission1") return;
+        let outcome = msg[1];
+        if (outcome === "correct") {
+          // TODO: Add gif. When kid closes gif, invoke the following redirect.
+          window.location.href = "4_after_count_candies.html";
+        } else if (outcome === "double" || outcome === "incorrect") {
+          // TODO: Visual indication for incorrect answer
+        }
+      });
+    </script>
+
 </body>
 
 </html>

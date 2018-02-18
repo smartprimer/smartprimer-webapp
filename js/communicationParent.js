@@ -28,7 +28,7 @@ var hideChat = function() {
 
 /**
  * sendToChat passes messages to the chat window.
- */ 
+ */
 var sendToChat = function(msg) {
   let chatFrame = document.getElementById("chat");
   chatFrame.contentWindow.postMessage(msg, '*');
@@ -42,7 +42,7 @@ var sendToStory = function(msg) {
   storyFrame.contentWindow.postMessage(msg, '*');
 };
 
-/** 
+/**
  * Receive messages from the story by listening to child window.
  * bindEvent is defined in communcationChild file.
  */
@@ -59,7 +59,13 @@ bindEvent(window, 'message', function (e) {
       hideChat();
       break;
     case "setName":
-      sendToChat(msg);
+      sendToChat(encodeMsg(tag, msg[1]));
+      break;
+    case "waitingForHi":
+      sendToChat("waitingForHi");
+      break;
+    case "saidHi":
+      sendToStory("saidHi");
       break;
     case "mission1Answer":
       handleMission1Answer(msg[1], msg[2]);
@@ -69,17 +75,16 @@ bindEvent(window, 'message', function (e) {
   }
 });
 
-/** 
+/**
  * Relating to the first Mission.
  */
 let handleMission1Answer = function(area, answer) {
   // console.log("Actual area: " + area + " / Answer: " + answer); // For debugging
-
   if (area === answer) { // Correct answer!
     sendToStory("mission1:correct");
     sendToChat("mission1:correct");
-  } else if (area === answer / 2) { // Forgot to halve answer
-    sendToStory("mission1:double");   
+  } else if (area == (answer / 2)) { // Forgot to halve answer
+    sendToStory("mission1:double");
     sendToChat("mission1:double");
   } else { // Just wrong
     sendToStory("mission1:incorrect");
