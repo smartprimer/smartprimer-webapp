@@ -42,6 +42,7 @@ class mission{
       sendToParent(encodeMsg("mission1Answer", area, ans));
     };
 
+// Code that gives control of the transition to the next page to the bot
     /**
      * Listen for the parent's response to the proposed answer and respond
      * accordingly.
@@ -53,11 +54,12 @@ class mission{
     //   if (outcome === "correct") {
     //     toggleModal();
     //   } else if (outcome === "double" || outcome === "incorrect") {
-    //     console.log("incorrect");
-    //     // TODO: Visual indication for incorrect answer
+    //     document.querySelector("#try_again").classList.add("inactive");
+    //    setTimeout(function() {  document.querySelector("#try_again").classList.remove("inactive");}, 200);
     //   }
     // });
 
+// Code that automatically transitions to next page if answer is correct
     this.checkAnswerButton.onclick = function(){
       const height = document.querySelector('#Height_Answer');
       const width = document.querySelector('#Width_Answer');
