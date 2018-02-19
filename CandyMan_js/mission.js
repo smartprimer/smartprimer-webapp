@@ -26,39 +26,6 @@ class mission{
       }
     }
 
-    /**
-     * When kid inputs an answer, send both that answer and the box dimensions
-     * to the parent for evaluation.
-     */
-    this.checkAnswerButton.onclick = function() {
-      const height = parseInt(document.querySelector('#Height_Answer').value, 10);
-      const width = parseInt(document.querySelector('#Width_Answer').value, 10);
-      const depth = parseInt(document.querySelector('#Depth_Answer').value, 10);
-      let area = (width * height * depth) / 2;
-      let ans = document.querySelector("#Final_Answer").value;
-      if (ans === "") { // If user didn't submit answer, default to 0
-        ans = 0;
-      }
-      sendToParent(encodeMsg("mission1Answer", area, ans));
-    };
-
-// Code that gives control of the transition to the next page to the bot
-    /**
-     * Listen for the parent's response to the proposed answer and respond
-     * accordingly.
-     */
-    // bindEvent(window, 'message', function (e) {
-    //   let msg = decodeMsg(e.data);
-    //   if (msg[0] !== "mission1") return;
-    //   let outcome = msg[1];
-    //   if (outcome === "correct") {
-    //     toggleModal();
-    //   } else if (outcome === "double" || outcome === "incorrect") {
-    //     document.querySelector("#try_again").classList.add("inactive");
-    //    setTimeout(function() {  document.querySelector("#try_again").classList.remove("inactive");}, 200);
-    //   }
-    // });
-
 // Code that automatically transitions to next page if answer is correct
     this.checkAnswerButton.onclick = function(){
       const height = document.querySelector('#Height_Answer');
