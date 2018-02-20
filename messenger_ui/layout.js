@@ -14,10 +14,15 @@ layfun = (function() {
     // alert("Hi there");
     queryInput = document.getElementById("q");
     resultDiv = document.getElementById("result");
-    queryInput.addEventListener("keydown", queryInputKeyDown);
+    if (queryInput != null && queryInput != undefined) {
+      queryInput.addEventListener("keydown", queryInputKeyDown);
+    }
 
     // Directly add the token here.
-    document.getElementById("main-wrapper").style.display = "block";
+    let mainWrapper = document.getElementById("main-wrapper");
+    if (mainWrapper != null) {
+      mainWrapper.style.display = "block";
+    }
     window.init(tokenStr);
   }
 

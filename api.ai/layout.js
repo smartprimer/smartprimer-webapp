@@ -19,7 +19,9 @@ layfun = (function() {
     // Directly add the token here.
     const mainWrapper = document.getElementById("main-wrapper")
     if (mainWrapper != undefined) mainWrapper.style.display = "block";
-    window.init(tokenStr);
+    if (typeof window.init === "function") { 
+      window.init(tokenStr);
+    }
   }
 
 
