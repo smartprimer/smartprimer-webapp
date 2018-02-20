@@ -54,7 +54,7 @@ SandhiniPrimer.prototype.checkSetup = function() {
 
 SandhiniPrimer.prototype.writeUserData = function(event) {
   event.preventDefault();
-  console.log(localStorage.first_name);
+  // console.log(localStorage.first_name);
   firebase.database().ref('users/' + localStorage.first_name).update({
     firstName: localStorage.first_name,
     lastName: localStorage.last_name,

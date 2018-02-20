@@ -12,7 +12,7 @@ window.init = function(token) {
   client = new ApiAi.ApiAiClient({accessToken: token, streamClientClass: ApiAi.ApiAiStreamClient});
   
   streamClient = client.createStreamClient();
-  console.log(client.createStreamClient());
+  // console.log(client.createStreamClient());
   streamClient.init();
   startMic();
 
