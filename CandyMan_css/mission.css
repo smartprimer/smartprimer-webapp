@@ -55,7 +55,7 @@ body {
   height: 80px;
 }
 
-#try_again{
+.error_message{
   color: #cc313c;
   font-size: 18px;
   display: block;
