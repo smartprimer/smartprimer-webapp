@@ -91,7 +91,7 @@ class mission{
       if (msg[0] !== "mission1") return;
       let outcome = msg[1];
       if (outcome === "correct") {
-        toggleModal();
+        // toggleModal(); This line causes a bug when the pane opens and closes very quickly
       } else if (outcome === "double") {
         inactivateAllErrorMessages();
         setTimeout(function() {  document.querySelector("#try_again_half").classList.remove("inactive");}, 200);
