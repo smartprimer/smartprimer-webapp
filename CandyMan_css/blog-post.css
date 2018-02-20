@@ -111,6 +111,15 @@ a:hover {
     -webkit-transition: all 0.35s ease-in;
 }
 
+#Sally_pic{
+   display: block;
+   max-width:450px;
+   max-height:579px;
+   width: auto;
+   height: auto;
+   margin: auto;
+}
+
 img{
  -khtml-user-select: none;
  -o-user-select: none;
