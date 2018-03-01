@@ -1,0 +1,1 @@
+const storyApp = new App();

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Smart Primer</title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script src="js/main.js" defer></script>
+
+    <!-- Custom CSS and JS-->
+    <script src="js/communicationChild.js"></script>
+    <link href="CandyMan_css/mission.css" rel="stylesheet">
+    <link href="css/dragableOwl.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+
+
+    <!-- Added by Sherry -->
+    <script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script type="text/javascript" src="js/speechBot.js" defer></script>
+</head>
+<body>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+          <!-- <div class="col-md-4">
+          </div> -->
+            <!-- Blog Post Content Column -->
+            <div id="book_content">
+
+                <div class="book-text">
+                <a href="3_CandyMan_Story_Part2.html" class="fixedbutton" id="leftfixedbutton"><img src="images/left arrow.png"></a>
+
+                <h1 id="title">John's Task</h1>
+
+                  <p>
+                    Now it’s your turn to find how many candies the candy man has! In the boxes on the picture below, write how many quarters fit along each of the width, height, and depth. Then answer the final question below. Remember that you can always get help from your generous personal tutor Sally!
+                  </p>
+
+                  <div id="dimension-answers">
+                    <input type="text" id="Width_Answer" placeholder="?">
+                    <input type="text" id="Height_Answer" placeholder="?">
+                    <input type="text" id="Depth_Answer" placeholder="?">
+                  </div>
+                  <br>
+                  <div id="final_answers">
+                    <h5> How many candies does the candy man have in the box? </h5>
+                    <div class="answer_area">
+                      <input type="text" id="Final_Answer">
+                      <p class="inactive error_message" id="try_again">It seems like you missed something! Maybe discuss it with Sally.</p>
+                      <p class="inactive error_message" id="try_again_missingDimensionsInput">Please input the answer you got for each dimension on the picture above.</p>
+                      <p class="inactive error_message" id="try_again_missingFinalInput">Please input your final answer.</p>
+                      <p class="inactive error_message" id="try_again_half">Remember that only <strong>half</strong> of the box is full!</p>
+                    </div>
+                  </div>
+                  <button class="buttons" id="Check_Answer" name="button">I Solved it!</button>
+                </div>
+            </div>
+         </div>
+         <div class="modal">
+          <div class="modal-content">
+            <img src="images/homer.gif" alt="">
+            <h1>Congratulations! You got it!</h1>
+            <br>
+            <button class="close-button" href>Close</button>
+          </div>
+         </div>
+    </div>
+    <!-- /.container -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script defer src="messenger_ui/layout.js"></script>
+    <script src="CandyMan_js/mission.js" defer></script>
+
+    <script type="text/javascript">
+      document.body.innerHTML=document.body.innerHTML.replace(/John/g,localStorage.first_name);
+    </script>
+
+</body>
+
+</html>

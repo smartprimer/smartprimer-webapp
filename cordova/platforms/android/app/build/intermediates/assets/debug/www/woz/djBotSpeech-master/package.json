@@ -1,0 +1,14 @@
+{
+  "name": "eGolfDataServer",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Data server for the eGolf",
+  "main": "server.js",
+  "author": "Nik Martelaro <nmartelaro@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mqtt": "^1.11.0",
+    "say": "^0.9.0"
+  }
+}

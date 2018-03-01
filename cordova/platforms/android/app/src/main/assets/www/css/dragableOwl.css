@@ -1,0 +1,42 @@
+#tutor{
+  position: absolute;
+  display: flex;
+}
+
+#result{
+  border: 2px solid grey;
+  max-width: 300px;
+  background: solid white;
+  opacity: 1;
+  margin: 5px;
+}
+
+.userAsk{
+  display: inline-block;
+  background: #98FB98;
+  padding: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: pre;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px 2px #888888;
+}
+
+.botResponse{
+  display: inline-block;
+  padding: 3px;
+  background: #B0C4DE;
+  text-align: right;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px 2px #888888;
+}
+
+.input-field{
+  margin-left: 5px;
+  margin-bottom: 10px;
+  width:auto;
+}

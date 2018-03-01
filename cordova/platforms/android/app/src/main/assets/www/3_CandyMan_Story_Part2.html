@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Smart Primer</title>
+
+    <!-- Custom CSS and JS-->
+    <script src="CandyMan_js/dictionary.js"></script>
+    <script src="CandyMan_js/Story_Text.js"></script>
+    <script src="CandyMan_js/Setting_Story_Text.js" defer></script>
+    <link href="CandyMan_css/blog-post.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div id="book_content">
+
+                <a href="2_CandyMan_Story_Part1.html" class="fixedbutton" id="leftfixedbutton"><img src="images/left arrow.png"></a>
+                <a href="CandyMan_Mission.html" class="fixedbutton" id="rightfixedbutton"><img src="images/right arrow.png"></a>
+                <div class="book-text">
+                <!-- Post Content -->
+                  <p class="story_paragraph_3"></p>
+                  <p class="story_paragraph_4"></p>
+                  <br><br>
+                  <div class="images_sideToside">
+                    <img src="images/coin.png" alt="">
+                    <img src="images/package_box.png" alt="">
+                  </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.row -->
+
+
+        <div id = "wordMeaning" class = "inactive">
+          <img class="img-responsive" src="images/sally_picture_transparent.png" width="20%" alt="">
+          <div id="spokenResponse" class="spoken-response">
+            <textarea id="speech" class = "inactive" rows="3" cols = "14"> </textarea><br>
+
+              <div class="word-meaning__text"></div>
+          </div>
+          <button id = close> X </button>
+    </div>
+
+    </div>
+    <!-- /.container -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="CandyMan_js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="CandyMan_js/bootstrap.min.js"></script>
+
+    <script src="CandyMan_js/wordMeanings.js" defer></script>
+
+
+    <script type="text/javascript">
+      // var dunia = document.querySelector("#dunia");
+      // console.log(dunia);
+      // this.dunia.onclick = function(){
+      //   console.log("dunia pressed");
+      // }
+    </script>
+    <!-- JavaScript for Chatbot functionality. -->
+
+</body>
+
+</html>

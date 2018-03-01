@@ -1,0 +1,440 @@
+body {
+    /* background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed; */
+    display: flex;
+    font-family: 'Quicksand',Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    flex-direction: column;
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-bottom: 70px;
+    margin:auto;
+    justify-content: center;
+}
+
+.fixedbutton{
+  position: fixed;
+  top: 400px;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 0s linear;
+  z-index: 1;
+}
+
+#leftfixedbutton {
+  left: 5px;
+}
+#rightfixedbutton {
+  right: 40px;
+}
+
+#datatable{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#submited1:hover{
+  background-color: grey;
+}
+
+/* #navStart{
+  margin-left: 7.8%;
+} */
+
+#navigationBar{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  height: 70px;
+  border: 1px solid #e7e7e7;
+  background-color: #47A1BF;
+  color: white;
+  top: 0;
+  border-width: 0 0 1px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.book-text{
+  text-align: left;
+  padding: 20px 60px;
+}
+
+.instructions-text{
+  text-align: left;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+    font-size: 20px;
+}
+
+.navbar-nav>li {
+    float: left;
+    padding-right: 50px;
+    margin-top: 0px;
+    list-style-type: none;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+  color: black;
+}
+
+.container{
+  margin: auto;
+  width: 100%;
+}
+
+#book_content{
+  text-align: center;
+  margin: auto;
+  padding-top: 90px;
+  width: inherit;
+}
+
+#missionMessage{
+  font-weight: bold;
+}
+
+.col-lg-8 button{
+  border-width: 2px;
+  border-color: black;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  color: black;
+  background-color: white;
+  width: 150px;
+  font-size: 15px;
+  margin-bottom: 40px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.col-lg-8 button:hover{
+  background: grey;
+}
+
+#muteVol{
+  align: left;
+  border-width: 0px;
+  border-color: none;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: left;
+  color: black;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  align-items: left;
+  width: 40px;
+  height: 40px;
+}
+
+#intendedLearning{
+  background: black;
+  color: white;
+  height: 80%;
+  margin: 10px;
+  margin-top: -20px;
+  padding-top: 0px;
+  padding: 10px;
+}
+
+#userAns{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+#chat{
+  border: 2px solid black;
+  opacity: 1.0;
+  margin: 10px;
+  padding: 10px;
+  width: 87%;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+/* #buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+#popUpChat{
+  flex-wrap: wrap;
+  display: flex;
+  border: 2px solid black;
+  width: 100%;
+  position: fixed;
+  top: 9%;
+  max-width: 400px;
+  padding: 2%;
+  justify-content: center;
+  background: black;
+  margin-left: 24%;
+  margin-top: 12%;
+}
+
+#wordMeaning{
+  display: flex;
+  align-items: center;
+}
+
+.word-meaning__text{
+  margin-left: 5%;
+  max-width: inherit;
+  flex-wrap: wrap;
+  background: black;
+  color: white;
+  padding: 2%;
+  max-width: 300px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+#close{
+  align-self: flex-start;
+  border: 1px solid black;
+  background: white;
+  max-width: 30px;
+}
+
+.img-responsive{
+  align-self: flex-start;
+}
+
+#chat.speechBtn{
+  font-family: "Titillium Web";
+  -webkit-transition: all 0.35s ease-in;
+  border: 1px solid #3F7F93;
+  margin-right: 9%;
+  width: 80%;
+  margin-left: 9%;
+}
+
+
+#popUpChat2{
+  flex-wrap: wrap;
+  display: flex;
+  border: 2px solid black;
+  width: 100%;
+  position: fixed;
+  top: 9%;
+  max-width: 400px;
+  padding: 2%;
+  justify-content: center;
+  background: black;
+  margin-left: 16%;
+  margin-top: 12%;
+  color: white;
+  font-size: 16px;
+}
+
+#goBack{
+  border-width: 2px;
+  border-color: black;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  align-self: center;
+  color: black;
+  background-color: white;
+  width: 250px;
+  font-size: 15px;
+}
+
+h1 {
+   font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#chatbot1{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: solid black 2px;
+    padding-bottom: 2%;
+    margin-top: 0.5%;
+}
+
+
+#stopButton{
+    border-width: 2px;
+    border-color: black;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    align-self: center;
+    color: black;
+    background-color: white;
+    width: 100px;
+    font-size: 15px;
+}
+
+#dimensions{
+  margin-top: 30px;
+  font-family: sans-serif;
+  font-size: 19px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+#chat.btn{
+  border-width: 2px;
+  border-color: black;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  color: black;
+  background-color: white;
+  width: 150px;
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  width: 280px;
+  margin-bottom: 40px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 2px solid #47A1BF;
+  border-radius: 8px;
+  margin: auto;
+}
+
+.next-prev-buttons:hover {
+  background-color: #47A1BF ;
+  color: white;
+}
+
+.next-prev-buttons {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  width: 100px;
+  margin-bottom: 40px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 2px solid #47A1BF;
+  border-radius: 8px;
+  margin: 3px auto;
+  padding: 2px 2px;
+}
+
+.buttons:hover {
+  background-color: #47A1BF ;
+  color: white;
+}
+
+#helpButton{
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  width: 280px;
+  margin-bottom: 40px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 2px solid #47A1BF;
+  border-radius: 8px;
+  margin: auto;
+}
+
+#helpButton:hover{
+  background-color: #47A1BF ;
+  color: white;
+}
+
+#mainContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+/* a:hover {
+	cursor: pointer;
+	background: yellow;
+} */
+
+.inactive {
+  display: none !important;
+}
+
+#missionHeading{
+  font-size: 20px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#missionMessage{
+  font-size: 14px;
+  text-align: center;
+  padding-right: 9px;
+  padding-left: 9px;
+}
+
+.spoken-response {
+    -webkit-transition: all 0.35s ease-in;
+}
+
+@media screen and (max-width: 900px) {
+
+  body{
+    width: 80vw;
+  }
+
+  #navStart{
+    margin-left: 7.8%;
+    margin-top: 1%;
+  }
+
+  #popUpChat{
+    padding: 2%;
+    justify-content: center;
+    max-height: 950px;
+    margin-left: 15%;
+
+  }
+
+  #popUpChat2{
+      padding-top: 38%;
+      padding: 2%;
+      justify-content: center;
+      margin-left: 15%;
+  }
+}

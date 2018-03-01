@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Archimedes Story</title>
+<!--Sandhini New Comments-->
+    <!-- Bootstrap Core CSS -->
+    <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
+
+    <!-- Custom CSS -->
+    <script src="js/storyChap1.js" defer></script>
+
+
+    <link href="css/mission.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--script src="js/talkBot.js" defer></script-->
+
+    <!-- Added by Sherry -->
+
+    <script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script>
+    <script defer src="api.ai/layout.js"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id = "navigationBar">
+        <div class="container" id = "navStart">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a class="navbar-brand" href="index.html">Restart</a>
+                  </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+          <!-- <div class="col-md-12">
+          </div> -->
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-12" id="book_content">
+
+                <!-- Title -->
+                <h1>Archimedes Story</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">Smart Primer Group</a>
+                </p>
+
+                <div class="instructions-text">
+                <!-- Post Content -->
+                <p id="start_para">
+                  Hey there <span id="name_to_fill"></span>!
+                  <br><br>
+                  You can both type your messages, or use the microphone button to record yourself instead. So, as you go through this story, remember to communicate with Sally because she can be of great help!
+                  <br><br>
+                  Also, whenever you solve a task, please remember provide your answer to Sally so she can tell you whether your answers are correct. Additionally, Sally might have some interesting follow-up questions for you.
+                  <br><br>
+                  Awesome! Ready to get started? Say Hi to Sally, then move on to the next page to get started with the story!
+                <br>
+              </div>
+
+                <div>
+                    <form action = "2_mission_briefing.html">
+                    <button type="submit" class="btn btn-primary buttons" >Let's Start!</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Footer -->
+        <footer class="inactive">
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- JavaScript for Chatbot functionality. -->
+    <script type="text/javascript" src="js/speechBot.js"></script>
+
+    <script type="text/javascript">
+    document.getElementById("name_to_fill").innerHTML= localStorage.first_name;
+    </script>
+
+</body>
+
+</html>

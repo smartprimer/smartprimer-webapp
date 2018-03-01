@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Archimedes Story</title>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script src="js/getLoc.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <!-- Custom CSS -->
+    <link href="css/blog-post.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Added by Sherry -->
+    <script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script>
+    <!--Interferes with firebase. Removed to make sure firebase works-->
+    <!--script defer src="api.ai/layout.js"></script-->
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id = "navigationBar">
+        <div class="container" id = "navStart">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                      <a class="navbar-brand" href="index.html">Restart</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+          <!-- Side Widget Well -->
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-12" id="book_content">
+
+                <!-- Title -->
+                <h1>Archimedes Story</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">Smart Primer Group</a>
+                </p>
+
+                <br>
+
+                <p>Hello there! I'd like to tell you a story. But first, tell me a little about yourself. </p>
+
+                <!-- form to collect input from children -->
+                <div id = "userInf">
+                  My first name is
+                  <span id = "firstName"> </span><br> <br>
+                  My last name is
+                  <span id = "lastName"> </span><br> <br>
+                  I'm
+                  <span id = "ageEnter"> </span> years old<br> <br>
+                  My gender is
+                  <span id = "genderEnter"> </span><br> <br>
+                  My school is called
+                  <span id = "schoolEnter"> </span><br> <br>
+                  <div id = buttonsFirst>
+                    <form action = "index.html">
+                      <button id = "restart"> Restart </button>
+                    </form>
+                    <input type="submit" value="I'm ready!" id = "getInfo"></input>
+                  </div>
+                </div>
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+
+        <!-- Footer -->
+        <footer class="inactive">
+          <div id = "userAnswer" class = "inactive"></div>
+          <div id = "submited" class = "inactive"></div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Sherry Ruan 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- JavaScript for Chatbot functionality. -->
+    <script type="text/javascript" src="js/speechBot.js"></script>
+
+    <script>
+
+      // get the input from the user from the previous html page
+      function processForm() {
+        var parameters = location.search.substring(1).split("&");
+        var first_name = parameters[0].split("=");
+        var last_name = parameters[1].split("=");
+        var age = parameters[2].split("=");
+        var gender = parameters[3].split("=");
+        var school = parameters[4].split("=");
+
+        // store to localStorage to pass across html pages
+        localStorage.first_name = first_name[1];
+        localStorage.last_name = last_name[1];
+
+        if (gender[1] === "Female"){
+        localStorage.gender = "Female";
+        }
+        else localStorage.gender = "Male";
+
+        const firstName = document.querySelector("#firstName");
+        firstName.innerHTML = first_name[1];
+
+        const lastName = document.querySelector("#lastName");
+        lastName.innerHTML = last_name[1];
+
+        const ageEnter = document.querySelector("#ageEnter");
+        ageEnter.innerHTML = age[1];
+        localStorage.age = age[1];
+
+        const genderEnter = document.querySelector("#genderEnter");
+        genderEnter.innerHTML = gender[1];
+
+        const schoolEnter = document.querySelector("#schoolEnter");
+        schoolEnter.innerHTML = school[1];
+        localStorage.school = school[1];
+      }
+      processForm();
+  </script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Post - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+
+    <!-- Firebase -->
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+
+    </script>
+
+    <script src="js/fullscreen.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+
+
+    <script>
+      // Initialize Firebase
+
+
+    </script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/blog-post.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Added by Sherry -->
+    <script src="api.ai/ApiAi.js"></script>
+    <script src="api.ai/APIAI.Functions.js"></script>
+    <script defer src="api.ai/layout.js"></script>
+
+    <style type="text/css">
+        input {
+            border: 1px solid #3F7F93;
+            font-family: "Titillium Web";
+            width: 220px;
+            -webkit-transition: all 0.35s ease-in;
+        }
+        .spoken-response {
+            overflow: hidden;
+            width: 280px;
+            -webkit-transition: all 0.35s ease-in;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div id = "submit" class = 'inactive'></div>
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Title -->
+                <h1>Archimedes Story</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">Smart Primer Group</a>
+                </p>
+
+                <hr>
+
+                <button id="goFS">Go fullscreen</button>
+
+                <!-- Preview Image -->
+                <figure width="80%" style="text-align:center;">
+                    <img class="img-responsive" src="../mediterranean_264BC.png" alt="">
+                    <figcaption>The Mediterranean around 264 BC, when Rome and Carthage started First Punic War. </figcaption>
+                </figure>
+                <br>
+
+                <!-- Post Content -->
+                <p>For nearly one hundred years, the ancient Greek cities of <a onclick="question('Syracuse')">Syracuse</a> and <a onclick="question('Carthage')">Carthage</a> had been at war as ruler after ruler fought each other for the throne. Finally, in 275 BCE, the troops from Syracuse grew weary of the inefficiency and selfishness of their leaders and elected commanders from amongst themselves. One of their chosen leaders was a young general named <a onclick="question('Hiero')">Hiero</a>.</p>
+
+                <figure width="30%" style="text-align:center;">
+                    <img src="../HieroCopperCR.jpg" width=30%/>
+                    <figcaption>Coin with the image of Hiero.</figcaption>
+                </figure>
+                <br>
+
+                <p>Now, Hiero was charismatic and had a natural talent for leadership and politics. With his new status and help from his connections, he entered the city of Syracuse and managed to take over its government. And the citizens of Syracuse, who typically rejected the thought of soldiers picking their own leaders, made an exception and accepted Hiero as a leader. In 270 BCE, a great battle broke out, and it was Hiero who led Syracuse to victory, prompting the people of Syracuse chose Hiero as their king.</p>
+
+                <p>The people of Ancient Greece believed in <a onclick="question('many gods')">many gods</a>, and Hiero was grateful to them all for his success and good fortune. To show his appreciation, Hiero decided to put into a temple a golden crown made in their honor. Hiero weighed out a precise amount of gold, and appointing a goldsmith, commanded him to fashion out of the gold a <a onclick="question('laurel wreath')">laurel wreath</a> shaped crown worthy of the gods.</p>
+
+                <p>The goldsmith did as instructed, and several days later, he returned to the king with a beautiful and intricate crown in the form of a laurel wreath, just as the king had requested. This crown weighed exactly the same as the gold the king had given to the smith and King Hiero, pleased with the work, rewarded the goldsmith.
+                King Hiero began preparations for the ceremony in which he would place the crown in the temple. But something has gone wrong. The king is furious, the festival has been put on hold, and the city is in turmoil.</p>
+
+                <p id="first_name_to_fill"><i>%%NAME%%'s Task</i></p>
+                <p>%%NAME%% is to travel to ancient Greece, figure out what is causing the king's anger and creating so much tension in the city, and fix the problem. Don't forget, it can get very hot in Greece; bring a disposable plastic water bottle back with you.</p>
+
+                <p>Ready to go undercover?</p>
+
+                <p>Accept this mission when you are ready to proceed.</p>
+
+                <br>
+
+                <div style="text-align:center;">
+                    <button type="submit" class="btn btn-primary">Accept This Mission</button>
+                </div>
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Side Widget Well -->
+                <div class="well" id="chatbot" >
+                    <h4 style="text-align:center;">Hi, I'm your personal tutor Mr.Owl</h4>
+
+                    <center><img class="img-responsive" src="https://firebasestorage.googleapis.com/v0/b/smartprimer-e0b94.appspot.com/o/owl_tutor_transparent.png?alt=media&amp;token=849b5f89-8d6f-4e0b-8829-29221e5d5edb" width="150px" alt=""></center>
+                    <div class="container">
+                        <input id="speech" type="text">
+                        <button id="rec" class="btn">Speak</button>
+                        <div id="spokenResponse" class="spoken-response">
+                            <div class="spoken-response__text"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Sherry Ruan 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+    <script type="text/javascript">
+
+    var accessToken = "832d17a2c5eb4632ba011271181d1e8c",
+      baseUrl = "https://api.api.ai/v1/",
+      $speechInput, //This stores your <input> element so you can access it in your JavaScript.
+      $recBtn, //This stores your <button> element
+      recognition, //You store your webkitSpeechRecognition() functionality in this variable. This is for the HTML5 Speech Recognition API.
+      messageRecording = "Recording...",
+      messageCouldntHear = "I couldn't hear you, could you say that again?",
+      messageInternalError = "Oh no, there has been an internal server error",
+      messageSorry = "I'm sorry, I don't have the answer to that yet.";
+
+    $(document).ready(function() {
+      $speechInput = $("#speech");
+      $recBtn = $("#rec");
+
+      // look for when the user presses the Enter key in the input field. When that happens, run the send() function to send off the data to Api.ai
+      $speechInput.keypress(function(event) {
+        if (event.which == 13) {
+          event.preventDefault();
+          send();
+        }
+      });
+
+      $recBtn.on("click", function(event) {
+        switchRecognition();
+      });
+
+      $(".debug__btn").on("click", function() {
+        $(this).next().toggleClass("is-active");
+        return false;
+      });
+    });
+
+    function startRecognition() {
+      recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onstart = function(event) {
+        respond(messageRecording);
+        updateRec(); //switches the text for your recording button from “Stop” to “Speak”.
+      };
+      recognition.onresult = function(event) {
+        recognition.onend = null;
+
+        var text = "";
+        for (var i = event.resultIndex; i < event.results.length; ++i) {
+          console.log("index"+i+": "+event.results[i][0].transcript);
+          text += event.results[i][0].transcript;
+        }
+        setInput(text);
+        stopRecognition();
+      };
+      recognition.onend = function() {
+        respond(messageCouldntHear);
+        stopRecognition();
+      };
+      recognition.lang = "en-US";
+      recognition.start();
+    }
+
+    function stopRecognition() {
+      if (recognition) {
+        recognition.stop();
+        recognition = null;
+      }
+      updateRec();
+    }
+
+    function switchRecognition() {
+      if (recognition) {
+        stopRecognition();
+      } else {
+        startRecognition();
+      }
+    }
+
+    function setInput(text) {
+      $speechInput.val(text);
+      send();
+    }
+
+    function updateRec() {
+      $recBtn.text(recognition ? "Stop" : "Speak");
+    }
+
+
+    // send off your query to Api.ai
+    function send() {
+      var text = $speechInput.val();
+      $.ajax({
+        type: "POST",
+        url: baseUrl + "query",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+          "Authorization": "Bearer " + accessToken
+        },
+        data: JSON.stringify({query: text, lang: "en", sessionId: "yaydevdiner"}),
+
+        success: function(data) {
+          prepareResponse(data);
+        },
+        error: function() {
+          respond(messageInternalError);
+        }
+      });
+    }
+
+    function prepareResponse(val) {
+      var debugJSON = JSON.stringify(val, undefined, 2),
+        spokenResponse = val.result.speech; // your assistant’s text response
+
+      respond(spokenResponse);
+      debugRespond(debugJSON);
+    }
+
+    function debugRespond(val) {
+      $("#response").text(val);
+    }
+
+    function respond(val) {
+      if (val == "") {
+        val = messageSorry;
+      }
+
+      if (val !== messageRecording) {
+        var msg = new SpeechSynthesisUtterance();
+        msg.voiceURI = "native";
+        msg.text = val;
+        msg.lang = "en-US";
+        window.speechSynthesis.speak(msg);
+      }
+
+      $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
+    }
+
+    // exposition
+    function resizeIframe(iframe) {
+      console.log("print-0");
+      iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    }
+
+    function expositionOnLoad() {
+      $(".exposition").mouseenter( function (eventObject) {
+        console.log("print-1");
+        var target = $(eventObject.target);
+        console.log(target.attr("data-link"))
+        $('<iframe>', {
+          src: target.attr("data-link"),
+          id: target.attr("data-link"),
+          width: 300,
+          scrolling: 'no',
+          style: "position: absolute; box-shadow: 5px 5px 15px #888888; " +
+            "border: 0px solid black;",
+          onload: "resizeIframe(this)"
+        }).appendTo(target);
+      }).mouseleave( function (eventObject) {
+        $("iframe").remove();
+      })
+      console.log("print");
+    }
+
+    function question(text) {
+      console.log(text);
+      setInput("What is "+text+"?");
+    }
+
+    document.getElementById("first_name_to_fill").innerHTML=localStorage.first_name;
+
+
+    var goFS = document.getElementById("goFS");
+    goFS.addEventListener("click", function() {
+        document.body.requestFullscreen();
+    }, false);
+
+
+
+  </script>
+
+
+</body>
+
+</html>

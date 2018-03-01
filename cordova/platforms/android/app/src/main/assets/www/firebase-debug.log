@@ -1,0 +1,61 @@
+[debug] [2018-01-15T18:21:47.291Z] ----------------------------------------------------------------------
+[debug] [2018-01-15T18:21:47.292Z] Command:       /usr/local/Cellar/node/8.4.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-01-15T18:21:47.292Z] CLI Version:   3.16.0
+[debug] [2018-01-15T18:21:47.293Z] Platform:      darwin
+[debug] [2018-01-15T18:21:47.293Z] Node Version:  v8.4.0
+[debug] [2018-01-15T18:21:47.293Z] Time:          Mon Jan 15 2018 10:21:47 GMT-0800 (PST)
+[debug] [2018-01-15T18:21:47.293Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-15T18:21:47.309Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-15T18:21:47.310Z] > authorizing via signed-in user
+[debug] [2018-01-15T18:21:47.312Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-15T18:21:47.312Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/OloXuDQdGTN2G0kfXp57-4C7Hjk7yYQwc-kbvVGwLJT394cXCd4a7mb2WlwOOyb4',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Jan 15 2018 10:21:47 GMT-0800 (PST)
+[debug] [2018-01-15T18:21:47.548Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-15T18:21:47.558Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/primer-archimedes  
+  
+ Mon Jan 15 2018 10:21:47 GMT-0800 (PST)
+[debug] [2018-01-15T18:21:48.043Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-15T18:21:48.045Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/primer-archimedes/tokens  
+  
+ Mon Jan 15 2018 10:21:48 GMT-0800 (PST)
+[debug] [2018-01-15T18:21:54.708Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'primer-archimedes'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing  directory for upload...
+[debug] [2018-01-15T18:21:55.643Z] Error: ENOENT: no such file or directory, stat '/Users/sherryruan/github/smartprimer-webapp/targetDirectory/include/python3.6m'
+[error] 
+[error] Error: There was an issue preparing Hosting files for upload.
+[debug] [2018-01-15T18:27:03.893Z] ----------------------------------------------------------------------
+[debug] [2018-01-15T18:27:03.895Z] Command:       /usr/local/Cellar/node/8.4.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-01-15T18:27:03.895Z] CLI Version:   3.16.0
+[debug] [2018-01-15T18:27:03.895Z] Platform:      darwin
+[debug] [2018-01-15T18:27:03.895Z] Node Version:  v8.4.0
+[debug] [2018-01-15T18:27:03.896Z] Time:          Mon Jan 15 2018 10:27:03 GMT-0800 (PST)
+[debug] [2018-01-15T18:27:03.896Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-15T18:27:03.910Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-15T18:27:03.912Z] > authorizing via signed-in user
+[debug] [2018-01-15T18:27:03.915Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/primer-archimedes  
+  
+ Mon Jan 15 2018 10:27:03 GMT-0800 (PST)
+[debug] [2018-01-15T18:27:04.422Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-15T18:27:04.423Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/primer-archimedes/tokens  
+  
+ Mon Jan 15 2018 10:27:04 GMT-0800 (PST)
+[debug] [2018-01-15T18:27:04.783Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'primer-archimedes'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing  directory for upload...
+[debug] [2018-01-15T18:27:05.581Z] Error: ENOENT: no such file or directory, stat '/Users/sherryruan/github/smartprimer-webapp/targetDirectory/include/python3.6m'
+[error] 
+[error] Error: There was an issue preparing Hosting files for upload.
