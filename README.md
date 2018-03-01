@@ -12,11 +12,11 @@ The web app is hosted at http://smartprimer.org/ (contact Sherry for server user
 
 ## Installation 
 
-### Add to Homescreen (Deprecated)
+#### Add to Homescreen (Deprecated)
 
 Open the website above (http://smartprimer.org/) from the Chrome browser on a Android tablet. Click the setting button in the browser and choose "Add to Homescreen". This will automactially turn the website to an application on your Android desktop. You can start to play with the application! Make sure to turn on the volume.
 
-### Cordova (Recommended)
+#### Cordova (Recommended)
 
 Make sure you have all the requirements satisfied. Connect your tablet with your computer. Go to the cordova folder and run `cordova run android --device`.
 
