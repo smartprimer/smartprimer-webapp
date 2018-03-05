@@ -151,6 +151,11 @@ h1 {
   color: white;
 }
 
+#playAgain:hover{
+  background-color: #47A1BF ;
+  color: white;
+}
+
 .img-responsive{
   align-self: flex-start;
 }
