@@ -26,12 +26,12 @@ class mission{
       }
     }
 
-
     function inactivateAllErrorMessages() {
       document.querySelector("#try_again_missingDimensionsInput").classList.add("inactive");
       document.querySelector("#try_again_missingFinalInput").classList.add("inactive");
       document.querySelector("#try_again_half").classList.add("inactive");
       document.querySelector("#try_again").classList.add("inactive");
+      document.querySelector("#try_again_numbersOnly").classList.add("inactive");
     }
 
     /**
@@ -46,11 +46,13 @@ class mission{
       const depth = document.querySelector('#Depth_Answer');
       const ans = document.querySelector("#Final_Answer");
 
-      // Extract kid's proposed answer. Default to 0.
       let proposed_ans = ans.value;
-      // if (proposed_ans === "") { // If user didn't submit answer, default to 0
-      //   proposed_ans = 0;
-      // }
+
+      if (isNaN(width.value) || isNaN(height.value) || isNaN(depth.value) || isNaN(ans.value)){
+        inactivateAllErrorMessages();
+        setTimeout(function() {  document.querySelector("#try_again_numbersOnly").classList.remove("inactive");}, 200);
+        return;
+      }
 
       if ( width.value === "" || height.value === "" || depth.value === ""){
         inactivateAllErrorMessages();
@@ -63,6 +65,7 @@ class mission{
         setTimeout(function() {  document.querySelector("#try_again_missingFinalInput").classList.remove("inactive");}, 200);
         return;
       }
+
 
       // Use height, width, and depth to determine correct number of candies
       let correct_ans = (parseFloat(width.value) * parseFloat(height.value) * parseFloat(depth.value))/2.0;

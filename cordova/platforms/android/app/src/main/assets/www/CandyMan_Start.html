@@ -19,7 +19,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
 
-    <script src="js/main.js" defer></script>
+    <!-- Adds an onSubmit to the main form to store user info in local
+         localStorage before proceeding to intro. -->
+    <script src="CandyMan_js/recordUserInfo.js" defer></script>
 
     <!-- Added by Sherry -->
     <!-- <script src="api.ai/ApiAi.js"></script>
@@ -68,30 +70,18 @@
                 <br>
                 <p>Hello there! I'd like to tell you a story. But first, tell me a little about yourself. </p>
 
-                <!-- form to collect input from children -->
+                <!-- Form to collect input from children. An onSubmit function
+                     is added by recordUserInfo.js to store answers in local
+                     storage for future reference. -->
                 <div id = "userInf">
-                <form action = "welcome-2.html" method="GET">
+                <form id="userInfoForm">
                   My first name is
-                  <input type="text" name="firstname"><br><br>
-                  My last name is
-                  <input type="text" name="lastname"><br><br>
-                  I'm
-                  <select name="age" value="Age" >
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                  </select> years old<br><br>
+                  <input type="text" name="firstname" id="firstName"><br><br>
                   My gender is
-                  <select name="gender" value="Gender" >
+                  <select name="gender" value="Gender" id="gender">
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
                   </select><br><br>
-                  My school is called
-                  <input type="text" name="school"><br><br>
                   <input class="buttons" type="submit" value="Submit" id = "submit">
                 </form>
               </div>
@@ -100,7 +90,6 @@
 
         </div>
         <!-- /.row -->
-
 
         <!-- Footer -->
         <footer class="inactive">
