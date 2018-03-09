@@ -71,9 +71,9 @@ class mission{
       let correct_ans = (parseFloat(width.value) * parseFloat(height.value) * parseFloat(depth.value))/2.0;
 
       // Respond visually to proposed answer
-      if (correct_ans == proposed_ans){
+      if (correct_ans == parseFloat(proposed_ans)){
         toggleModal();
-      } else if (correct_ans * 2 == proposed_ans) {
+      } else if (correct_ans * 2 == parseFloat(proposed_ans)) {
         inactivateAllErrorMessages();
         setTimeout(function() {  document.querySelector("#try_again_half").classList.remove("inactive");}, 200);
       } else {

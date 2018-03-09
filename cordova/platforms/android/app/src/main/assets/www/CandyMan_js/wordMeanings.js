@@ -3,8 +3,8 @@ clicked = true;
 function setBot(x, y){
   let d = document.querySelector('#wordMeaning');
   d.style.position = "absolute";
-  d.style.left = x+50+'px';
-  d.style.top = y-120+'px';
+  d.style.left = x-250+'px';
+  d.style.top = y-220+'px';
   setClose();
 }
 
