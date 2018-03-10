@@ -1,12 +1,27 @@
 class mission{
   constructor(){
-    this.widthButton = document.querySelector("#Width_Inputted");
-    this.heightButton = document.querySelector("#Height_Inputted");
-    this.depthButton = document.querySelector("#Depth_Inputted");
-    this.restartButton = document.querySelector("#restart");
     this.checkAnswerButton = document.querySelector("#Check_Answer");
     this.modal = document.querySelector(".modal");
     this.closeButton = document.querySelector(".close-button");
+    this.backButton = document.querySelector("#leftfixedbutton");
+    this.playAgainButton = document.querySelector("#playAgain");
+
+    if (localStorage.width != null) {document.querySelector('#Width_Answer').value = localStorage.width;}
+    if (localStorage.height != null) {document.querySelector('#Height_Answer').value = localStorage.height;}
+    if (localStorage.depth != null) {document.querySelector('#Depth_Answer').value = localStorage.depth;}
+    if (localStorage.finalAnswer != null) {document.querySelector("#Final_Answer").value = localStorage.finalAnswer;}
+
+
+    this.backButton.onclick = function() {
+      const height = document.querySelector('#Height_Answer');
+      const width = document.querySelector('#Width_Answer');
+      const depth = document.querySelector('#Depth_Answer');
+      const finalAnswer = document.querySelector("#Final_Answer");
+      localStorage.width = width.value;
+      localStorage.height = height.value;
+      localStorage.depth = depth.value;
+      localStorage.finalAnswer = finalAnswer.value;
+    }
 
     this.closeButton.onclick = function() {
       toggleModal();
@@ -40,7 +55,6 @@ class mission{
      * to the parent for evaluation.
      */
     this.checkAnswerButton.onclick = function(){
-      // Extract entered values
       const height = document.querySelector('#Height_Answer');
       const width = document.querySelector('#Width_Answer');
       const depth = document.querySelector('#Depth_Answer');
@@ -84,6 +98,10 @@ class mission{
       // Send information about proposed answer to parent
       sendToParent(encodeMsg("mission1Answer", correct_ans, proposed_ans));
     };
+
+    this.playAgainButton.onclick = function() {
+      localStorage.clear();
+    }
 
     /**
      * Listen for the parent's response to the proposed answer and respond
