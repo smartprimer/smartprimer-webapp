@@ -4,7 +4,6 @@ class mission{
     this.modal = document.querySelector(".modal");
     this.closeButton = document.querySelector(".close-button");
     this.backButton = document.querySelector("#leftfixedbutton");
-    this.playAgainButton = document.querySelector("#playAgain");
 
     if (localStorage.width != null) {document.querySelector('#Width_Answer').value = localStorage.width;}
     if (localStorage.height != null) {document.querySelector('#Height_Answer').value = localStorage.height;}
@@ -99,9 +98,6 @@ class mission{
       sendToParent(encodeMsg("mission1Answer", correct_ans, proposed_ans));
     };
 
-    this.playAgainButton.onclick = function() {
-      localStorage.clear();
-    }
 
     /**
      * Listen for the parent's response to the proposed answer and respond
