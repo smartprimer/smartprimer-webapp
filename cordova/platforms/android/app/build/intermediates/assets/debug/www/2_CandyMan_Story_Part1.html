@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Smart Primer</title>
+
+    <!-- Custom CSS and JS-->
+    <script src="CandyMan_js/dictionary.js"></script>
+    <script src="CandyMan_js/Story_Text.js"></script>
+    <script src="CandyMan_js/Setting_Story_Text.js" defer></script>
+    <link rel="stylesheet" href="CandyMan_css/bootstrap.min.css">
+    <link href="CandyMan_css/blog-post.css" rel="stylesheet">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div id="book_content">
+
+                <!-- Title -->
+                <h1>The Candy Man</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by Smart Primer Group
+                </p>
+
+                <a href="Chatting_with_Chatbot.html" class="fixedbutton" id="leftfixedbutton"><img src="images/left arrow.png"></a>
+                <a href="3_CandyMan_Story_Part2.html" class="fixedbutton" id="rightfixedbutton"><img src="images/right arrow.png"></a>
+                <div class="book-text">
+                <!-- Post Content -->
+                  <p class="story_paragraph_1"></p>
+                  <p class="story_paragraph_2"></p>
+                </div>
+
+            </div>
+            <div class="progress" id="progressBar" >
+                <div class="progress-bar progress-bar-info progress-bar-striped" id="progressBar-inner" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width:33%">
+                        33% Complete
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+
+
+        <div id = "wordMeaning" class = "inactive">
+          <img class="img-responsive" src="images/sally_picture_transparent.png" width="20%" alt="">
+          <div id="spokenResponse" class="spoken-response">
+            <textarea id="speech" class = "inactive" rows="3" cols = "14"> </textarea><br>
+
+              <div class="word-meaning__text"></div>
+          </div>
+          <button id="close"> X </button>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="CandyMan_js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="CandyMan_js/bootstrap.min.js"></script>
+
+    <script src="CandyMan_js/wordMeanings.js" defer></script>
+
+</body>
+</html>
