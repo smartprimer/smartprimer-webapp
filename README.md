@@ -1,3 +1,5 @@
+*This is the deprecated version of Smart Primer. This version is deployed to an Android tablet by tapping on "add to homescreen" in a Chrome browser.*
+
 # Smart Primer Application
 
 This is the main smart primer application. It is developed as a web application.
