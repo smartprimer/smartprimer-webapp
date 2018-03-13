@@ -32,7 +32,7 @@ Make sure you have all the requirements satisfied. Connect your tablet with your
 
 5. Enable the [developer mode](https://www.androidcentral.com/how-enable-developer-settings-android-42) for your android device.
 
-6. Go to the project folder and run `cordova run android —device`. Install corresponding missing packages if you encounter any error messages.
+6. Go to the project folder and run `cordova run android -device`. Install corresponding missing packages if you encounter any error messages.
 
 7. (Optional) If you want to run an emulator on your computer. You need to create one using AVD Manager. Instructions are [here](https://developer.android.com/studio/run/managing-avds.html). 
 
