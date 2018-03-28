@@ -61,6 +61,8 @@ bindEvent(window, 'message', function (e) {
     case "setName":
       sendToChat(encodeMsg(tag, msg[1]));
       break;
+        case "setUserURL":
+      document.getElementById("chat").src = "http://smartprimer.org:8000/user?name=" + msg[1] + '&uid=' + msg[2]
     case "waitingForHi":
       sendToChat("waitingForHi");
       break;
