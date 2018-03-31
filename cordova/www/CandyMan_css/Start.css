@@ -9,7 +9,7 @@ body {
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: relative;
-    background-size: contain;
+    background-size: cover;
     display: flex;
     font-family: 'Quicksand',Helvetica,Arial,sans-serif;
     font-size: 24px;

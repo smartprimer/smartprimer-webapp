@@ -36,7 +36,6 @@ function question(text) {
   for (const words in dictionaryRet){
     if (dictionaryRet[words].name === text){
     meaning = dictionaryRet[words].meaning;
-    console.log(text);
     break;
     }
   }

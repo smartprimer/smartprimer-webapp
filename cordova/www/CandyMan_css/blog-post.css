@@ -5,6 +5,11 @@
  */
 
 body {
+    background-image: url("../images/candy.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: relative;
+    background-size: cover;
     display: flex;
     font-family: 'Quicksand',Helvetica,Arial,sans-serif;
     font-size: 24px;
@@ -12,7 +17,6 @@ body {
     overflow: hidden;
     /* padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */ */
     margin: auto;
-    padding: 30px 5px;
 }
 
 .images_sideToside{
@@ -22,7 +26,8 @@ body {
 
 .fixedbutton{
   position: fixed;
-  top: 400px;
+  display: block;
+  top: 40%;
   width: 50px;
   height: 50px;
   -webkit-transition: all 2s ease-in-out;
@@ -49,13 +54,21 @@ h1 {
 
 #book_content{
   text-align: center;
-  margin: auto;
+  right: 50px;
+  left: 60px;
+  width: 95%;
+  height: 90%;
+  margin: auto 100px;
   padding: 90px 40px;
 }
 
 .book-text{
   text-align: left;
-  padding: 20px 60px;
+  /* padding: 20px 60px; */
+  top: 25%;
+  /* left: 9%; */
+  position: fixed;
+  width: 70%;
 }
 
 .img-responsive{
