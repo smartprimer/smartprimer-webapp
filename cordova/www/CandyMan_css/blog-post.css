@@ -58,17 +58,18 @@ h1 {
   left: 60px;
   width: 95%;
   height: 90%;
-  margin: auto 100px;
-  padding: 90px 40px;
+  /* margin: auto 100px; */
+  padding: 90px 50px;
 }
 
 .book-text{
   text-align: left;
-  /* padding: 20px 60px; */
+  padding: 20px 60px;
   top: 25%;
   /* left: 9%; */
   position: fixed;
-  width: 70%;
+  width: 85%;
+  padding-top: 2%;
 }
 
 .img-responsive{
