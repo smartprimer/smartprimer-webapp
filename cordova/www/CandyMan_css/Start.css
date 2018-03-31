@@ -80,7 +80,8 @@ h1 {
 
 .book-text{
   text-align: left;
-  padding: 210px 60px 20px 70px;
+  /* padding: 210px 60px 20px 70px; */
+  padding: 10% 10%;
 }
 
 #intro_user_info{
