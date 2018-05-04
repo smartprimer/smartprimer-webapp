@@ -14,7 +14,7 @@
 
     <!-- Custom CSS and JS-->
     <script src="CandyMan_js/dictionary.js"></script>
-    <link href="CandyMan_css/Start.css" rel="stylesheet">
+    <link href="CandyMan_css/Chatting_with_Chatbot.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
@@ -90,7 +90,7 @@
         bindEvent(window, 'message', function (e) {
           let msg = decodeMsg(e.data);
           if (msg[0] !== "saidHi") return;
-            window.location.href = "Chatting_with_Chatbot.html";
+          window.location.href = "Chatting_with_Chatbot.html";
         });
     </script>
 

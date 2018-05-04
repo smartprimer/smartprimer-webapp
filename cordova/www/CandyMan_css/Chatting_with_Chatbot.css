@@ -54,21 +54,7 @@ h1 {
 
 #book_content{
   text-align: center;
-  /* right: 50px; */
-  /* left: 60px; */
-  width: 95%;
-  /* height: 90%; */
-  /* margin: auto 100px; */
-  padding: 90px 50px;
-}
-
-.book-text{
-  text-align: left;
-  padding: 20px 60px;
-  top: 25%;
-  /* left: 9%; */
-  position: fixed;
-  width: 85%;
+  padding:5%;
 }
 
 .img-responsive{
