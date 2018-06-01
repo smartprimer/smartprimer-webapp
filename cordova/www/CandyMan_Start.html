@@ -23,6 +23,8 @@
          localStorage before proceeding to intro. -->
     <script src="CandyMan_js/recordUserInfo.js" defer></script>
 
+    <script src="js/communicationChild.js"></script>
+
     <!-- Added by Sherry -->
     <!-- <script src="api.ai/ApiAi.js"></script>
     <script src="api.ai/APIAI.Functions.js"></script> -->
@@ -82,6 +84,12 @@
 
     </div>
     <!-- /.container -->
+
+    <!-- Page-specific JS for communication with parent frame -->
+    <script type="text/javascript">
+      // Hide chat if user is coming from "Play Again"
+      sendToParent("hideChat");
+    </script>
 
     <!-- firebase library -->
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
