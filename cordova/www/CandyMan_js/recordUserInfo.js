@@ -8,6 +8,6 @@ let userInfoForm = document.querySelector('#userInfoForm');
 userInfoForm.onsubmit = function() {
   localStorage.first_name = document.querySelector("#firstName").value;
   localStorage.gender = document.querySelector("#gender").value;
-  window.location = "1_attention.html";
+  window.location = "attention.html";
   return false;
 };

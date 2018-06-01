@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Smart Primer</title>
+    <!-- Custom CSS and JS-->
+    <script src="CandyMan_js/dictionary.js"></script>
+    <link href="CandyMan_css/Chatting_with_Chatbot.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <script src="js/communicationChild.js"></script>
+</head>
+
+<body>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div id="book_content">
+                <div class="book-text">
+                    <!-- Post Content -->
+                    hi
+                    <!-- Remove "Let's Start" button and instead only advance after kid interacts with bot -->
+                    <!-- <div>
+                  <form action = "CandyMan_Story_Part1.html">
+                  <button type="submit" class="btn btn-primary buttons" >Let's Start!</button>
+                  </form>
+              </div> -->
+                    <div id="wordMeaning" class="inactive">
+                        <img class="img-responsive" src="images/sally_picture_transparent.png" width="20%" alt="">
+                        <div id="spokenResponse" class="spoken-response">
+                            <textarea id="speech" class="inactive" rows="3" cols="14"> </textarea>
+                            <br>
+                            <div class="word-meaning__text"></div>
+                        </div>
+                        <button id="close"> X </button>
+                    </div>
+                </div>
+            </div>
+            <!-- jQuery -->
+            <script src="js/jquery.js"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="js/bootstrap.min.js"></script>
+            <script src="CandyMan_js/wordMeanings.js" defer></script>
+            <!-- JavaScript for Chatbot functionality. -->
+            <!-- <script type="text/javascript" src="js/speechBot.js"></script> -->
+            <script type="text/javascript">
+            document.getElementById("name_to_fill").innerHTML = localStorage.first_name;
+            </script>
+            <!-- Page-specific JS for communication with parent frame -->
+            <script type="text/javascript">
+            // Show chat and send name when page loads.
+            sendToParent("showChat");
+            sendToParent(encodeMsg("setName", localStorage.first_name));
+            sendToParent("waitingForHi");
+            //sendToParent(encodeMsg("setUserURL", localStorage.first_name));
+
+            // Send saidHi
+            bindEvent(window, 'message', function(e) {
+                let msg = decodeMsg(e.data);
+                if (msg[0] !== "saidHi") return;
+                window.location.href = "Chatting_with_Chatbot.html";
+            });
+            </script>
+</body>
+
+</html>

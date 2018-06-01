@@ -24,7 +24,7 @@ class mission{
 
     this.closeButton.onclick = function() {
       toggleModal();
-      setTimeout(function() {window.location.href="mission_goal.html";}, 200);
+      setTimeout(function() {window.location.href="Candyman_mission_goal.html";}, 200);
     }
 
     window.addEventListener("click", windowOnClick);
