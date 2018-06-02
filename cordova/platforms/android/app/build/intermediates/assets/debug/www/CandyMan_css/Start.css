@@ -9,7 +9,7 @@ body {
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: relative;
-    background-size: contain;
+    background-size: cover;
     display: flex;
     font-family: 'Quicksand',Helvetica,Arial,sans-serif;
     font-size: 24px;
@@ -80,7 +80,8 @@ h1 {
 
 .book-text{
   text-align: left;
-  padding: 210px 60px 20px 70px;
+  /* padding: 210px 60px 20px 70px; */
+  padding: 10% 10%;
 }
 
 #intro_user_info{

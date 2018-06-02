@@ -42,6 +42,8 @@ var sendToStory = function(msg) {
   storyFrame.contentWindow.postMessage(msg, '*');
 };
 
+let waitingForHi = false;
+
 /**
  * Receive messages from the story by listening to child window.
  * bindEvent is defined in communcationChild file.
@@ -61,11 +63,18 @@ bindEvent(window, 'message', function (e) {
     case "setName":
       sendToChat(encodeMsg(tag, msg[1]));
       break;
+    case "setUserURL":
+      document.getElementById("chat").src = "http://smartprimer.org:8000/user?name=" + msg[1] + '&uid=' + msg[2]
+      break;
     case "waitingForHi":
+      waitingForHi = true;
       sendToChat("waitingForHi");
       break;
     case "saidHi":
-      sendToStory("saidHi");
+      if (waitingForHi) {
+        waitingForHi = false;
+        sendToStory("saidHi");
+      }
       break;
     case "mission1Answer":
       handleMission1Answer(msg[1], msg[2]);

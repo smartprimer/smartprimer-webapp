@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Smart Primer</title>
+
+    <!-- The text of the story -->
+    <script src="CandyMan_js/Story_Text.js"></script>
+    <!-- A dictionary of words and their meanings-->
+    <script src="CandyMan_js/dictionary.js"></script>
+    <!-- Inserts the text of the story into this html page -->
+    <script src="CandyMan_js/Setting_Story_Text.js" defer></script>
+    <!-- Custom JS -->
+    <script src="CandyMan_js/mission_goal.js" defer></script>
+    <!-- Custom CSS -->
+    <link href="CandyMan_css/Start.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div id="book_content">
+
+                <div class="book-text">
+                  <br>
+                  <p class="story_paragraph_5"></p>
+                  <p class="story_paragraph_6"></p>
+                  <br>
+                  <p id="goodbye">Don't forget to say goodbye to Sally!</p>
+                  <form action = "CandyMan_Start.html">
+                    <button class="buttons" id="playAgain"> Play Again! </button>
+                  </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+
+        <div id = "wordMeaning" class = "inactive">
+          <img class="img-responsive" src="images/sally_picture_transparent.png" width="20%" alt="">
+          <div id="spokenResponse" class="spoken-response">
+            <textarea id="speech" class = "inactive" rows="3" cols = "14"> </textarea><br>
+
+              <div class="word-meaning__text"></div>
+          </div>
+          <button id="close"> X </button>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="CandyMan_js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="CandyMan_js/bootstrap.min.js"></script>
+    <!-- Controls how word definitions show up -->
+    <script src="CandyMan_js/wordMeanings.js" defer></script>
+</body>
+</html>
