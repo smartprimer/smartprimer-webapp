@@ -2,6 +2,14 @@
 
 This is the main smart primer application. It is developed as a web application and deployed to tablets using Cordova.
 
+## Branches
+
+Master - the one merged with the bookbuddy automatic chatbot. Deprecated now. Please use the bookbuddy repo instead.
+
+Cordova - the candy man story with the woz interface.
+
+Homescreen - the old "add to homescreen" web page. Decrecated.
+
 ## Wiki
 
 https://github.com/smartprimer/smartprimer-webapp/wiki
@@ -18,7 +26,7 @@ Open the website above (http://smartprimer.org/) from the Chrome browser on a An
 
 #### Cordova (Recommended)
 
-Make sure you have all the requirements satisfied. Connect your tablet with your computer. Go to the cordova folder and run `cordova run android --device`.
+Make sure you have all the requirements satisfied. Connect your tablet with your computer. Go to the cordova folder and run `cordova run android -device`. To build it, run `cordova build android -device`
 
 ## Cordova Requirements (for Mac)
 
